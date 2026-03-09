@@ -15,6 +15,7 @@
     # framework-tool command line interface
     "${flakes.nixos-hardware}/framework/framework-tool.nix"
 
+    ../common/tpm.nix
     ../common/wifi.nix
     ../common/bluetooth.nix
     ../common/sound.nix

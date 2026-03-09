@@ -1,5 +1,11 @@
-{user, ...}: {
+{
+  user,
+  config,
+  ...
+}: {
   home-manager.users.${user} = {
+    systemd.user.sessionVariables = config.home-manager.users.${user}.home.sessionVariables;
+
     home = {
       preferXdgDirectories = true;
     };

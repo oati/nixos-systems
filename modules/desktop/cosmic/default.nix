@@ -18,6 +18,9 @@
 
   services.system76-scheduler.enable = true;
 
+  # conflicts with ssh-tpm-agent
+  services.gnome.gnome-keyring.enable = false;
+
   environment.systemPackages = with pkgs; [
     # audio config
     pavucontrol

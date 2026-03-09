@@ -4,6 +4,7 @@
     # TODO
     # ../common/ssh-server.nix
     ./networking.nix
+    ./ssh-client.nix
     ./fonts.nix
     ./browser.nix
   ];
