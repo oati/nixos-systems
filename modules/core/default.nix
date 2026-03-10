@@ -54,4 +54,6 @@
       "/var/cache"
     ];
   };
+
+  system.configurationRevision = flakes.self.shortRev or flakes.self.dirtyShortRev;
 }
