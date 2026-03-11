@@ -20,12 +20,12 @@
       shellAliases = {
         en = "cd /etc/nixos";
 
-        nrs = "run0 nixos-rebuild switch";
-        nrb = "run0 nixos-rebuild boot";
-        nrt = "run0 nixos-rebuild test";
-        nrdb = "run0 nixos-rebuild dry-build";
-        nrda = "run0 nixos-rebuild dry-activate";
-        nrc = "nixos-rebuild current";
+        nrs = "nixos-rebuild switch --sudo";
+        nrb = "nixos-rebuild boot --sudo";
+        nrt = "nixos-rebuild test --sudo";
+        nrdb = "nixos-rebuild dry-build --sudo";
+        nrda = "nixos-rebuild dry-activate --sudo";
+        nrac = "nixos-rebuild activate-current --sudo";
 
         ngl = "nixos-generations list";
         ngs = "nixos-generations switch";
@@ -38,8 +38,12 @@
       extraConfig =
         # nu
         ''
-          def "nixos-rebuild current" [] {
-            run0 /nix/var/nix/profiles/system/bin/switch-to-configuration test
+          def "nixos-rebuild activate-current" [--sudo] {
+            if $sudo {
+              run0 /nix/var/nix/profiles/system/bin/switch-to-configuration test
+            } else {
+              /nix/var/nix/profiles/system/bin/switch-to-configuration test
+            }
           }
           def "nixos-generations list" []: nothing -> table {
             nixos-rebuild list-generations --json | from json | update date {into datetime}

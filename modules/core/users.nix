@@ -1,4 +1,9 @@
-{user, ...}: {
+{
+  user,
+  lib,
+  pkgs,
+  ...
+}: {
   services.userborn.enable = true;
 
   users = {
@@ -18,6 +23,16 @@
 
   # no password for wheel
   security.run0.wheelNeedsPassword = false;
+
+  # sudo alias for run0
+  environment.systemPackages = [
+    (
+      pkgs.writeScriptBin "sudo" ''
+        #!${lib.getExe pkgs.dash}
+        exec run0 "$@"
+      ''
+    )
+  ];
 
   intransience.datastores.system.files = [
     "/var/lib/secrets"
