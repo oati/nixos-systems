@@ -55,7 +55,7 @@
 
     programs.nushell.settings.buffer_editor = "hx";
 
-    systemd.user.sessionVariables = {
+    home.sessionVariables = {
       EDITOR = "hx";
       VISUAL = "hx";
     };

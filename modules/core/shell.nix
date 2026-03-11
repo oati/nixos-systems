@@ -57,10 +57,19 @@
     };
 
     home.shell.enableNushellIntegration = true;
+
+    home.sessionVariables = {
+      PAGER = "moor";
+      # allows systemd commands to use moor
+      SYSTEMD_PAGERSECURE = "true";
+    };
   };
 
   environment.systemPackages = with pkgs; [
     fastfetch
+
+    # shell utils
+    moor
 
     # network tools
     inetutils
