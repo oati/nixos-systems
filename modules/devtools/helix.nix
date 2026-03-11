@@ -54,11 +54,11 @@
     };
 
     programs.nushell.settings.buffer_editor = "hx";
+  };
 
-    home.sessionVariables = {
-      EDITOR = "hx";
-      VISUAL = "hx";
-    };
+  environment.variables = {
+    EDITOR = "hx";
+    VISUAL = "hx";
   };
 
   environment.systemPackages = with pkgs; [

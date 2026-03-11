@@ -57,12 +57,12 @@
     };
 
     home.shell.enableNushellIntegration = true;
+  };
 
-    home.sessionVariables = {
-      PAGER = "moor";
-      # allows systemd commands to use moor
-      SYSTEMD_PAGERSECURE = "true";
-    };
+  environment.variables = {
+    PAGER = "moor";
+    # allows systemd commands to use moor
+    SYSTEMD_PAGERSECURE = "true";
   };
 
   environment.systemPackages = with pkgs; [
