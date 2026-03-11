@@ -9,7 +9,7 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = ["Monaspace Neon" "Symbols Nerd Font Mono"];
+        monospace = ["Monaspace Neon Frozen" "Symbols Nerd Font Mono"];
         sansSerif = ["Lexend"];
         serif = ["Lexend"];
       };
