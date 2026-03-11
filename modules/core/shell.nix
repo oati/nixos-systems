@@ -1,10 +1,11 @@
 {
   user,
+  lib,
   pkgs,
   ...
 }: {
   users.defaultUserShell = pkgs.bash;
-  programs.bash.interactiveShellInit = "exec ${pkgs.nushell}/bin/nu";
+  programs.bash.interactiveShellInit = "exec ${lib.getExe pkgs.nushell}";
 
   home-manager.users.${user} = {
     programs.nushell = {
