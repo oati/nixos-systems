@@ -17,15 +17,7 @@
   security.sudo.enable = false;
 
   # no password for wheel
-  security.polkit.extraConfig =
-    # js
-    ''
-      polkit.addRule(function(action, subject) {
-        if (subject.isInGroup("wheel")) {
-          return polkit.Result.YES;
-        }
-      })
-    '';
+  security.run0.wheelNeedsPassword = false;
 
   intransience.datastores.system.files = [
     "/var/lib/secrets"
