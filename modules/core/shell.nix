@@ -71,11 +71,8 @@
 
     # shell utils
     moor
+    ripgrep
 
-    # network tools
-    inetutils
-    bind
-
-    # wget
+    wget
   ];
 }
