@@ -93,7 +93,7 @@
           "graphical-session.target"
           "dbus.service"
         ];
-        Wants = "dbus.service";
+        Wants = ["dbus.service"];
         X-Restart-Triggers = [
           config.home-manager.users.${user}.xdg.configFile."delta-shell/config.json".source
           config.home-manager.users.${user}.xdg.configFile."delta-shell/theme.json".source
@@ -102,7 +102,6 @@
       Service = {
         ExecStartPre = "${pkgs.coreutils}/bin/sleep 1";
         ExecStart = "${lib.getExe pkgs.delta-shell} run";
-        ExecReload = "${lib.getExe pkgs.delta-shell} restart";
         Restart = "always";
         RestartSec = 1;
       };
