@@ -1,7 +1,9 @@
 {
   flakes,
   user,
+  lib,
   pkgs,
+  config,
   ...
 }: {
   home-manager.users.${user} = {
@@ -147,6 +149,28 @@
 
           amoled-cord = "${flakes.amoled-cord}/clients/amoled-cord.theme.css";
         };
+      };
+    };
+
+    # autostart
+    systemd.user.services.vesktop = {
+      Unit = {
+        Description = "Discord Client";
+        PartOf = ["graphical-session.target"];
+        After = [
+          "graphical-session.target"
+          "dbus.service"
+        ];
+        Wants = ["dbus.service"];
+      };
+      Service = {
+        ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";
+        ExecStart = "${lib.getExe config.home-manager.users.${user}.programs.vesktop.package} --start-minimized";
+        Restart = "always";
+        RestartSec = "5s";
+      };
+      Install = {
+        WantedBy = ["graphical-session.target"];
       };
     };
   };
