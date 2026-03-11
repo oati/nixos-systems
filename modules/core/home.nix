@@ -43,6 +43,7 @@
   # workaround for intransience bug
   intransience.datastores.cache.users.${user}.dirs = [
     ".local/meow"
+    ".local/share/meow"
     ".local/state/meow"
   ];
 }

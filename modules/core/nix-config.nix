@@ -1,4 +1,8 @@
-{ flakes, ... }:
+{
+  flakes,
+  user,
+  ...
+}:
 {
   nix = {
     settings = {
@@ -41,4 +45,12 @@
       };
     };
   };
+
+  intransience.datastores.home.users.${user}.files = [
+    ".local/share/nix/trusted-settings.json"
+  ];
+
+  # workaround unti intransience adds support
+  systemd.tmpfiles.settings."12-intransience-binds-home"."/safe/home/home/${user}/.local/share/nix/trusted-settings.json".f.argument =
+    "{}";
 }
