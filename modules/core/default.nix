@@ -4,7 +4,6 @@
     flakes.disko.nixosModules.default
     flakes.intransience.nixosModules.default
     flakes.home-manager.nixosModules.default
-    flakes.nix-index-database.nixosModules.default
 
     ./nixpkgs.nix
     ./nix-config.nix
