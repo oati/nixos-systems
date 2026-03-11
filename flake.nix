@@ -24,6 +24,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    amoled-cord = {
+      url = "github:LuckFire/amoled-cord";
+      flake = false;
+    };
   };
 
   nixConfig = {

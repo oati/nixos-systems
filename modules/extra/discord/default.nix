@@ -1,4 +1,5 @@
 {
+  flakes,
   user,
   config,
   ...
@@ -105,10 +106,25 @@
             PauseInvitesForever.enabled = true;
           };
 
-          enabledThemes = [];
+          enabledThemes = [
+            "amoled-cord.css"
+            "default-fonts.css"
+          ];
         };
 
-        themes = {};
+        themes = {
+          amoled-cord = "${flakes.amoled-cord}/clients/amoled-cord.theme.css";
+
+          default-fonts =
+            # css
+            ''
+              :root {
+                  --font-primary: "sans-serif";
+                  --font-display: "sans-serif";
+                  --font-code: "monospace";
+              }
+            '';
+        };
       };
     };
   };

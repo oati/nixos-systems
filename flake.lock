@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "amoled-cord": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1771355764,
+        "narHash": "sha256-TwoWK7Y51CDGcv+l2uvET3g1gqkv+YvFAxKbGHN5WYQ=",
+        "owner": "LuckFire",
+        "repo": "amoled-cord",
+        "rev": "343808e7d5297223e43868b3955da4cbbd01ceef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LuckFire",
+        "repo": "amoled-cord",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -149,6 +165,7 @@
     },
     "root": {
       "inputs": {
+        "amoled-cord": "amoled-cord",
         "disko": "disko",
         "home-manager": "home-manager",
         "intransience": "intransience",
