@@ -1,7 +1,7 @@
 {
   user,
-  config,
   pkgs,
+  config,
   ...
 }: {
   home-manager.users.${user} = {
@@ -9,7 +9,7 @@
       enable = true;
 
       settings = {
-        theme = "zed_onedark"; # catppuccin_frappe darcula dracula nord dark_plus github_dark_dimmed zed_onedark
+        theme = "modus_vivendi"; # catppuccin_frappe darcula dracula nord dark_plus github_dark_dimmed zed_onedark
 
         editor = {
           cursor-shape = {
