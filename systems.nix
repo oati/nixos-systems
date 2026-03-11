@@ -24,7 +24,7 @@ rec {
     ./modules/hardware/peripherals/drawing-tablet
 
     # ./modules/extra/browser
-    # ./modules/extra/discord
+    ./modules/extra/discord
   ];
 
   erin-pc =
