@@ -6,6 +6,7 @@
     ./networking.nix
     ./ssh-client.nix
     ./fonts.nix
+    ./terminal.nix
     ./browser.nix
   ];
 

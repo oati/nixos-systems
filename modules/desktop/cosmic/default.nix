@@ -14,7 +14,9 @@
 
   services.desktopManager.cosmic.enable = true;
 
-  environment.cosmic.excludePackages = [];
+  environment.cosmic.excludePackages = with pkgs; [
+    cosmic-term
+  ];
 
   services.system76-scheduler.enable = true;
 
