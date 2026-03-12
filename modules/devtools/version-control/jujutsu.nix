@@ -9,6 +9,10 @@
 
       settings = {
         inherit (config.home-manager.users.${user}.programs.git.settings) user;
+
+        ui = {
+          default-command = "status";
+        };
       };
     };
 
