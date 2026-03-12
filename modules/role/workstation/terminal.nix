@@ -1,4 +1,9 @@
 {user, ...}: {
+  services.kmscon = {
+    enable = true;
+    hwRender = true;
+  };
+
   home-manager.users.${user} = {
     programs.ghostty = {
       enable = true;
