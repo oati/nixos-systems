@@ -46,7 +46,11 @@
             }
           }
           def "nixos-generations list" []: nothing -> table {
-            nixos-rebuild list-generations --json | from json | update date {into datetime}
+            nixos-rebuild list-generations --json | from json
+              | update date {into datetime}
+              | rename --column {configurationRevision: revision}
+              | move current --after generation
+              | move revision --after date
           }
           def "nixos-generations switch" [generation: int] {
             run0 nix-env -p /nix/var/nix/profiles/system --switch-generation $generation
