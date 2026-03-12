@@ -30,6 +30,9 @@
 
   services.dbus.implementation = "broker";
 
+  # faster shutdown
+  systemd.settings.Manager.DefaultTimeoutStopSec = "5s";
+
   home-manager = {
     # use system pkgs
     useGlobalPkgs = true;
