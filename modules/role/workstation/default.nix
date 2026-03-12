@@ -3,9 +3,10 @@
   imports = [
     # TODO
     # ../common/ssh-server.nix
+    ./fonts.nix
+    ./theme.nix
     ./networking.nix
     ./ssh-client.nix
-    ./fonts.nix
     ./terminal.nix
     ./browser.nix
   ];

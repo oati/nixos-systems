@@ -38,6 +38,12 @@
         "browser.safebrowsing.downloads.enabled" = true;
       };
     };
+
+    # stylix.targets.librewolf = {
+    #   enable = true;
+    #   colors.enable = false;
+    #   profileNames = [];
+    # };
   };
 
   intransience.datastores.home.users.${user}.dirs = [

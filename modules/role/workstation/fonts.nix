@@ -3,7 +3,6 @@
     packages = with pkgs; [
       monaspace
       lexend
-
       nerd-fonts.symbols-only
     ];
 

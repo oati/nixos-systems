@@ -22,5 +22,7 @@
     };
 
     programs.jjui.enable = true;
+
+    stylix.targets.jjui.enable = true;
   };
 }

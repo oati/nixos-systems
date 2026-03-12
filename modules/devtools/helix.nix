@@ -9,8 +9,6 @@
       enable = true;
 
       settings = {
-        theme = "modus_vivendi"; # catppuccin_frappe darcula dracula nord dark_plus github_dark_dimmed zed_onedark
-
         editor = {
           cursor-shape = {
             normal = "block";
@@ -52,6 +50,8 @@
         };
       };
     };
+
+    stylix.targets.helix.enable = true;
 
     programs.nushell.settings.buffer_editor = "hx";
   };
