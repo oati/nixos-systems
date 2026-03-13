@@ -3,6 +3,15 @@
   config,
   ...
 }: {
+  home-manager = {
+    # use system pkgs
+    useGlobalPkgs = true;
+    # allow home manager to add packages
+    useUserPackages = true;
+
+    backupFileExtension = "hm-backup";
+  };
+
   home-manager.users.${user} = {
     systemd.user.sessionVariables = config.home-manager.users.${user}.home.sessionVariables;
 

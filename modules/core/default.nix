@@ -8,21 +8,12 @@
 
     ./nixpkgs.nix
     ./nix-config.nix
+    ./boot.nix
     ./users.nix
     ./home.nix
     ./shell.nix
     ./networking.nix
   ];
-
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-      timeout = 5;
-    };
-
-    initrd.systemd.enable = true;
-  };
 
   system.etc.overlay = {
     enable = true;
@@ -34,13 +25,8 @@
   # faster shutdown
   systemd.settings.Manager.DefaultTimeoutStopSec = "5s";
 
-  home-manager = {
-    # use system pkgs
-    useGlobalPkgs = true;
-    # allow home manager to add packages
-    useUserPackages = true;
-    backupFileExtension = "hm-backup";
-  };
+  # revision metadata
+  system.configurationRevision = flakes.self.shortRev or flakes.self.dirtyShortRev;
 
   intransience.datastores = {
     system.etc.dirs = [
@@ -57,6 +43,4 @@
       "/var/cache"
     ];
   };
-
-  system.configurationRevision = flakes.self.shortRev or flakes.self.dirtyShortRev;
 }
