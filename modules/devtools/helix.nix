@@ -51,8 +51,6 @@
       };
     };
 
-    stylix.targets.helix.enable = true;
-
     programs.nushell.settings.buffer_editor = "hx";
   };
 
