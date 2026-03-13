@@ -17,8 +17,8 @@
         enable = true;
         createDirectories = true;
         desktop = null;
-        documents = "~/documents";
-        download = "~/downloads";
+        documents = "$HOME/documents";
+        download = "$HOME/downloads";
         music = null;
         pictures = null;
         videos = null;
