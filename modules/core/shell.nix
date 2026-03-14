@@ -80,6 +80,7 @@
     # shell utils
     moor
     ripgrep
+    inotify-tools
 
     wget
   ];
