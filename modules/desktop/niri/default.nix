@@ -4,7 +4,12 @@
   ...
 }: {
   services.displayManager = {
-    cosmic-greeter.enable = true;
+    gdm = {
+      enable = true;
+      # banner = "";
+    };
+
+    defaultSession = "niri";
 
     autoLogin = {
       enable = true;
@@ -12,16 +17,15 @@
     };
   };
 
-  services.desktopManager.cosmic.enable = true;
-
-  environment.cosmic.excludePackages = with pkgs; [
-    cosmic-term
-  ];
-
-  services.system76-scheduler.enable = true;
+  programs.niri = {
+    enable = true;
+    useNautilus = true;
+  };
 
   # conflicts with ssh-tpm-agent
   services.gnome.gnome-keyring.enable = false;
+
+  # programs.xwayland.enable = true;
 
   environment.systemPackages = with pkgs; [
     # audio config

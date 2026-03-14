@@ -7,7 +7,7 @@ rec {
     ./modules/identity/iso
     ./modules/role/workstation
 
-    ./modules/desktop/cosmic
+    ./modules/desktop/niri
     ./modules/devtools
   ];
 
@@ -22,7 +22,7 @@ rec {
     ./modules/hardware/peripherals/monitor
     ./modules/hardware/peripherals/drawing-tablet
 
-    ./modules/desktop/cosmic
+    ./modules/desktop/niri
     ./modules/devtools
 
     # ./modules/extra/browser
