@@ -19,9 +19,11 @@ rec {
     ./modules/identity/erin-pc
     ./modules/role/workstation
 
+    ./modules/hardware/peripherals/monitor
+    ./modules/hardware/peripherals/drawing-tablet
+
     ./modules/desktop/cosmic
     ./modules/devtools
-    ./modules/hardware/peripherals/drawing-tablet
 
     # ./modules/extra/browser
     ./modules/extra/discord
