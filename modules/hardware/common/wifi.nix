@@ -19,9 +19,6 @@
     networkmanager.wifi.backend = "iwd";
   };
 
-  # address race condition where iwd starts before the wifi card is initalized
-  systemd.services.iwd.preStart = "${pkgs.coreutils}/bin/sleep 2";
-
   intransience.datastores.system.dirs = [
     "/var/lib/iwd"
   ];
