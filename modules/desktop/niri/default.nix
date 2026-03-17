@@ -1,8 +1,20 @@
 {
+  flakes,
   user,
+  lib,
   pkgs,
   ...
 }: {
+  imports = [
+    flakes.niri-flake.nixosModules.niri
+    ./niri.nix
+    ./displays.nix
+    ./keybinds.nix
+    ./launcher.nix
+  ];
+
+  niri-flake.cache.enable = false;
+
   services.displayManager = {
     gdm = {
       enable = true;
@@ -19,13 +31,15 @@
 
   programs.niri = {
     enable = true;
-    useNautilus = true;
+    package = pkgs.niri;
   };
 
   # conflicts with ssh-tpm-agent
-  services.gnome.gnome-keyring.enable = false;
+  services.gnome.gnome-keyring.enable = lib.mkForce false;
 
   # programs.xwayland.enable = true;
+
+  fonts.enableDefaultPackages = false;
 
   environment.systemPackages = with pkgs; [
     # audio config
