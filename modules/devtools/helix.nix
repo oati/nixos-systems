@@ -50,8 +50,6 @@
         };
       };
     };
-
-    programs.nushell.settings.buffer_editor = "hx";
   };
 
   environment.variables = {
