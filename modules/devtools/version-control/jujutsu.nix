@@ -12,6 +12,7 @@
 
         ui = {
           default-command = "status";
+          pager = "moor";
         };
       };
     };
