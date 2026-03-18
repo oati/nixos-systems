@@ -25,6 +25,9 @@
     };
 
     home.shell.enableNushellIntegration = true;
+
+    # completions
+    programs.carapace.enable = true;
   };
 
   environment.variables = {
