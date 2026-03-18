@@ -1,0 +1,39 @@
+{
+  user,
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./aliases.nix
+    ./nixos-utils.nix
+    ./utils.nix
+  ];
+
+  users.defaultUserShell = pkgs.bash;
+  programs.bash.interactiveShellInit = "exec ${lib.getExe pkgs.nushell}";
+
+  home-manager.users.${user} = {
+    programs.nushell = {
+      enable = true;
+
+      settings = {
+        show_banner = false;
+      };
+
+      plugins = [];
+    };
+
+    home.shell.enableNushellIntegration = true;
+  };
+
+  environment.variables = {
+    PAGER = "moor";
+    # allows systemd commands to use moor
+    SYSTEMD_PAGERSECURE = "true";
+  };
+
+  environment.systemPackages = with pkgs; [
+    moor
+  ];
+}

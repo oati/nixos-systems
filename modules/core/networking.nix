@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   services.resolved = {
     enable = true;
 
@@ -15,12 +15,4 @@
   };
 
   networking.networkmanager.dns = "systemd-resolved";
-
-  environment.systemPackages = with pkgs; [
-    # network tools
-    dnsutils
-    inetutils
-    iw
-    speedtest-cli
-  ];
 }

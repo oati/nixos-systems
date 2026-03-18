@@ -11,7 +11,7 @@
     ./boot.nix
     ./users.nix
     ./home.nix
-    ./shell.nix
+    ./shell
     ./networking.nix
   ];
 
