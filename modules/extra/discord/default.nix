@@ -1,7 +1,6 @@
 {
   flakes,
   user,
-  config,
   ...
 }: {
   home-manager.users.${user} = {
