@@ -19,7 +19,7 @@ rec {
     ./modules/identity/erin-pc
     ./modules/role/workstation
 
-    ./modules/hardware/peripherals/monitor
+    ./modules/hardware/peripherals/portable-monitor
     ./modules/hardware/peripherals/drawing-tablet
 
     ./modules/desktop/niri
