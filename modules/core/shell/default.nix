@@ -34,6 +34,8 @@
     PAGER = "moor";
     # allows systemd commands to use moor
     SYSTEMD_PAGERSECURE = "true";
+    # allow unkown flags for completions
+    CARAPACE_LENIENT = 1;
   };
 
   environment.systemPackages = with pkgs; [
