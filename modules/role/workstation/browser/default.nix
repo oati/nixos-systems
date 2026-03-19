@@ -1,0 +1,40 @@
+{user, ...}: {
+  imports = [
+    ./search-engines.nix
+  ];
+
+  home-manager.users.${user} = {
+    programs.librewolf = {
+      enable = true;
+
+      # https://mozilla.github.io/policy-templates/
+      policies = {};
+
+      # https://librewolf.net/docs/settings/
+      settings = {
+        # always open links in the current tab
+        "browser.link.open_newwindow" = 1;
+
+        # allow custom CSS
+        # "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
+        # enable webgl
+        # "webgl.disabled" = false;
+
+        # resume from crash
+        # "browser.sessionstore.resume_from_crash" = false;
+
+        # middle mouse click to scroll
+        "middlemouse.paste" = false;
+        "general.autoScroll" = true;
+
+        # disable autoplay
+        "media.autoplay.blocking_policy" = 2;
+      };
+    };
+  };
+
+  intransience.datastores.home.users.${user}.dirs = [
+    # ".librewolf"
+  ];
+}

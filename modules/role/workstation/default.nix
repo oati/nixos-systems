@@ -8,7 +8,7 @@
     ./networking.nix
     ./ssh-client.nix
     ./terminal.nix
-    ./browser.nix
+    ./browser
   ];
 
   intransience.datastores.system.byPath."/var/lib".dirs = [
