@@ -15,8 +15,8 @@
         # always open links in the current tab
         "browser.link.open_newwindow" = 1;
 
-        # allow custom CSS
-        # "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        # use system fonts on webpages
+        "browser.display.use_document_fonts" = 0;
 
         # enable webgl
         # "webgl.disabled" = false;
