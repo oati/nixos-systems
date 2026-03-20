@@ -1,6 +1,7 @@
 {flakes, ...}: {
   nixpkgs = {
     overlays = [
+      flakes.nur.overlays.default
       (
         final: prev: let
           packages = flake: flake.packages.${prev.stdenv.hostPlatform.system};

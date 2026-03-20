@@ -1,6 +1,7 @@
 {user, ...}: {
   imports = [
     ./search-engines.nix
+    ./extensions.nix
   ];
 
   home-manager.users.${user} = {
