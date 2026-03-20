@@ -43,6 +43,9 @@
   fonts.enableDefaultPackages = false;
 
   environment.systemPackages = with pkgs; [
+    # needed by helix for clipboard paste
+    wl-clipboard
+
     # audio config
     pavucontrol
     crosspipe
