@@ -27,11 +27,11 @@
         # only show bookmarks toolbar in new tab
         "browser.toolbars.bookmarks.visibility" = "newtab";
 
+        # disable resume from crash
+        "browser.sessionstore.resume_from_crash" = false;
+
         # enable webgl
         # "webgl.disabled" = false;
-
-        # resume from crash
-        # "browser.sessionstore.resume_from_crash" = false;
 
         # middle mouse click to scroll
         "middlemouse.paste" = false;
