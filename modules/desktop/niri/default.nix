@@ -6,7 +6,10 @@
 }: {
   imports = [
     ../common/gtk.nix
-    ./niri.nix
+    ./config.nix
+    ./appearance.nix
+    ./behavior.nix
+    ./input-devices.nix
     ./keybinds.nix
     ./launcher.nix
   ];
