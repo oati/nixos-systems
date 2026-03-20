@@ -1,12 +1,10 @@
 {
-  flakes,
   user,
   lib,
   pkgs,
   ...
 }: {
   imports = [
-    flakes.niri-flake.nixosModules.niri
     ../common/gtk.nix
     ./niri.nix
     ./keybinds.nix
