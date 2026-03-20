@@ -18,6 +18,9 @@
         # use system fonts on webpages
         "browser.display.use_document_fonts" = 0;
 
+        # only show bookmarks toolbar in new tab
+        "browser.toolbars.bookmarks.visibility" = "newtab";
+
         # enable webgl
         # "webgl.disabled" = false;
 
