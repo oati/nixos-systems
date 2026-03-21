@@ -1,0 +1,16 @@
+toolbar
+- multi-account containers
+- tab session manager
+
+tab session manager:
+- disable discarded property for lazy loading
+- dark theme
+
+multi-account containers:
+- enable bookmark menus
+
+dark background light text:
+- set default method to invert
+
+bypass paywalls clean:
+- disable check update opt-in
