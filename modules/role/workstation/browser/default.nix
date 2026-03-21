@@ -9,7 +9,12 @@
       enable = true;
 
       # https://mozilla.github.io/policy-templates/
-      policies = {};
+      policies = {
+        # hide hints
+        SkipOnboarding = true;
+        ExtensionRecommendations = false;
+        FeatureRecommendations = false;
+      };
 
       # https://librewolf.net/docs/settings/
       settings = {
