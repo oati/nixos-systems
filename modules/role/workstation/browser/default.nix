@@ -44,6 +44,6 @@
   };
 
   intransience.datastores.home.users.${user}.dirs = [
-    # ".librewolf"
+    ".librewolf"
   ];
 }
