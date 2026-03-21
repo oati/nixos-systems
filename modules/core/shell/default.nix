@@ -19,6 +19,8 @@
 
       settings = {
         show_banner = false;
+
+        history.file_format = "sqlite";
       };
 
       plugins = [];
