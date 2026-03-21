@@ -22,8 +22,6 @@
 
         history.file_format = "sqlite";
       };
-
-      plugins = [];
     };
 
     home.shell.enableNushellIntegration = true;

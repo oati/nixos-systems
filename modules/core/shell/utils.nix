@@ -5,6 +5,19 @@
 }: {
   home-manager.users.${user} = {
     programs.nushell = {
+      settings.keybindings = [
+        {
+          name = "skim_file_finder";
+          modifier = "control";
+          keycode = "char_t";
+          mode = ["emacs" "vi_normal" "vi_insert"];
+          event = {
+            send = "executehostcommand";
+            cmd = "commandline edit --insert (ls **/* | where type == file | get name | str join (char newline) | sk)";
+          };
+        }
+      ];
+
       extraConfig =
         # nu
         ''
@@ -29,6 +42,7 @@
 
     # shell utils
     wget
+    skim
     ripgrep
     inotify-tools
 
