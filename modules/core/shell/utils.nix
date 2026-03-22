@@ -13,7 +13,11 @@
           mode = ["emacs" "vi_normal" "vi_insert"];
           event = {
             send = "executehostcommand";
-            cmd = "commandline edit --insert (ls **/* | where type == file | get name | str join (char newline) | sk)";
+            cmd =
+              # nu
+              ''
+                commandline edit --insert (ls **/* | where type == file | get name | str join (char newline) | sk)
+              '';
           };
         }
       ];
