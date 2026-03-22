@@ -28,6 +28,15 @@
 
           gaps = 8;
 
+          struts = let
+            struts = -3;
+          in {
+            top = struts;
+            bottom = struts;
+            left = struts;
+            right = struts;
+          };
+
           focus-ring = {
             width = 3;
             active.color = "#7FC8FF";
