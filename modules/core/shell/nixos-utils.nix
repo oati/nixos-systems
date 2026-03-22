@@ -1,16 +1,16 @@
 {user, ...}: {
+  programs.nh = {
+    enable = true;
+  };
+
   home-manager.users.${user} = {
     programs.nushell = {
       extraConfig =
         # nu
         ''
           # Activate the boot default configuration
-          def "nixos-rebuild activate-current" [--sudo] {
-            if $sudo {
-              run0 /nix/var/nix/profiles/system/bin/switch-to-configuration test
-            } else {
-              /nix/var/nix/profiles/system/bin/switch-to-configuration test
-            }
+          def "nh os restore" [] {
+            run0 /nix/var/nix/profiles/system/bin/switch-to-configuration test
           }
 
           def "nixos-generations list" []: nothing -> table {

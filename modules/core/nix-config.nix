@@ -19,7 +19,6 @@
       log-lines = 50;
 
       auto-optimise-store = true;
-      # unsure about these
       keep-outputs = true;
       # show-trace = true;
       trusted-users = ["@wheel"];
