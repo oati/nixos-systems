@@ -47,8 +47,10 @@
 
       # window
       "Mod+T".action.toggle-column-tabbed-display = {};
-      "Mod+R".action.switch-preset-column-width-back = {};
-      "Mod+N".action.switch-preset-column-width = {};
+      "Mod+Up".action.switch-preset-window-height-back = {};
+      "Mod+Down".action.switch-preset-window-height = {};
+      "Mod+Left".action.switch-preset-column-width-back = {};
+      "Mod+Right".action.switch-preset-column-width = {};
       "Mod+M".action.maximize-column = {};
       "Mod+F".action.fullscreen-window = {};
       "Mod+Ctrl+F".action.toggle-windowed-fullscreen = {};
