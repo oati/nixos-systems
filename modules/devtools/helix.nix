@@ -31,15 +31,34 @@
         language = [
           {
             name = "nix";
-            language-servers = ["nixd"];
+            language-servers = ["nixd" "uwu-colors"];
             formatter = {
               command = "alejandra";
             };
             auto-format = true;
           }
+          {
+            name = "nu";
+            # remove when helix > 25.07.1
+            formatter = {
+              command = "nufmt";
+              args = ["--stdin"];
+            };
+            auto-format = true;
+          }
+          {
+            name = "toml";
+            auto-format = true;
+          }
+          {
+            name = "css";
+            language-servers = ["vscode-css-language-server" "uwu-colors"];
+          }
         ];
 
         language-server = {
+          uwu-colors.command = "uwu_colors";
+
           nixd = {
             nixpkgs.expr = "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs {}";
             options = {
@@ -58,8 +77,28 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # color codes
+    uwu-colors
+
     # nix
     nixd
     alejandra
+
+    # nushell
+    nu-lsp
+    nufmt
+
+    # bash
+    bash-language-server
+    shfmt
+
+    # markdown
+    marksman
+
+    # toml
+    tombi
+
+    vscode-json-languageserver
+    vscode-css-languageserver
   ];
 }
