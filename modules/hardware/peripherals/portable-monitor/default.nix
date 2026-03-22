@@ -11,8 +11,8 @@
 
   users.users.${user}.extraGroups = ["i2c"];
 
-  # niri output
   home-manager.users.${user} = {
+    # niri output
     programs.niri.settings.outputs = {
       "PNP(YMK) EM160TP-A 0x00000001" = {
         focus-at-startup = true;
@@ -22,6 +22,11 @@
           refresh = 120.001;
         };
       };
+    };
+
+    # browser
+    programs.librewolf.settings = {
+      "layout.frame_rate" = 120;
     };
   };
 }
