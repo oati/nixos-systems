@@ -18,8 +18,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "oati";
           repo = "nix-your-shell";
-          rev = "f88fe1d00cfeb875d5452de5bf670ded63a2da1f";
-          hash = "sha256-YBnfByywQY/oR6GahGnao1TIWLHxTZAsnMAuh8RmCw0=";
+          rev = "e440d162568f7f25b1e3f52134a4abf8414de979";
+          hash = "sha256-HlpREbS30KHwtPXZfr9FoJDFlDRxBUa7QySqOZrbSls=";
         };
       });
     };
