@@ -8,7 +8,7 @@
       # niri
       "Mod+Tab".action.toggle-overview = {};
       "Mod+slash".action.show-hotkey-overlay = {};
-      # "Mod+Escape".action.spawn = [{allow-inhibiting = false;} "lock"];
+      # "Mod+L".action.spawn = ["lock"];
 
       # focus
       "Mod+Shift+U".action.focus-workspace-up = {};
@@ -57,7 +57,15 @@
       "Mod+Q".action.close-window = {};
 
       # commands
-      "Mod+space".action.spawn = "fuzzel";
+      "Mod+space".action.spawn = ["delta-shell" "toggle" "applauncher"];
+      "Mod+C".action.spawn = ["delta-shell" "toggle" "clipboard"];
+      "Mod+N".action.spawn = ["delta-shell" "toggle" "notificationslist"];
+      "Mod+S".action.spawn = ["delta-shell" "toggle" "quicksettings"];
+      "Mod+Escape" = {
+        action.spawn = ["delta-shell" "toggle" "powermenu"];
+        allow-inhibiting = false;
+      };
+
       "Mod+P".action.screenshot = {};
       "Mod+Ctrl+P".action.screenshot-window.write-to-disk = false;
       "Mod+Ctrl+Shift+P".action.screenshot-window = {};
@@ -79,6 +87,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    delta-shell
     playerctl
   ];
 }

@@ -36,6 +36,11 @@
       inputs.nixpkgs-stable.follows = "nixpkgs";
     };
 
+    delta-shell = {
+      url = "github:oati/delta-shell/flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";

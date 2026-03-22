@@ -11,7 +11,8 @@
     ./behavior.nix
     ./input-devices.nix
     ./keybinds.nix
-    ./launcher.nix
+    ./screen-recorder.nix
+    ./desktop-shell.nix
   ];
 
   niri-flake.cache.enable = false;

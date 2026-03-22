@@ -19,7 +19,7 @@
       sizes = {
         # defaults
         applications = 12;
-        desktop = 10;
+        desktop = 12;
         # terminal follows applications
       };
 
