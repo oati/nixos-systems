@@ -8,6 +8,7 @@
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         tab-session-manager
         multi-account-containers
+        cookie-autodelete
         form-history-control
       ];
 
@@ -28,7 +29,6 @@
           {
             "*" = {
               installation_mode = "blocked";
-              # valid options are "navbar" and "menupanel"
               default_area = "menupanel";
             };
           }

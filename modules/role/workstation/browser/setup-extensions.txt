@@ -9,6 +9,15 @@ tab session manager:
 multi-account containers:
 - enable bookmark menus
 
+cookie autodelete:
+- enable cache cleanup
+- enable IndexedDB cleanup
+- enable LocalStorage cleanup
+- enable plugin data cleanup
+- enable service workers cleanup
+- disable cleanup log and counter
+- disable context menus
+
 dark background light text:
 - set default method to invert
 

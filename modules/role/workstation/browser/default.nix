@@ -18,6 +18,18 @@
 
       # https://librewolf.net/docs/settings/
       settings = {
+        # clear history, form data, cache, and site settings on shutdown
+        "privacy.clearOnShutdown_v2.browsingHistoryAndDownloads" = true;
+        "privacy.clearOnShutdown_v2.formdata" = true;
+        "privacy.clearOnShutdown_v2.cache" = true;
+        "privacy.clearOnShutdown_v2.siteSettings" = true;
+
+        # allow cookies and site data on shutdown (managed by cookie autodelete)
+        "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+
+        # disable resume from crash
+        "browser.sessionstore.resume_from_crash" = false;
+
         # always open links in the current tab
         "browser.link.open_newwindow" = 1;
 
@@ -26,9 +38,6 @@
 
         # only show bookmarks toolbar in new tab
         "browser.toolbars.bookmarks.visibility" = "newtab";
-
-        # disable resume from crash
-        "browser.sessionstore.resume_from_crash" = false;
 
         # enable webgl
         # "webgl.disabled" = false;
