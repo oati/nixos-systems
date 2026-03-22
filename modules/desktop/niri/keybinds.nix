@@ -52,8 +52,9 @@
       "Mod+Left".action.switch-preset-column-width-back = {};
       "Mod+Right".action.switch-preset-column-width = {};
       "Mod+M".action.maximize-column = {};
-      "Mod+F".action.fullscreen-window = {};
-      "Mod+Ctrl+F".action.toggle-windowed-fullscreen = {};
+      "Mod+Ctrl+M".action.maximize-window-to-edges = {};
+      "Mod+F".action.toggle-windowed-fullscreen = {};
+      "Mod+Ctrl+F".action.fullscreen-window = {};
       "Mod+Q".action.close-window = {};
 
       # commands
