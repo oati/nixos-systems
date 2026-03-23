@@ -32,8 +32,10 @@
 
   environment.variables = {
     PAGER = "moor";
+    MOOR = "-terminal-fg";
     # allows systemd commands to use moor
     SYSTEMD_PAGERSECURE = "true";
+
     # allow unkown flags for completions
     CARAPACE_LENIENT = 1;
   };

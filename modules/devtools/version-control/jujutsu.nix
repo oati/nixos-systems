@@ -12,7 +12,7 @@
 
         ui = {
           default-command = "status";
-          pager = "moor";
+          pager = "moor -quit-if-one-screen";
         };
       };
     };
