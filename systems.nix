@@ -36,7 +36,7 @@ rec {
   erin-pc =
     erin-pc-small
     ++ [
-      # ./modules/extra/anytype
+      ./modules/extra/anytype
       # ./modules/extra/vmware
       # ./modules/extra/games
     ];

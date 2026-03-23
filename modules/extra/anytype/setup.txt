@@ -1,0 +1,8 @@
+vault settings
+
+preferences
+- disable show anytype in system tray
+language & region
+- 24h time format
+local storage
+- enable offline access
