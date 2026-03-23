@@ -23,6 +23,11 @@
 
           default-column-width = {proportion = 1. / 2.;};
         };
+
+        hotkey-overlay = {
+          skip-at-startup = true;
+          hide-not-bound = true;
+        };
       };
     };
   };
