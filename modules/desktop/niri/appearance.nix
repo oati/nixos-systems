@@ -24,31 +24,26 @@
         ];
 
         layout = {
-          background-color = "#606060";
+          background-color = "#101010";
 
           gaps = 8;
 
           struts = let
-            struts = -3;
+            verticalStruts = -4;
+            horizontalStruts = -2;
           in {
-            top = struts;
-            bottom = struts;
-            left = struts;
-            right = struts;
+            top = verticalStruts;
+            bottom = verticalStruts;
+            left = horizontalStruts;
+            right = horizontalStruts;
           };
 
-          focus-ring = {
-            width = 3;
-            active.color = "#7FC8FF";
-            inactive.color = "#505050";
-            # urgent
-          };
+          focus-ring.enable = false;
 
           tab-indicator = {
             width = 4;
-            gap = 5;
-            place-within-column = true;
-            active.color = "#7FC8FF";
+            gap = 2;
+            active.color = "#BF5700";
             inactive.color = "#505050";
           };
         };

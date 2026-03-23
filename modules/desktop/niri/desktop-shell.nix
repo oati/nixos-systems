@@ -80,7 +80,7 @@
 
       radius = 8;
 
-      colors.accent = "#3584e4";
+      colors.accent = "#BF5700";
 
       shadow = false;
     };
