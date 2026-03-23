@@ -1,11 +1,14 @@
 {
-  flakes,
   user,
   lib,
   pkgs,
   config,
   ...
 }: {
+  imports = [
+    ./appearance.nix
+  ];
+
   home-manager.users.${user} = {
     programs.vesktop = {
       enable = true;
@@ -117,37 +120,6 @@
             ExpressionCloner.enabled = true;
             PauseInvitesForever.enabled = true;
           };
-
-          enabledThemes = [
-            "default-fonts.css"
-            "smaller-sidebar.css"
-            "amoled-cord.css"
-          ];
-        };
-
-        themes = {
-          default-fonts =
-            # css
-            ''
-              :root {
-                --font-primary: "sans-serif";
-                --font-display: "sans-serif";
-                --font-code: "monospace";
-              }
-            '';
-
-          # shrink sidebar from 240px if width is less than 2/3 of 1920px screen width
-          smaller-sidebar =
-            # css
-            ''
-              @media (max-width: 1280) {
-                div [class *= "sidebarList__"] {
-                  width: 210px !important;
-                }
-              }
-            '';
-
-          amoled-cord = "${flakes.amoled-cord}/clients/amoled-cord.theme.css";
         };
       };
     };
