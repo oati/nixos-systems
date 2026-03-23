@@ -1,0 +1,21 @@
+gpg --expert --full-generate-key
+- ECC (set your own capabilities)
+- certify only
+- curve 25519
+- no expiry
+- name only for user ID
+
+gpg --expert --edit-key <userid>
+- addkey
+- ECC (encrypt only)
+- ECC (sign only)
+- ECC (set your own capabilities)
+- authenticate only
+- 1 year expiry
+- save
+
+# extend key expiration
+gpg --expert --edit-key <userid>
+- key <n>
+- expire
+- save

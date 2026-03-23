@@ -13,6 +13,7 @@
       ];
 
       private-extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        passff
         surfingkeys
         dark-background-light-text
         i-dont-care-about-cookies
@@ -21,8 +22,12 @@
         sponsorblock
       ];
 
+      nativeMessagingHosts = [pkgs.passff-host];
+
       getXpi = package: "file://${package}/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/${package.addonId}.xpi";
     in {
+      inherit nativeMessagingHosts;
+
       policies = {
         # https://mozilla.github.io/policy-templates/#extensionsettings
         ExtensionSettings =

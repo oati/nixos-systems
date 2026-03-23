@@ -17,7 +17,7 @@
       };
     };
 
-    # ssh-tpm-keygen -C insert_comment
+    # ssh-tpm-keygen -C <comment>
     services.ssh-tpm-agent.enable = config.security.tpm2.enable;
   };
 

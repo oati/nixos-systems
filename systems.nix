@@ -26,6 +26,9 @@ rec {
     ./modules/desktop/niri
     ./modules/devtools
 
+    ./modules/security/gnupg
+    ./modules/security/password-store
+
     ./modules/extra/discord
     ./modules/extra/signal
   ];
