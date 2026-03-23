@@ -8,7 +8,7 @@
       # niri
       "Mod+Tab".action.toggle-overview = {};
       "Mod+slash".action.show-hotkey-overlay = {};
-      # "Mod+L".action.spawn = ["lock"];
+      "Mod+L".action.spawn = "gtklock";
 
       # focus
       "Mod+Shift+U".action.focus-workspace-up = {};
