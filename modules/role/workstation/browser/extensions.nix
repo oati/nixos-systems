@@ -37,7 +37,7 @@
               name = package.addonId;
               value = {
                 install_url = getXpi package;
-                installation_mode = "force_installed";
+                installation_mode = "normal_installed";
               };
             })
             extensions)
@@ -45,7 +45,7 @@
               name = package.addonId;
               value = {
                 install_url = getXpi package;
-                installation_mode = "force_installed";
+                installation_mode = "normal_installed";
                 private_browsing = true;
               };
             })
