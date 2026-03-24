@@ -2,6 +2,7 @@
   user,
   lib,
   pkgs,
+  config,
   ...
 }: {
   services.userborn.enable = true;
@@ -38,5 +39,7 @@
     "/var/lib/secrets"
   ];
 
-  fileSystems."/var/lib/secrets".neededForBoot = true;
+  fileSystems."/var/lib/secrets" =
+    lib.mkIf config.intransience.enable
+    {neededForBoot = true;};
 }

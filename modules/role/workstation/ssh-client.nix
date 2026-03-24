@@ -1,4 +1,8 @@
-{user, ...}: {
+{
+  user,
+  config,
+  ...
+}: {
   home-manager.users.${user} = {
     programs.ssh = {
       enable = true;
@@ -14,9 +18,7 @@
     };
 
     # ssh-tpm-keygen -C insert_comment
-    services.ssh-tpm-agent = {
-      enable = true;
-    };
+    services.ssh-tpm-agent.enable = config.security.tpm2.enable;
   };
 
   intransience.datastores.home.users.${user}.dirs = [
