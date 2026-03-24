@@ -4,5 +4,6 @@
     ./helix.nix
     ./version-control
     ./nix-tools.nix
+    ./embedded.nix
   ];
 }
