@@ -2,14 +2,13 @@
   user,
   lib,
   pkgs,
-  config,
   ...
 }: {
   imports = [
     ./appearance.nix
   ];
 
-  home-manager.users.${user} = {
+  home-manager.users.${user} = {config, ...}: {
     programs.vesktop = {
       enable = true;
 
@@ -137,7 +136,7 @@
       };
       Service = {
         ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";
-        ExecStart = "${lib.getExe config.home-manager.users.${user}.programs.vesktop.package} --start-minimized";
+        ExecStart = "${lib.getExe config.programs.vesktop.package} --start-minimized";
         Restart = "always";
         RestartSec = "5s";
       };

@@ -1,14 +1,10 @@
-{
-  user,
-  config,
-  ...
-}: {
-  home-manager.users.${user} = {
+{user, ...}: {
+  home-manager.users.${user} = {config, ...}: {
     programs.jujutsu = {
       enable = true;
 
       settings = {
-        inherit (config.home-manager.users.${user}.programs.git.settings) user;
+        inherit (config.programs.git.settings) user;
 
         ui = {
           default-command = "status";

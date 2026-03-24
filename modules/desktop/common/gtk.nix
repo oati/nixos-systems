@@ -1,10 +1,9 @@
 {
   user,
   pkgs,
-  config,
   ...
 }: {
-  home-manager.users.${user} = {
+  home-manager.users.${user} = {config, ...}: {
     gtk = {
       enable = true;
 
@@ -16,7 +15,7 @@
 
     dconf.settings = {
       "org/gnome/desktop/interface" = {
-        gtk-theme = config.home-manager.users.${user}.gtk.theme.name;
+        gtk-theme = config.gtk.theme.name;
         color-scheme = "prefer-dark";
       };
     };

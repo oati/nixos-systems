@@ -1,8 +1,4 @@
-{
-  user,
-  config,
-  ...
-}: {
+{user, ...}: {
   home-manager = {
     # use system pkgs
     useGlobalPkgs = true;
@@ -12,8 +8,8 @@
     backupFileExtension = "hm-backup";
   };
 
-  home-manager.users.${user} = {
-    systemd.user.sessionVariables = config.home-manager.users.${user}.home.sessionVariables;
+  home-manager.users.${user} = {config, ...}: {
+    systemd.user.sessionVariables = config.home.sessionVariables;
 
     home = {
       preferXdgDirectories = true;

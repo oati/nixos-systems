@@ -2,10 +2,9 @@
   user,
   lib,
   pkgs,
-  config,
   ...
 }: {
-  home-manager.users.${user} = {
+  home-manager.users.${user} = {config, ...}: {
     xdg.configFile."delta-shell/config.json".text = builtins.toJSON {
       # animation time in seconds
       transition = 0.1;
@@ -95,8 +94,8 @@
         ];
         Wants = ["dbus.service"];
         X-Restart-Triggers = [
-          config.home-manager.users.${user}.xdg.configFile."delta-shell/config.json".source
-          config.home-manager.users.${user}.xdg.configFile."delta-shell/theme.json".source
+          config.xdg.configFile."delta-shell/config.json".source
+          config.xdg.configFile."delta-shell/theme.json".source
         ];
       };
       Service = {
