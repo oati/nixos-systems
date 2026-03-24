@@ -1,10 +1,11 @@
 # definitions of systems
 rec {
-  minimal-iso = [
+  minimal-x86_64-iso = [
     ./modules/hardware/live-usb-x86_64
 
     ./modules/core
-    ./modules/identity/iso
+    ./modules/identity/iso-image
+    ./modules/role/installer
     ./modules/role/workstation
 
     ./modules/desktop/niri

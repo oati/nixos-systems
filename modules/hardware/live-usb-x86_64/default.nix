@@ -7,5 +7,5 @@
     system = "x86_64-linux";
   };
 
-  hardware.enableRedistributableFirmware = true;
+  hardware.enableAllHardware = true;
 }
