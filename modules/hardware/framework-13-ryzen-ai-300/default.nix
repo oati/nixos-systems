@@ -1,4 +1,8 @@
-{flakes, ...}: {
+{
+  flakes,
+  pkgs,
+  ...
+}: {
   imports = [
     # battery power management
     flakes.nixos-hardware.nixosModules.common-pc-laptop
@@ -37,4 +41,16 @@
 
   # main disk
   disko.devices.disk.main.device = "/dev/nvme0n1";
+
+  # hardware utilities
+  environment.systemPackages = with pkgs; [
+    usbutils
+    pciutils
+
+    # SMBIOS data
+    dmidecode
+
+    # sensor info
+    lm_sensors
+  ];
 }
