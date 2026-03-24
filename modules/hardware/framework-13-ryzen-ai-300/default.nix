@@ -1,8 +1,4 @@
-{
-  flakes,
-  pkgs,
-  ...
-}: {
+{flakes, ...}: {
   imports = [
     # battery power management
     flakes.nixos-hardware.nixosModules.common-pc-laptop
@@ -19,6 +15,7 @@
     # framework-tool command line interface
     "${flakes.nixos-hardware}/framework/framework-tool.nix"
 
+    ../common/utils.nix
     ../common/tpm.nix
     ../common/wifi.nix
     ../common/bluetooth.nix
@@ -41,16 +38,4 @@
 
   # main disk
   disko.devices.disk.main.device = "/dev/nvme0n1";
-
-  # hardware utilities
-  environment.systemPackages = with pkgs; [
-    usbutils
-    pciutils
-
-    # SMBIOS data
-    dmidecode
-
-    # sensor info
-    lm_sensors
-  ];
 }

@@ -1,7 +1,7 @@
 # definitions of systems
 rec {
   minimal-iso = [
-    ./modules/hardware/x86_64-iso
+    ./modules/hardware/live-usb-x86_64
 
     ./modules/core
     ./modules/identity/iso
@@ -15,17 +15,16 @@ rec {
     ./modules/hardware/framework-13-ryzen-ai-300
     ./modules/filesystems/tmpfs-zfs
 
+    ./modules/hardware/peripherals/portable-monitor
+    ./modules/hardware/peripherals/drawing-tablet
+
     ./modules/core
     ./modules/identity/erin-pc
     ./modules/role/workstation
 
-    ./modules/hardware/peripherals/portable-monitor
-    ./modules/hardware/peripherals/drawing-tablet
-
     ./modules/desktop/niri
     ./modules/devtools
 
-    # ./modules/extra/browser
     ./modules/extra/discord
   ];
 
