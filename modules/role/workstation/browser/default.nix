@@ -18,17 +18,8 @@
 
       # https://librewolf.net/docs/settings/
       settings = {
-        # clear history, form data, cache, and site settings on shutdown
-        "privacy.clearOnShutdown_v2.browsingHistoryAndDownloads" = true;
-        "privacy.clearOnShutdown_v2.formdata" = true;
-        "privacy.clearOnShutdown_v2.cache" = true;
-        "privacy.clearOnShutdown_v2.siteSettings" = true;
-
-        # allow cookies and site data on shutdown (managed by cookie autodelete)
-        "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
-
-        # disable resume from crash
-        "browser.sessionstore.resume_from_crash" = false;
+        # open new tabs next to current tab
+        "browser.tabs.insertAfterCurrent" = true;
 
         # always open links in the current tab
         "browser.link.open_newwindow" = 1;
@@ -74,6 +65,18 @@
 
         "widget.wayland.fractional-scale.enabled" = true;
         "widget.gtk.global-menu.wayland.enabled" = true;
+
+        # clear history, form data, cache, and site settings on shutdown
+        "privacy.clearOnShutdown_v2.browsingHistoryAndDownloads" = true;
+        "privacy.clearOnShutdown_v2.formdata" = true;
+        "privacy.clearOnShutdown_v2.cache" = true;
+        "privacy.clearOnShutdown_v2.siteSettings" = true;
+
+        # allow cookies and site data on shutdown (managed by cookie autodelete)
+        "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
+
+        # disable resume from crash
+        "browser.sessionstore.resume_from_crash" = false;
       };
     };
   };
