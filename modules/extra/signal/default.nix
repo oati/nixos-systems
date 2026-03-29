@@ -23,7 +23,7 @@ in {
         Wants = ["dbus.service"];
       };
       Service = {
-        ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";
+        ExecStartPre = "${pkgs.coreutils}/bin/sleep 2";
         ExecStart = "${lib.getExe signal-desktop} --start-in-tray";
         Restart = "always";
         RestartSec = "5s";
