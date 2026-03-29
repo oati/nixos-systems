@@ -1,0 +1,3 @@
+general
+- allow access to the microphone
+- allow access to the camera

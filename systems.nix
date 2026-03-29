@@ -26,6 +26,7 @@ rec {
     ./modules/devtools
 
     ./modules/extra/discord
+    ./modules/extra/signal
   ];
 
   erin-pc =
