@@ -13,6 +13,7 @@
     ./keybinds.nix
     ./screen-recorder.nix
     ./desktop-shell.nix
+    ./launcher.nix
     ./lockscreen.nix
   ];
 

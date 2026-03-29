@@ -58,7 +58,7 @@
       "Mod+Q".action.close-window = {};
 
       # commands
-      "Mod+space".action.spawn = ["delta-shell" "toggle" "applauncher"];
+      "Mod+space".action.spawn = ["wofi" "--show" "drun"];
       "Mod+C".action.spawn = ["delta-shell" "toggle" "clipboard"];
       "Mod+N".action.spawn = ["delta-shell" "toggle" "notificationslist"];
       "Mod+S".action.spawn = ["delta-shell" "toggle" "quicksettings"];

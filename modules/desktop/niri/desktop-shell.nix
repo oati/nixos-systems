@@ -13,7 +13,7 @@
         position = "top";
 
         modules = {
-          start = ["launcher" "clipboard"];
+          start = ["clipboard"];
           center = ["clock"];
           end = ["recordindicator" "tray" "weather" "cpu" "ram" "battery" "notificationslist" "quicksettings"];
 
@@ -23,12 +23,6 @@
           ram.format = "{icon} {usage}%";
           battery.format = "{icon} {percent}%";
         };
-      };
-
-      launcher = {
-        width = 360;
-        height = 480;
-        columns = 1;
       };
 
       clipboard = {
