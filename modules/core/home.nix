@@ -32,8 +32,4 @@
       };
     };
   };
-
-  intransience.datastores.cache.users.${user}.dirs = [
-    ".cache"
-  ];
 }

@@ -29,4 +29,9 @@
       "layout.frame_rate" = 120;
     };
   };
+
+  intransience.datastores.cache.users.${user}.dirs = [
+    # monitor data
+    ".cache/ddcutil"
+  ];
 }
