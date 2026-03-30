@@ -67,11 +67,16 @@
         allow-inhibiting = false;
       };
 
-      "Mod+P".action.screenshot = {};
-      "Mod+Ctrl+P".action.screenshot-window.write-to-disk = false;
+      "Mod+P".action.screenshot = {show-pointer = false;};
+      "Mod+Ctrl+P".action.screenshot-window = {write-to-disk = false;};
       "Mod+Ctrl+Shift+P".action.screenshot-window = {};
-      "Mod+Alt+P".action.screenshot-screen.write-to-disk = false;
-      "Mod+Alt+Shift+P".action.screenshot-screen = {};
+      "Mod+Alt+P".action.screenshot-screen = {
+        show-pointer = false;
+        write-to-disk = false;
+      };
+      "Mod+Alt+Shift+P".action.screenshot-screen = {
+        show-pointer = false;
+      };
 
       XF86AudioRaiseVolume.action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" "--limit" "1.0"];
       XF86AudioLowerVolume.action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
