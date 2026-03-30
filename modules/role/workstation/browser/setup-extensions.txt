@@ -23,3 +23,5 @@ dark background light text:
 
 bypass paywalls clean:
 - disable check update opt-in
+- disable show options on update
+- save
