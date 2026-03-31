@@ -1,4 +1,8 @@
 run0 disko --mode destroy,format,mount disko-config.nix
 run0 nixos-install --flake .#erin-pc --no-root-password
+
 run0 mkdir /safe/system/var/lib/secrets
 run0 nu -c 'mkpasswd -m yescrypt -s | save -f /safe/system/var/lib/secrets/erin-password'
+
+run0 chown erin:users /local/media
+run0 chown erin:users /local/steam
