@@ -23,6 +23,10 @@
 
         # always open links in the current tab
         "browser.link.open_newwindow" = 1;
+        # open popups in new window
+        "browser.link.open_newwindow.restriction" = 2;
+        # open external links in new window
+        "browser.link.open_newwindow.override.external" = 2;
 
         # use system fonts on webpages
         "browser.display.use_document_fonts" = 0;
