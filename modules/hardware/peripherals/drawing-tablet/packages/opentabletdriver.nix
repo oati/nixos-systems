@@ -22,13 +22,13 @@
 }:
 buildDotnetModule (finalAttrs: {
   pname = "OpenTabletDriver";
-  version = "0.6.6.2-ad3e21f";
+  version = "0.6.6.2-dd573b1";
 
   src = fetchFromGitHub {
     owner = "OpenTabletDriver";
     repo = "OpenTabletDriver";
-    rev = "ad3e21f1c9ff83217bd5060a0641c3666519af89";
-    hash = "sha256-apiUwvrFfzADnLRgibR2DnONCJacBewnIGQ0u5j8jeE=";
+    rev = "dd573b1fe80ac78f77ec58674fdeeb4b6106f1fd";
+    hash = "sha256-QePnC29nYuRmZUl3V8AgPIU/jC2A3VWGtHV4OJUELNw=";
   };
 
   dotnet-sdk = dotnetCorePackages.sdk_8_0;
