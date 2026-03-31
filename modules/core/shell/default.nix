@@ -38,6 +38,8 @@
 
     # allow unkown flags for completions
     CARAPACE_LENIENT = 1;
+
+    NIXPKGS_ALLOW_UNFREE = 1;
   };
 
   environment.systemPackages = with pkgs; [
