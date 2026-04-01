@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./packages
-    ./helix.nix
+    ./helix
     ./version-control
     ./nix-tools.nix
     ./embedded.nix

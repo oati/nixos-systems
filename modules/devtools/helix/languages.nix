@@ -6,27 +6,6 @@
 }: {
   home-manager.users.${user} = {
     programs.helix = {
-      enable = true;
-
-      settings = {
-        editor = {
-          cursor-shape = {
-            normal = "block";
-            select = "underline";
-            insert = "bar";
-          };
-
-          soft-wrap.enable = true;
-        };
-
-        keys = {
-          insert = {
-            C-left = "move_prev_word_start";
-            C-right = "move_next_word_start";
-          };
-        };
-      };
-
       languages = {
         language = [
           {
@@ -61,19 +40,21 @@
 
           nixd = {
             nixpkgs.expr = "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs {}";
-            options = {
-              nixos.expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.${config.networking.hostName}.options";
-              home-manager.expr = "(builtins.getFlake (builtins.toString ./.)).nixosConfigurations.${config.networking.hostName}.options.home-manager.users.type.getSubOptions []";
+            options = let
+              configName = config.networking.hostName;
+            in {
+              nixos.expr =
+                "(builtins.getFlake (builtins.toString ./.))"
+                + ".nixosConfigurations.${configName}.options";
+              home-manager.expr =
+                "(builtins.getFlake (builtins.toString ./.))"
+                + ".nixosConfigurations.${configName}.options"
+                + ".home-manager.users.type.getSubOptions []";
             };
           };
         };
       };
     };
-  };
-
-  environment.variables = {
-    EDITOR = "hx";
-    VISUAL = "hx";
   };
 
   environment.systemPackages = with pkgs; [
@@ -102,7 +83,10 @@
     yaml-language-server
     yamlfmt
 
+    # json
     vscode-json-languageserver
+
+    # css
     vscode-css-languageserver
   ];
 }
