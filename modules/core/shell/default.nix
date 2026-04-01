@@ -19,12 +19,13 @@
 
       settings = {
         show_banner = false;
-
         history.file_format = "sqlite";
       };
     };
 
     home.shell.enableNushellIntegration = true;
+
+    programs.helix.settings.editor.shell = ["nu" "-c"];
 
     # completions
     programs.carapace.enable = true;
