@@ -30,6 +30,8 @@
         publicShare = null;
         templates = null;
       };
+
+      mimeApps.enable = true;
     };
   };
 

@@ -14,6 +14,7 @@
 
   stylix.targets.kmscon.enable = true;
 
+  # terminal emulator
   home-manager.users.${user} = {
     programs.ghostty = {
       enable = true;
@@ -21,5 +22,10 @@
     };
 
     stylix.targets.ghostty.enable = true;
+
+    xdg.terminal-exec = {
+      enable = true;
+      settings.default = ["com.mitchellh.ghostty.desktop"];
+    };
   };
 }

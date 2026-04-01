@@ -4,7 +4,7 @@
     ./extensions.nix
   ];
 
-  home-manager.users.${user} = {
+  home-manager.users.${user} = {config, ...}: {
     programs.librewolf = {
       enable = true;
 
@@ -83,6 +83,10 @@
         "browser.sessionstore.resume_from_crash" = false;
       };
     };
+
+    xdg.mimeApps.defaultApplicationPackages = [
+      config.programs.librewolf.package
+    ];
   };
 
   intransience.datastores.home.users.${user}.dirs = [

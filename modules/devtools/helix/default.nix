@@ -3,7 +3,7 @@
     ./languages.nix
   ];
 
-  home-manager.users.${user} = {
+  home-manager.users.${user} = {config, ...}: {
     programs.helix = {
       enable = true;
 
@@ -26,6 +26,10 @@
         };
       };
     };
+
+    xdg.mimeApps.defaultApplicationPackages = [
+      config.programs.helix.package
+    ];
   };
 
   environment.variables = {

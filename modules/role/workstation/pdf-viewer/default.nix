@@ -1,5 +1,5 @@
 {user, ...}: {
-  home-manager.users.${user} = {
+  home-manager.users.${user} = {config, ...}: {
     programs.sioyek = {
       enable = true;
 
@@ -21,6 +21,10 @@
         ];
       };
     };
+
+    xdg.mimeApps.defaultApplicationPackages = [
+      config.programs.sioyek.package
+    ];
   };
 
   intransience.datastores.home.users.${user}.dirs = [
