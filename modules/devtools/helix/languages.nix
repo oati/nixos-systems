@@ -1,7 +1,7 @@
 {
+  name,
   user,
   pkgs,
-  config,
   ...
 }: {
   home-manager.users.${user} = {
@@ -40,15 +40,13 @@
 
           nixd = {
             nixpkgs.expr = "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs {}";
-            options = let
-              configName = config.networking.hostName;
-            in {
+            options = {
               nixos.expr =
                 "(builtins.getFlake (builtins.toString ./.))"
-                + ".nixosConfigurations.${configName}.options";
+                + ".nixosConfigurations.${name}.options";
               home-manager.expr =
                 "(builtins.getFlake (builtins.toString ./.))"
-                + ".nixosConfigurations.${configName}.options"
+                + ".nixosConfigurations.${name}.options"
                 + ".home-manager.users.type.getSubOptions []";
             };
           };
