@@ -4,12 +4,10 @@
   pkgs,
   ...
 }: let
-  signal-desktop = pkgs.signal-desktop;
+  package = pkgs.signal-desktop;
 in {
   home-manager.users.${user} = {
-    home.packages = [
-      signal-desktop
-    ];
+    home.packages = [package];
 
     # autostart
     systemd.user.services.signal-desktop = {
@@ -24,7 +22,7 @@ in {
       };
       Service = {
         ExecStartPre = "${pkgs.coreutils}/bin/sleep 2";
-        ExecStart = "${lib.getExe signal-desktop} --start-in-tray";
+        ExecStart = "${lib.getExe package} --start-in-tray";
         Restart = "always";
         RestartSec = "5s";
       };

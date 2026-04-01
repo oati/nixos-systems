@@ -12,10 +12,10 @@
     ./behavior.nix
     ./input-devices.nix
     ./keybinds.nix
-    ./screen-recorder.nix
+    ./idle-lockscreen.nix
     ./desktop-shell.nix
     ./launcher.nix
-    ./lockscreen.nix
+    ./screen-recorder.nix
   ];
 
   niri-flake.cache.enable = false;
@@ -43,8 +43,6 @@
   services.gnome.gnome-keyring.enable = lib.mkForce false;
 
   # programs.xwayland.enable = true;
-
-  fonts.enableDefaultPackages = false;
 
   environment.systemPackages = with pkgs; [
     # needed by helix for clipboard paste

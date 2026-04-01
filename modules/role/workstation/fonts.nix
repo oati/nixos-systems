@@ -1,5 +1,8 @@
 {pkgs, ...}: {
   fonts = {
+    # defaulted to true by many desktop environments
+    enableDefaultPackages = false;
+
     packages = with pkgs; [
       monaspace
       lexend
