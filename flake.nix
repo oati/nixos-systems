@@ -62,7 +62,7 @@
         lib.nixosSystem {
           inherit modules;
           specialArgs = {
-            inherit flakes;
+            inherit flakes name;
             user = "erin";
           };
         }
