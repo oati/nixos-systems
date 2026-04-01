@@ -8,6 +8,7 @@
     ./networking.nix
     ./ssh-client.nix
     ./terminal.nix
+    ./file-manager.nix
     ./browser
     ./pdf-viewer
   ];
