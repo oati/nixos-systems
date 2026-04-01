@@ -98,6 +98,10 @@
     # toml
     tombi
 
+    # yaml
+    yaml-language-server
+    yamlfmt
+
     vscode-json-languageserver
     vscode-css-languageserver
   ];
