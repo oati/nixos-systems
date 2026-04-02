@@ -3,6 +3,7 @@
   imports = [
     # TODO
     # ../common/ssh-server.nix
+    ../common/vpn
     ./fonts.nix
     ./theme.nix
     ./networking.nix

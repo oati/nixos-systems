@@ -43,8 +43,6 @@
     network.wait-online.enable = false;
   };
 
-  # TODO: vpn, dns filter
-
   intransience.datastores.system.dirs = [
     "/var/lib/NetworkManager"
   ];
