@@ -9,8 +9,8 @@
     ./ssh-client.nix
     ./terminal.nix
     ./file-manager.nix
+    ./pdf-viewer.nix
     ./browser
-    ./pdf-viewer
   ];
 
   intransience.datastores.system.byPath."/var/lib".dirs = [
