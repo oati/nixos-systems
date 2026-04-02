@@ -103,9 +103,9 @@
           mountpoint = "/local/media";
           options.mountpoint = "legacy";
         };
-        "encrypt/local/steam" = {
+        "encrypt/local/games" = {
           type = "zfs_fs";
-          mountpoint = "/local/steam";
+          mountpoint = "/local/games";
           options.mountpoint = "legacy";
         };
 

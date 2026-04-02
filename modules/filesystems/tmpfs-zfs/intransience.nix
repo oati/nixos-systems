@@ -6,7 +6,7 @@
       system.path = "/safe/system";
       home.path = "/safe/home";
       cache.path = "/local/cache";
-      steam.path = "/local/steam";
+      games.path = "/local/games";
     };
   };
 
