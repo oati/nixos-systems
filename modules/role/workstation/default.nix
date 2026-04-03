@@ -1,6 +1,7 @@
 # system used as a personal computer
 {user, ...}: {
   imports = [
+    ../common/ssh-server.nix
     ../common/vpn
     ./fonts.nix
     ./theme.nix
