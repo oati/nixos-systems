@@ -1,0 +1,67 @@
+general
+- prefer 24-hour time display
+
+skin
+- argon pro
+
+input - key configuration
+- in game
+  - quick retry (hold): L
+  - quick exit (hold): F
+- osu!
+  - left button: N
+  - right button: T
+  - smoke: H
+- osu!taiko
+  - N T D E
+- osu!catch
+  - N T shift
+- osu!mania
+  - 1k space
+  - 2k T D
+  - 3k T space D
+  - 4k N T D E
+  - 5k N T space D E
+  - 6k R N T D E A
+  - 7k R N T space D E A
+  - 8k S R N T D E A I
+  - 9k S R N T space D E A I
+  - 10k S R N T space backspace D E A I
+
+input - tablet
+- conform to current game aspect ratio
+- offset 20 20
+- width height 40 25
+
+input - mouse
+- disable clicks during gameplay
+
+ui
+- main menu
+  - menu tips off
+  - interface voices off
+  - osu! music theme off
+- song select
+  - show converted beatmaps off
+- gameplay
+  - general
+    - hit lighting off
+	- star fountains off
+  - beatmap
+    - beatmap skins off
+    - beatmap hitsounds off
+    - storyboard/video off
+  - background
+    - background dim 100%
+	- lighten playfield during breaks off
+  - input
+    - gameplay cursor size 0.75x
+
+rulesets
+- osu!
+  - cursor trail off
+
+online
+- web
+  - prefer downloads without video
+
