@@ -37,8 +37,8 @@ rec {
     erin-pc-small
     ++ [
       ./modules/extra/anytype
+      ./modules/extra/steam
       ./modules/extra/osu-lazer
       # ./modules/extra/vmware
-      # ./modules/extra/steam
     ];
 }
