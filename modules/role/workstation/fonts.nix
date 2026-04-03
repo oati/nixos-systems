@@ -3,6 +3,9 @@
     # defaulted to true by many desktop environments
     enableDefaultPackages = false;
 
+    # X11 fonts
+    fontDir.enable = true;
+
     packages = with pkgs; [
       monaspace
       lexend

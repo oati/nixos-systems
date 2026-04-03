@@ -42,9 +42,11 @@
   # conflicts with ssh-tpm-agent
   services.gnome.gnome-keyring.enable = lib.mkForce false;
 
-  # programs.xwayland.enable = true;
+  programs.xwayland.enable = true;
 
   environment.systemPackages = with pkgs; [
+    xwayland-satellite
+
     # needed by helix for clipboard paste
     wl-clipboard
 
