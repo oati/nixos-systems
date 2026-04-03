@@ -8,11 +8,12 @@
       extraConfig =
         # nu
         ''
-          # Activate the boot default configuration
+          # activate the boot default configuration
           def "nh os restore" [] {
             run0 /nix/var/nix/profiles/system/bin/switch-to-configuration test
           }
 
+          # list nixos generations
           def "nixos-generations list" []: nothing -> table {
             nixos-rebuild list-generations --json | from json
               | update date {into datetime}
@@ -21,16 +22,33 @@
               | move revision --after date
           }
 
-          def "nixos-generations switch" [generation: int] {
+          # switch to a generation by index from nixos-generations list
+          def "nixos-generations switch" [index: int] {
+            let generation: int = nixos-generations list | get $index | get generation
+
             run0 nix-env -p /nix/var/nix/profiles/system --switch-generation $generation
           }
 
-          # Besides a list of generation numbers to delete, this command can take
-          # - +N - delete generations older than the last N generations starting from current
-          # - Nd - delete all but the most recent generation older than N days
-          # - old - delete all generations except current
-          def "nixos-generations delete" [...generations] {
+          # delete generations by indices
+          def "nixos-generations delete" [...indices: oneof<int, range>] {
+            let generations_list: list<int> = nixos-generations list | get generation
+            let generations: list<int> = $indices | each {|item|
+              match ($item | describe) {
+                "int" => {
+                  $generations_list | select $item
+                }
+                "range" => {
+                  $generations_list | slice $item
+                }
+              }
+            } | flatten
+
             run0 nix-env -p /nix/var/nix/profiles/system --delete-generations ...$generations
+          }
+
+          # delete all generations except current
+          def "nixos-generations delete all" [] {
+            run0 nix-env -p /nix/var/nix/profiles/system --delete-generations old
           }
         '';
     };
