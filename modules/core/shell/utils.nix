@@ -25,6 +25,11 @@
       extraConfig =
         # nu
         ''
+          # run nushell command with elevated privileges
+          def --wrapped nu0 [...args] {
+            run0 nu -c ($args | str join " ")
+          }
+
           # watch the filesystem of a directory for changes
           def fswatch [dir] {
             (
