@@ -10,12 +10,14 @@ multi-account containers:
 - enable bookmark menus
 
 cookie autodelete:
+- enable automatic cleaning
 - enable cache cleanup
 - enable IndexedDB cleanup
 - enable LocalStorage cleanup
 - enable plugin data cleanup
 - enable service workers cleanup
 - disable cleanup log and counter
+- disable show notification after automatic cleanup
 - disable context menus
 
 dark background light text:
