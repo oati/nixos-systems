@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   fonts = {
     # defaulted to true by many desktop environments
-    enableDefaultPackages = false;
+    enableDefaultPackages = true;
 
     # X11 fonts
     fontDir.enable = true;
