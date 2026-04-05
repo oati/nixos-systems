@@ -10,6 +10,7 @@
       monaspace
       lexend
       nerd-fonts.symbols-only
+      noto-fonts-color-emoji
     ];
 
     fontconfig = {
@@ -17,6 +18,7 @@
         monospace = ["Monaspace Neon Frozen" "Symbols Nerd Font Mono"];
         sansSerif = ["Lexend"];
         serif = ["Lexend"];
+        emoji = ["Noto Color Emoji"];
       };
     };
   };
