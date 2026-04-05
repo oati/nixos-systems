@@ -17,15 +17,6 @@
             auto-format = true;
           }
           {
-            name = "nu";
-            # remove when helix > 25.07.1
-            formatter = {
-              command = "nufmt";
-              args = ["--stdin"];
-            };
-            auto-format = true;
-          }
-          {
             name = "toml";
             auto-format = true;
           }
