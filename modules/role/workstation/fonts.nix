@@ -22,4 +22,18 @@
       };
     };
   };
+
+  stylix.fonts = {
+    sizes = {
+      # default 12
+      applications = 12;
+      desktop = 12;
+      # terminal font follows applications
+    };
+
+    serif.name = "serif";
+    sansSerif.name = "sans-serif";
+    monospace.name = "monospace";
+    emoji.name = "emoji";
+  };
 }
