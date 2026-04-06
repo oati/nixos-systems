@@ -24,6 +24,12 @@
             vendor = "03eb";
             product = "2ff4";
           }
+
+          # quansheng uv-k1
+          {
+            vendor = "36b7";
+            product = "ffff";
+          }
         ];
       in
         lib.concatMapStringsSep "\n" (
