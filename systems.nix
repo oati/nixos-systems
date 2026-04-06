@@ -39,6 +39,7 @@ rec {
       ./modules/extra/anytype
       ./modules/extra/steam
       ./modules/extra/osu-lazer
+      ./modules/extra/chirp
       # ./modules/extra/vmware
     ];
 }
