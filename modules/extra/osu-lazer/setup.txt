@@ -5,13 +5,15 @@ skin
 - argon pro
 
 input - key configuration
+- audio
+  - play / pause: ctrl+alt
 - in game
   - quick retry (hold): L
   - quick exit (hold): F
+  - toggle in-game interface: del
 - osu!
   - left button: N
   - right button: T
-  - smoke: H
 - osu!taiko
   - N T D E
 - osu!catch
@@ -30,7 +32,7 @@ input - key configuration
 
 input - tablet
 - conform to current game aspect ratio
-- offset 20 20
+- offset 50 50
 - width height 40 25
 
 input - mouse
@@ -49,17 +51,24 @@ ui
 	- star fountains off
   - beatmap
     - beatmap skins off
+    - beatmap colors off
     - beatmap hitsounds off
     - storyboard/video off
   - background
     - background dim 100%
 	- lighten playfield during breaks off
+  - HUD
+    - HUD overlay visibility mode hide during gameplay
+    - always show gameplay leaderboard off
   - input
     - gameplay cursor size 0.75x
 
 rulesets
 - osu!
   - cursor trail off
+
+audio - volume
+- effect 20%
 
 online
 - web
