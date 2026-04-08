@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  scale = 1.5;
+  scale = 4. / 3.;
 in {
   home-manager.users.${user} = {
     # niri output
