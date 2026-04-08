@@ -1,8 +1,13 @@
 {
+  user,
   lib,
   pkgs,
   ...
 }: {
+  # access to serial ports
+  users.users.${user}.extraGroups = ["dialout"];
+
+  # udev rules
   # see https://github.com/NixOS/nixpkgs/issues/308681
   services.udev.packages = [
     (pkgs.writeTextFile {
