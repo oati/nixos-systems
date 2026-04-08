@@ -17,7 +17,11 @@
           def "nixos-generations list" []: nothing -> table {
             nixos-rebuild list-generations --json | from json
               | update date {into datetime}
-              | rename --column {configurationRevision: revision}
+              | rename --column {
+                configurationRevision: revision
+                nixosVersion: version
+                kernelVersion: kernel
+              }
               | move current --after generation
               | move revision --after date
           }
