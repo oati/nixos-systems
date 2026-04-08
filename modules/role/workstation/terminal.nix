@@ -2,6 +2,7 @@
   # kernel console
   stylix.targets.console.enable = true;
 
+  # virtual console
   services.kmscon = {
     enable = true;
     hwRender = true;
@@ -18,7 +19,14 @@
   home-manager.users.${user} = {
     programs.ghostty = {
       enable = true;
-      systemd.enable = true;
+
+      settings = {
+        resize-overlay-position = "bottom-right";
+
+        notify-on-command-finish = "unfocused";
+        notify-on-command-finish-action = "no-bell,notify";
+        notify-on-command-finish-after = "5s";
+      };
     };
 
     stylix.targets.ghostty.enable = true;
