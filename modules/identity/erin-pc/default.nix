@@ -15,6 +15,6 @@ in {
 
   time.timeZone = "America/Chicago";
 
-  system.stateVersion = "25.11";
-  home-manager.users.${user}.home.stateVersion = "25.11";
+  system.stateVersion = "26.05";
+  home-manager.users.${user}.home.stateVersion = "26.05";
 }

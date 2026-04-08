@@ -11,6 +11,8 @@
         package = pkgs.adw-gtk3;
         name = "adw-gtk3-dark";
       };
+
+      gtk4.theme = config.gtk.theme;
     };
 
     dconf.settings = {
