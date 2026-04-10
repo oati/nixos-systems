@@ -22,5 +22,6 @@
 
   intransience.datastores.home.users.${user}.dirs = [
     "documents"
+    "projects"
   ];
 }
