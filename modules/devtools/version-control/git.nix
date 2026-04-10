@@ -12,6 +12,7 @@
       };
 
       ignores = [
+        "result"
         ".envrc"
         ".direnv"
       ];
