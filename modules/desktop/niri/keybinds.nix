@@ -51,6 +51,7 @@
       "Mod+Down".action.switch-preset-window-height = {};
       "Mod+Left".action.switch-preset-column-width-back = {};
       "Mod+Right".action.switch-preset-column-width = {};
+      "Mod+backslash".action.reset-window-height = {};
       "Mod+M".action.maximize-column = {};
       "Mod+Ctrl+M".action.maximize-window-to-edges = {};
       "Mod+F".action.toggle-windowed-fullscreen = {};
