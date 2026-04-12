@@ -16,19 +16,9 @@
             };
             auto-format = true;
           }
-          {
-            name = "toml";
-            auto-format = true;
-          }
-          {
-            name = "css";
-            language-servers = ["vscode-css-language-server" "uwu-colors"];
-          }
         ];
 
         language-server = {
-          uwu-colors.command = "uwu_colors";
-
           nixd = {
             nixpkgs.expr = "import (builtins.getFlake (builtins.toString ./.)).inputs.nixpkgs {}";
             options = {
@@ -44,38 +34,10 @@
         };
       };
     };
+
+    home.packages = with pkgs; [
+      nixd
+      alejandra
+    ];
   };
-
-  environment.systemPackages = with pkgs; [
-    # color codes
-    uwu-colors
-
-    # nix
-    nixd
-    alejandra
-
-    # nushell
-    nu-lsp
-    nufmt
-
-    # bash
-    bash-language-server
-    shfmt
-
-    # markdown
-    marksman
-
-    # toml
-    tombi
-
-    # yaml
-    yaml-language-server
-    yamlfmt
-
-    # json
-    vscode-json-languageserver
-
-    # css
-    vscode-css-languageserver
-  ];
 }

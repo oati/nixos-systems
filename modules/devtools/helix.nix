@@ -1,8 +1,4 @@
 {user, ...}: {
-  imports = [
-    ./languages.nix
-  ];
-
   home-manager.users.${user} = {config, ...}: {
     programs.helix = {
       enable = true;
