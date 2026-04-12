@@ -6,6 +6,7 @@
   imports = [
     ./nix.nix
     ./rust.nix
+    ./python.nix
   ];
 
   home-manager.users.${user} = {
