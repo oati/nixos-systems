@@ -30,6 +30,12 @@
 
     registry = {
       nixpkgs.flake = flakes.nixpkgs;
+
+      templates.to = {
+        type = "github";
+        owner = "oati";
+        repo = "flake-templates";
+      };
     };
   };
 }
