@@ -54,7 +54,7 @@
 
   outputs = flakes: let
     inherit (flakes.nixpkgs) lib;
-    forEachSystem = lib.genAttrs lib.systems.flakeExposed;
+    eachSystem = lib.genAttrs lib.systems.flakeExposed;
   in {
     # nixos configurations defined by ./systems.nix
     nixosConfigurations = builtins.mapAttrs (
@@ -69,7 +69,7 @@
     ) (import ./systems.nix);
 
     # build iso images for all system names ending in "-iso"
-    packages = forEachSystem (system:
+    packages = eachSystem (system:
       lib.mapAttrs
       (name: nixosConfiguration: nixosConfiguration.config.system.build.images.iso)
       (lib.filterAttrs
