@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    ./completions.nix
     ./aliases.nix
     ./nixos-utils.nix
     ./utils.nix
@@ -39,9 +40,6 @@
     home.shell.enableNushellIntegration = true;
 
     programs.helix.settings.editor.shell = ["nu" "-c"];
-
-    # completions
-    programs.carapace.enable = true;
   };
 
   environment.variables = {
@@ -49,9 +47,6 @@
     MOOR = "-terminal-fg";
     # allows systemd commands to use moor
     SYSTEMD_PAGERSECURE = "true";
-
-    # allow unkown flags for completions
-    CARAPACE_LENIENT = 1;
 
     NIXPKGS_ALLOW_UNFREE = 1;
   };
