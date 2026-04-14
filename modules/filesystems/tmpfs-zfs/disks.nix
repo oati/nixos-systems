@@ -84,6 +84,11 @@
           mountpoint = "/safe/home";
           options.mountpoint = "legacy";
         };
+        "encrypt/safe/gamedata" = {
+          type = "zfs_fs";
+          mountpoint = "/safe/gamedata";
+          options.mountpoint = "legacy";
+        };
 
         "encrypt/local" = {
           type = "zfs_fs";

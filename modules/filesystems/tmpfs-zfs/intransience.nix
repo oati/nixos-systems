@@ -7,6 +7,7 @@
       home.path = "/safe/home";
       cache.path = "/local/cache";
       games.path = "/local/games";
+      gamedata.path = "/safe/gamedata";
     };
   };
 

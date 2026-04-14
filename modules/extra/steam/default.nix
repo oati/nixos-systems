@@ -9,8 +9,9 @@
 
   intransience.datastores.games.users.${user}.dirs = [
     ".local/share/Steam"
+  ];
 
-    # game specific data
+  intransience.datastores.gamedata.users.${user}.dirs = [
     ".config/unity3d"
     ".local/share/Celeste"
   ];
