@@ -31,7 +31,9 @@
           }
 
           # watch the filesystem of a directory for changes
-          def fswatch [dir] {
+          @example "watch the root filesystem" {fswatch /}
+          @example "watch the root filesystem while excluding /tmp" {fswatch / --exclude ^/tmp}
+          def --wrapped fswatch [dir, ...rest] {
             (
               run0 fsnotifywait ($dir | path expand)
               --filesystem
@@ -39,6 +41,7 @@
               --quiet
               --event create,delete,modify,move
               --format "%e\t%w%f"
+              ...$rest
             )
           }
         '';
