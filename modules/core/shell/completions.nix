@@ -23,12 +23,12 @@
 
       package = pkgs.symlinkJoin {
         name = "carapace-wrapped";
+        inherit (pkgs.carapace) version meta;
         paths = [pkgs.carapace];
         nativeBuildInputs = [pkgs.makeWrapper];
         postBuild = lib.concatStringsSep " " (["wrapProgram $out/bin/carapace"]
           ++ (lib.mapAttrsToList (name: value: "--set ${name} '${toString value}'") settings)
           ++ ["--prefix PATH : ${lib.makeBinPath completers}"]);
-        meta.mainProgram = "carapace";
       };
     in {
       enable = true;
