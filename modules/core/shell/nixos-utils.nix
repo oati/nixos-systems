@@ -35,7 +35,7 @@
 
           # delete generations by indices
           def "nixos-generations delete" [...indices: oneof<int, range>] {
-            let generations_list: list<int> = nixos-generations list | get generation
+            let generations_list: table = nixos-generations list
             let generations: list<int> = $indices | each {|item|
               match ($item | describe) {
                 "int" => {
@@ -45,14 +45,30 @@
                   $generations_list | slice $item
                 }
               }
-            } | flatten
+            } | flatten | where not current | get generation
 
-            run0 nix-env -p /nix/var/nix/profiles/system --delete-generations ...$generations
+            if ($generations | is-not-empty) {
+              run0 nix-env -p /nix/var/nix/profiles/system --delete-generations ...$generations
+            }
+
+            $generations | each {|generation|
+              $'/boot/loader/entries/nixos-generation-($generation).conf'
+            } | run0 rm -f ...$in
           }
 
           # delete all generations except current
           def "nixos-generations delete all" [] {
-            run0 nix-env -p /nix/var/nix/profiles/system --delete-generations old
+            let generations: list<int> = (
+              nixos-generations list | where not current | get generation
+            )
+
+            if ($generations | is-not-empty) {
+              run0 nix-env -p /nix/var/nix/profiles/system --delete-generations ...$generations
+            }
+
+            $generations | each {|generation|
+              $'/boot/loader/entries/nixos-generation-($generation).conf'
+            } | run0 rm -f ...$in
           }
         '';
     };
