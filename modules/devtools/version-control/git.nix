@@ -23,6 +23,11 @@
       git.enable = true;
     };
 
+    programs.mergiraf = {
+      enable = true;
+      enableGitIntegration = true;
+    };
+
     programs.git-credential-oauth.enable = true;
   };
 }

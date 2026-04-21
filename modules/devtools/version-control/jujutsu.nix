@@ -18,6 +18,11 @@
       jujutsu.enable = true;
     };
 
+    programs.mergiraf = {
+      enable = true;
+      enableJujutsuIntegration = true;
+    };
+
     programs.jjui.enable = true;
 
     stylix.targets.jjui.enable = true;
