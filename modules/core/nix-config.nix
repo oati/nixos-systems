@@ -22,6 +22,8 @@
       keep-outputs = true;
       # show-trace = true;
       trusted-users = ["@wheel"];
+
+      commit-lock-file-summary = "flake.lock: update";
     };
 
     # extraOptions = "";
