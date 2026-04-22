@@ -41,6 +41,7 @@ rec {
       ./modules/extra/osu-lazer
       ./modules/extra/iloader
       ./modules/extra/chirp
+      ./modules/extra/chess
       # ./modules/extra/vmware
     ];
 }
