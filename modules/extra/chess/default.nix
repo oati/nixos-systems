@@ -22,8 +22,8 @@
         options = {
           # https://lczero.org/dev/wiki/networks/
           WeightsFile = pkgs.fetchurl {
-            url = "https://storage.lczero.org/files/networks-contrib/big-transformers/BT4-1740.pb.gz";
-            hash = "sha256-SpfZHJHnun0nuxLP1tOZdaeBk3I5ZHmGlDHLtHmpf8s=";
+            url = "https://storage.lczero.org/files/networks-contrib/BT4-1024x15x32h-swa-6147500-policytune-332.pb.gz";
+            hash = "sha256-5q2p1sSnab+rOqCEjYLK64CapF+D5sYF/FijHSG91hg=";
           };
         };
         search_nodes = null;
