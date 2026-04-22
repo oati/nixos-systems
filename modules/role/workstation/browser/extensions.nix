@@ -19,10 +19,14 @@
         i-dont-care-about-cookies
         clearurls
         bypass-paywalls-clean
+        ff2mpv
         sponsorblock
       ];
 
-      nativeMessagingHosts = [pkgs.passff-host];
+      nativeMessagingHosts = with pkgs; [
+        passff-host
+        ff2mpv-rust
+      ];
 
       getXpi = package: "file://${package}/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/${package.addonId}.xpi";
     in {

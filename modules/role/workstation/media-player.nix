@@ -51,6 +51,17 @@
         slang = "en,eng";
       };
     };
+
+    # browser extension configuration
+    xdg.configFile."ff2mpv-rust.json".text = builtins.toJSON {
+      player_command = "mpv";
+      player_args = [
+        "--player-operation-mode=pseudo-gui"
+        # don't persist video positions from browser
+        "--watch-later-dir=~~state/watch_later_browser"
+        "--"
+      ];
+    };
   };
 
   intransience.datastores.cache.users.${user}.dirs = [
