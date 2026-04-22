@@ -1,5 +1,9 @@
 # system used as a personal computer
-{user, ...}: {
+{
+  user,
+  pkgs,
+  ...
+}: {
   imports = [
     ../common/vpn
     ./fonts.nix
@@ -12,6 +16,13 @@
     ./pdf-viewer
     ./browser
   ];
+
+  home-manager.users.${user} = {
+    home.packages = with pkgs; [
+      # audio and video downloader
+      yt-dlp
+    ];
+  };
 
   intransience.datastores.system.byPath."/var/lib".dirs = [
     # audio
