@@ -62,23 +62,22 @@
     eachSystem = lib.genAttrs lib.systems.flakeExposed;
   in {
     # nixos configurations defined by ./systems.nix
-    nixosConfigurations = builtins.mapAttrs (
-      name: modules:
-        lib.nixosSystem {
-          inherit modules;
-          specialArgs = {
-            inherit flakes name;
-            user = "erin";
-          };
-        }
-    ) (import ./systems.nix);
+    nixosConfigurations = lib.mapAttrs (name: modules:
+      lib.nixosSystem {
+        inherit modules;
+        specialArgs = {
+          inherit flakes name;
+          user = "erin";
+        };
+      })
+    (import ./systems.nix);
 
     # build iso images for all system names ending in "-iso"
     packages = eachSystem (system:
       lib.mapAttrs
       (name: nixosConfiguration: nixosConfiguration.config.system.build.images.iso)
       (lib.filterAttrs
-        (name: value: lib.strings.hasSuffix "-iso" name)
+        (name: value: lib.hasSuffix "-iso" name)
         flakes.self.nixosConfigurations));
   };
 }

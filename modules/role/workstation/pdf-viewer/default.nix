@@ -36,7 +36,7 @@
         keyboard_select_font_size = "16";
 
         epub_font_size = "9";
-        epub_css = lib.concatStrings (
+        epub_css = lib.concatMapStringsSep " " lib.trim (
           lib.splitString "\n"
           # css
           ''

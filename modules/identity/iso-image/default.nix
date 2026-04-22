@@ -8,7 +8,7 @@
 in {
   networking = {
     hostName = "nixos-iso";
-    hostId = lib.strings.substring 0 8 machine-id;
+    hostId = lib.substring 0 8 machine-id;
   };
 
   environment.etc.machine-id.text = machine-id;
