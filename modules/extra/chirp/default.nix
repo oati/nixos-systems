@@ -9,9 +9,9 @@
     hash = "sha256-BSMV9NLSaJlbNXt/k3NLoglVeOSgK87mBbP8PudyHNI=";
   };
 
-  package = pkgs.chirp.overrideAttrs (final: prev: {
+  package = pkgs.chirp.overrideAttrs (finalAttrs: prevAttrs: {
     postInstall =
-      (prev.postInstall or "")
+      (prevAttrs.postInstall or "")
       + ''
         cp ${armel-uv-k1-driver} \
           $out/${pkgs.python3.sitePackages}/chirp/drivers/F4HWN.py

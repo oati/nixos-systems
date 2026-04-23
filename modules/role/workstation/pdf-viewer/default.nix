@@ -12,10 +12,10 @@
     programs.sioyek = {
       enable = true;
 
-      package = pkgs.sioyek.overrideAttrs (old: {
+      package = pkgs.sioyek.overrideAttrs (finalAttrs: prevAttrs: {
         name = "sioyek-no-default-keys";
         postInstall =
-          old.postInstall
+          prevAttrs.postInstall
           + ''
             rm $out/etc/keys.config
             touch $out/etc/keys.config
