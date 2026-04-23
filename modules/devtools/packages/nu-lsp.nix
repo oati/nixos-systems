@@ -2,12 +2,12 @@
   fetchCrate,
   rustPlatform,
 }:
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "nu-lsp";
   version = "0.111.0";
 
   src = fetchCrate {
-    inherit pname version;
+    inherit (finalAttrs) pname version;
     hash = "sha256-33TeJt1mGFb2O/blNl9N3EGc5NtBDKZ8krSwWIQIC18=";
   };
 
@@ -16,4 +16,4 @@ rustPlatform.buildRustPackage rec {
   doCheck = false;
 
   meta.mainProgram = "nu-lsp";
-}
+})
