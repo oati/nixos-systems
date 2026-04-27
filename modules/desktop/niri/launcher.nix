@@ -8,6 +8,8 @@
         no_actions = true;
         insensitive = true;
 
+        prompt = "";
+
         location = "center";
         # default 50K
         width = "50%";
