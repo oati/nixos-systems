@@ -22,9 +22,5 @@
       enable = true;
       enableJujutsuIntegration = true;
     };
-
-    programs.jjui.enable = true;
-
-    stylix.targets.jjui.enable = true;
   };
 }
