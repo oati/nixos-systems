@@ -18,12 +18,15 @@
     xdg = {
       enable = true;
 
-      userDirs = {
+      userDirs = let
+        homeDir = config.home.homeDirectory;
+      in {
         enable = true;
         createDirectories = true;
         desktop = null;
-        documents = "$HOME/documents";
-        download = "$HOME/downloads";
+        documents = "${homeDir}/documents";
+        download = "${homeDir}/downloads";
+        projects = "${homeDir}/projects";
         music = null;
         pictures = null;
         videos = null;
