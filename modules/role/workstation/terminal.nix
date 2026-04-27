@@ -21,6 +21,11 @@
         notify-on-command-finish = "unfocused";
         notify-on-command-finish-action = "no-bell,notify";
         notify-on-command-finish-after = "5s";
+
+        keybind = [
+          # bind ctrl+backspace to alt+backspace
+          "ctrl+backspace=text:\\x1b\\x7f"
+        ];
       };
     };
 
