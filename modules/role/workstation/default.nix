@@ -21,6 +21,9 @@
     home.packages = with pkgs; [
       # audio and video downloader
       yt-dlp
+
+      # wayland event viewer
+      wev
     ];
   };
 
