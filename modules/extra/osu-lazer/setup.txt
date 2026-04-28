@@ -32,8 +32,6 @@ input - key configuration
 
 input - tablet
 - conform to current game aspect ratio
-- offset 50 50
-- width height 40 25
 
 input - mouse
 - disable clicks during gameplay
@@ -66,6 +64,8 @@ ui
 rulesets
 - osu!
   - cursor trail off
+- osu!mania
+  - scroll speed 20
 
 audio - volume
 - effect 20%
