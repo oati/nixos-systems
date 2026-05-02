@@ -36,7 +36,7 @@
           # delete generations by indices
           def "nixos-generations delete" [...indices: oneof<int, range>] {
             let generations_list: table = nixos-generations list
-            let generations: list<int> = $indices | each {|item|
+            let generations: list<int> = $indices | each { |item|
               match ($item | describe) {
                 "int" => {
                   $generations_list | select $item
@@ -51,7 +51,7 @@
               run0 nix-env -p /nix/var/nix/profiles/system --delete-generations ...$generations
             }
 
-            $generations | each {|generation|
+            $generations | each { |generation|
               $'/boot/loader/entries/nixos-generation-($generation).conf'
             } | run0 rm -f ...$in
           }
@@ -66,7 +66,7 @@
               run0 nix-env -p /nix/var/nix/profiles/system --delete-generations ...$generations
             }
 
-            $generations | each {|generation|
+            $generations | each { |generation|
               $'/boot/loader/entries/nixos-generation-($generation).conf'
             } | run0 rm -f ...$in
           }
