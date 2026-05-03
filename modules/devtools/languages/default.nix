@@ -7,6 +7,7 @@
     ./nix.nix
     ./rust.nix
     ./python.nix
+    ./typst.nix
   ];
 
   home-manager.users.${user} = {
