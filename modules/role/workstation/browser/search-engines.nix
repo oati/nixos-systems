@@ -12,7 +12,7 @@
           Add = [
             {
               Name = "Google Web";
-              URLTemplate = "https://google.com/search?hl=en&pws=0&udm=14&hl=en&q={searchTerms}";
+              URLTemplate = "https://google.com/search?hl=en&pws=0&udm=14&q={searchTerms}";
               Method = "GET";
             }
           ];
