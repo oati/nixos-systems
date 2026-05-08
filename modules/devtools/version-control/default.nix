@@ -10,8 +10,8 @@
   ];
 
   home-manager.users.${user} = {
-    home.packages = with pkgs; [
-      gh
+    home.packages = [
+      pkgs.gh
     ];
   };
 }

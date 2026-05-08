@@ -1,13 +1,13 @@
 # hardware utilities
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    usbutils
-    pciutils
+  environment.systemPackages = [
+    pkgs.usbutils
+    pkgs.pciutils
 
     # SMBIOS data
-    dmidecode
+    pkgs.dmidecode
 
     # sensor info
-    lm_sensors
+    pkgs.lm_sensors
   ];
 }

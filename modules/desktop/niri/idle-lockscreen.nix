@@ -7,9 +7,9 @@
   programs.gtklock = {
     enable = true;
 
-    modules = with pkgs; [
-      gtklock-powerbar-module
-      gtklock-playerctl-module
+    modules = [
+      pkgs.gtklock-powerbar-module
+      pkgs.gtklock-playerctl-module
     ];
   };
 

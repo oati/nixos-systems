@@ -18,11 +18,11 @@
   boot.kernel.sysctl."vm.overcommit_memory" = "1";
 
   # include in nix store
-  system.extraDependencies = with pkgs; [
-    busybox
+  system.extraDependencies = [
+    pkgs.busybox
     # for runCommand
-    stdenvNoCC
+    pkgs.stdenvNoCC
     # for boot.initrd.systemd
-    makeInitrdNGTool
+    pkgs.makeInitrdNGTool
   ];
 }

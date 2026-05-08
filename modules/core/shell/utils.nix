@@ -48,20 +48,20 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     # system information
-    fastfetch
+    pkgs.fastfetch
 
     # shell utils
-    wget
-    skim
-    ripgrep
-    inotify-tools
+    pkgs.wget
+    pkgs.skim
+    pkgs.ripgrep
+    pkgs.inotify-tools
 
     # network tools
-    dnsutils
-    inetutils
-    iw
-    speedtest-cli
+    pkgs.dnsutils
+    pkgs.inetutils
+    pkgs.iw
+    pkgs.speedtest-cli
   ];
 }

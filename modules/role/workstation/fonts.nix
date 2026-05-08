@@ -6,11 +6,11 @@
     # X11 fonts
     fontDir.enable = true;
 
-    packages = with pkgs; [
-      monaspace
-      lexend
-      nerd-fonts.symbols-only
-      noto-fonts-color-emoji
+    packages = [
+      pkgs.monaspace
+      pkgs.lexend
+      pkgs.nerd-fonts.symbols-only
+      pkgs.noto-fonts-color-emoji
     ];
 
     fontconfig = {

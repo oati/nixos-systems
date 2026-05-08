@@ -16,9 +16,9 @@
         CARAPACE_MATCH = 1;
       };
 
-      completers = with pkgs; [
-        zsh
-        fish
+      completers = [
+        pkgs.zsh
+        pkgs.fish
       ];
 
       package = pkgs.symlinkJoin {

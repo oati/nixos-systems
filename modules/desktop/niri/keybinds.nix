@@ -92,9 +92,9 @@
       # XF86MonBrightnessDown
     };
 
-    home.packages = with pkgs; [
-      delta-shell
-      playerctl
+    home.packages = [
+      pkgs.delta-shell
+      pkgs.playerctl
     ];
   };
 }

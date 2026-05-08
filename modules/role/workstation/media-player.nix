@@ -7,16 +7,18 @@
     programs.mpv = {
       enable = true;
 
-      scripts = with pkgs.mpvScripts; [
-        mpris
+      scripts = let
+        p = pkgs.mpvScripts;
+      in [
+        p.mpris
 
         # on screen controller
-        uosc
+        p.uosc
         # thumbnails on timeline
-        thumbfast
+        p.thumbfast
 
         # youtube
-        sponsorblock
+        p.sponsorblock
       ];
 
       defaultProfiles = [

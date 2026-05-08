@@ -51,7 +51,7 @@
     NIXPKGS_ALLOW_UNFREE = 1;
   };
 
-  environment.systemPackages = with pkgs; [
-    moor
+  environment.systemPackages = [
+    pkgs.moor
   ];
 }

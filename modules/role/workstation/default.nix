@@ -18,12 +18,12 @@
   ];
 
   home-manager.users.${user} = {
-    home.packages = with pkgs; [
+    home.packages = [
       # audio and video downloader
-      yt-dlp
+      pkgs.yt-dlp
 
       # wayland event viewer
-      wev
+      pkgs.wev
     ];
   };
 

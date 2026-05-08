@@ -12,12 +12,11 @@
           x11Support = false;
           waylandSupport = true;
           dmenuSupport = false;
-        }).withExtensions (exts:
-          with exts; [
-            pass-genphrase
-            pass-checkup
-            pass-otp
-          ]);
+        }).withExtensions (p: [
+          p.pass-genphrase
+          p.pass-checkup
+          p.pass-otp
+        ]);
     };
 
     services.pass-secret-service.enable = true;

@@ -31,33 +31,33 @@
       };
     };
 
-    home.packages = with pkgs; [
+    home.packages = [
       # color codes
-      uwu-colors
+      pkgs.uwu-colors
 
       # markdown
-      marksman
+      pkgs.marksman
 
       # toml
-      tombi
+      pkgs.tombi
 
       # yaml
-      yaml-language-server
-      yamlfmt
+      pkgs.yaml-language-server
+      pkgs.yamlfmt
 
       # json
-      vscode-json-languageserver
+      pkgs.vscode-json-languageserver
 
       # css
-      vscode-css-languageserver
+      pkgs.vscode-css-languageserver
 
       # nushell
-      nu-lsp
-      nufmt
+      pkgs.nu-lsp
+      pkgs.nufmt
 
       # bash
-      bash-language-server
-      shfmt
+      pkgs.bash-language-server
+      pkgs.shfmt
     ];
   };
 }

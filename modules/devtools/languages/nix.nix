@@ -35,10 +35,10 @@
       };
     };
 
-    home.packages = with pkgs; [
-      nixd
-      alejandra
-      nixfmt
+    home.packages = [
+      pkgs.nixd
+      pkgs.alejandra
+      pkgs.nixfmt
     ];
   };
 }
