@@ -2,9 +2,11 @@
   user,
   pkgs,
   ...
-}: {
+}: let
+  package = pkgs.iloader;
+in {
   home-manager.users.${user} = {
-    home.packages = [pkgs.iloader];
+    home.packages = [package];
   };
 
   services.usbmuxd.enable = true;
