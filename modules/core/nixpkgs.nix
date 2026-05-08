@@ -4,7 +4,7 @@
       flakes.nur.overlays.default
       (
         final: prev: let
-          packages = flake: flake.packages.${prev.stdenv.hostPlatform.system};
+          packages = flake: flake.packages.${final.stdenv.hostPlatform.system};
         in {
           inherit (packages flakes.home-manager) home-manager;
           inherit (packages flakes.disko) disko;
