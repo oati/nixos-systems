@@ -44,14 +44,16 @@
 
   programs.xwayland.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    xwayland-satellite
+  home-manager.users.${user} = {
+    home.packages = with pkgs; [
+      xwayland-satellite
 
-    # needed by helix for clipboard paste
-    wl-clipboard
+      # needed by helix for clipboard paste
+      wl-clipboard
 
-    # audio config
-    pavucontrol
-    crosspipe
-  ];
+      # audio config
+      pavucontrol
+      crosspipe
+    ];
+  };
 }

@@ -91,10 +91,10 @@
       # XF86MonBrightnessUp
       # XF86MonBrightnessDown
     };
-  };
 
-  environment.systemPackages = with pkgs; [
-    delta-shell
-    playerctl
-  ];
+    home.packages = with pkgs; [
+      delta-shell
+      playerctl
+    ];
+  };
 }
