@@ -54,6 +54,7 @@
 
     # shell utils
     pkgs.wget
+    pkgs.p7zip
     pkgs.skim
     pkgs.ripgrep
     pkgs.inotify-tools
