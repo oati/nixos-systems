@@ -4,7 +4,8 @@
       settings = {
         input.mouse = {
           accel-profile = "flat";
-          accel-speed = 0.25;
+          # range [-1, 1]
+          accel-speed = -0.5;
         };
       };
     };
