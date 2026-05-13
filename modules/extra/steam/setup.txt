@@ -6,6 +6,9 @@ in game
 - disable steam overlay
 - disable restore my previous browser tabs when starting a game
 
+compatibility
+- default compatibility tool: GE-Proton
+
 
 game properties:
 
