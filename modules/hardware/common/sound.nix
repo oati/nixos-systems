@@ -8,4 +8,7 @@
     };
     jack.enable = true;
   };
+
+  # realtime priority for pipewire
+  security.rtkit.enable = true;
 }
