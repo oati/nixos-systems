@@ -7,6 +7,8 @@
     enable = true;
   };
 
+  programs.gamemode.enable = true;
+
   intransience.datastores.games.users.${user}.dirs = [
     ".local/share/Steam"
   ];

@@ -5,3 +5,9 @@ interface
 in game
 - disable steam overlay
 - disable restore my previous browser tabs when starting a game
+
+
+game properties:
+
+general
+- launch options: gamemoderun %command%
