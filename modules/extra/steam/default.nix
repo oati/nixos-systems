@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./niri-window-rules.nix
+    ./mangohud.nix
   ];
 
   programs.steam = {

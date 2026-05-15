@@ -14,3 +14,4 @@ game properties:
 
 general
 - launch options: gamemoderun %command%
+- launch options (for testing): gamemoderun mangohud %command%
