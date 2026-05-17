@@ -35,7 +35,7 @@
         "browser.toolbars.bookmarks.visibility" = "newtab";
 
         # enable webgl
-        # "webgl.disabled" = false;
+        "webgl.disabled" = false;
 
         # middle mouse click to scroll
         "middlemouse.paste" = false;
