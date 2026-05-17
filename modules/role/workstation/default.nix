@@ -14,6 +14,7 @@
     ./file-manager.nix
     ./media-player.nix
     ./pdf-viewer
+    ./email-client.nix
     ./browser
   ];
 
