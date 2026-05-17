@@ -42,8 +42,8 @@
       "Mod+Ctrl+comma".action.toggle-window-floating = {};
 
       # column
-      "Mod+G".action.consume-or-expel-window-left = {};
-      "Mod+period".action.consume-or-expel-window-right = {};
+      "Mod+Ctrl+G".action.consume-or-expel-window-left = {};
+      "Mod+Ctrl+period".action.consume-or-expel-window-right = {};
 
       # window
       "Mod+T".action.toggle-column-tabbed-display = {};
