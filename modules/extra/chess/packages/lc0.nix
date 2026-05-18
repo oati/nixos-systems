@@ -1,6 +1,7 @@
 {
   stdenv,
   fetchFromGitHub,
+  symlinkJoin,
   meson,
   ninja,
   pkg-config,
@@ -8,6 +9,8 @@
   abseil-cpp,
   zlib,
   eigen,
+  onednn,
+  ispc,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "lc0";
@@ -38,6 +41,8 @@ stdenv.mkDerivation (finalAttrs: {
 
     # BLAS backend
     eigen
+    onednn
+    ispc
   ];
 
   mesonFlags = [
@@ -46,6 +51,18 @@ stdenv.mkDerivation (finalAttrs: {
 
     # disable metal backend
     "-Dmetal=disabled"
+
+    # BLAS backend
+    "-Ddnnl=true"
+    (let
+      onednn-combined = symlinkJoin {
+        name = "onednn-combined";
+        paths = [
+          onednn
+          onednn.dev
+        ];
+      };
+    in "-Ddnnl_dir=${onednn-combined}")
   ];
 
   enableParallelBuilding = true;
