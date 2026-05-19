@@ -33,4 +33,8 @@
       };
     };
   };
+
+  intransience.datastores.cache.users.${user}.dirs = [
+    ".cache/lc0"
+  ];
 }

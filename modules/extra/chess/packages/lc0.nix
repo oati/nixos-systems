@@ -27,6 +27,11 @@ stdenv.mkDerivation (finalAttrs: {
 
   postPatch = ''
     patchShebangs .
+
+    # see https://github.com/LeelaChessZero/lc0/issues/2414
+    sed -i \
+      's|CommandLine::BinaryDirectory()|std::string(std::getenv("HOME")) + "/.cache/lc0"|g' \
+      ./src/neural/backends/onnx/network_onnx.cc
   '';
 
   nativeBuildInputs = [
