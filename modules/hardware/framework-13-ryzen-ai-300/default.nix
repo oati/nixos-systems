@@ -26,6 +26,9 @@
     system = "x86_64-linux";
   };
 
+  # AMD GPU computing framework
+  nixpkgs.config.rocmSupport = true;
+
   hardware.enableRedistributableFirmware = true;
 
   # firmware updater

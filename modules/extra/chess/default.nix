@@ -26,6 +26,7 @@
             hash = "sha256-5q2p1sSnab+rOqCEjYLK64CapF+D5sYF/FijHSG91hg=";
           };
         };
+        backend = "onnx-rocm";
         search_nodes = null;
         search_nodes_special = 10000;
         limit_by_time = false;

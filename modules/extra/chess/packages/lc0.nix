@@ -11,6 +11,7 @@
   eigen,
   onednn,
   ispc,
+  onnxruntime,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "lc0";
@@ -43,6 +44,9 @@ stdenv.mkDerivation (finalAttrs: {
     eigen
     onednn
     ispc
+
+    # ONNX backend
+    onnxruntime
   ];
 
   mesonFlags = [
@@ -63,6 +67,11 @@ stdenv.mkDerivation (finalAttrs: {
         ];
       };
     in "-Ddnnl_dir=${onednn-combined}")
+
+    # ONNX backend
+    "-Donnx=true"
+    "-Donnx_libdir=${onnxruntime}/lib"
+    "-Donnx_include=${onnxruntime.dev}/include"
   ];
 
   enableParallelBuilding = true;
