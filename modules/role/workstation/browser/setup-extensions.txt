@@ -1,6 +1,9 @@
 toolbar
 - multi-account containers
 - tab session manager
+- dark background and light text
+- ff2mpv
+- passff
 
 tab session manager:
 - disable discarded property for lazy loading
