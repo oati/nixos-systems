@@ -17,6 +17,7 @@
       private-extensions = [
         p.passff
         p.surfingkeys
+        p.scroll_anywhere
         p.dark-background-light-text
         p.i-dont-care-about-cookies
         p.clearurls

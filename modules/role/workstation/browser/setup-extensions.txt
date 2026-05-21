@@ -20,6 +20,14 @@ cookie autodelete:
 - disable show notification after automatic cleanup
 - disable context menus
 
+scroll anywhere:
+- general
+  - disable middle button
+  - enable left button
+  - scroll style grab and drag
+- momentum
+  - page weight 50 grams (default 1000)
+
 dark background light text:
 - set default method to invert
 
