@@ -33,7 +33,12 @@
           # quansheng uv-k1
           {
             vendor = "36b7";
-            product = "ffff";
+            products = [
+              # DFU mode
+              "0001"
+              # firmware
+              "ffff"
+            ];
           }
         ];
       in
