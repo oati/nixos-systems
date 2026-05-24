@@ -51,6 +51,9 @@
       # needed by helix for clipboard paste
       pkgs.wl-clipboard
 
+      # system resources monitor
+      pkgs.resources
+
       # audio config
       pkgs.pavucontrol
       pkgs.crosspipe
