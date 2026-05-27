@@ -2,7 +2,7 @@
   description = "Erin's NixOS Configurations";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:oati/nixpkgs/fetchcrate-fix";
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     nur = {
