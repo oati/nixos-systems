@@ -175,11 +175,6 @@
     "hash": "sha256-SRk+00fzJk/jA2dbQbYE/udmcZgqVkscgZT8yi+D2NY="
   },
   {
-    "pname": "System.Collections.Immutable",
-    "version": "8.0.0",
-    "hash": "sha256-F7OVjKNwpqbUh8lTidbqJWYi476nsq9n+6k0+QVRo3w="
-  },
-  {
     "pname": "System.CommandLine",
     "version": "2.0.1",
     "hash": "sha256-NDBiPUt/ZZIMBcLHpF/6IMX/UpfsC/XnH3p4i4MHCFw="
@@ -200,16 +195,6 @@
     "hash": "sha256-zUXIQtAFKbiUMKCrXzO4mOTD5EUphZzghBYKXprowSM="
   },
   {
-    "pname": "System.IO.Pipelines",
-    "version": "8.0.0",
-    "hash": "sha256-LdpB1s4vQzsOODaxiKstLks57X9DTD5D6cPx8DE1wwE="
-  },
-  {
-    "pname": "System.Reflection.Metadata",
-    "version": "8.0.0",
-    "hash": "sha256-dQGC30JauIDWNWXMrSNOJncVa1umR1sijazYwUDdSIE="
-  },
-  {
     "pname": "Validation",
     "version": "2.5.51",
     "hash": "sha256-yMZ6znWbsLKHcx+VwhyoPdSjGlAJsAAx9kP6xnE9YE4="
@@ -223,11 +208,6 @@
     "pname": "xunit",
     "version": "2.9.3",
     "hash": "sha256-BPrpSbjlIB7PoH+ocCusqMDrMZgRQZSzeTeJzHK/I9c="
-  },
-  {
-    "pname": "xunit.abstractions",
-    "version": "2.0.2",
-    "hash": "sha256-w5APCW7suBdoDOmQqm/8Gq6+Sk88JcTR09zjmj9s17E="
   },
   {
     "pname": "xunit.abstractions",
