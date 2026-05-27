@@ -52,7 +52,7 @@
     };
 
     iloader = {
-      url = "github:nab138/iloader?ref=v2.2.4";
+      url = "github:nab138/iloader?ref=v2.2.6";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
