@@ -1,5 +1,6 @@
 {
   user,
+  lib,
   pkgs,
   ...
 }: {
@@ -90,6 +91,31 @@
 
       # XF86MonBrightnessUp
       # XF86MonBrightnessDown
+
+      # toggle opentabletdriver relative mode
+      "Mod+R".action.spawn = [
+        (lib.getExe pkgs.nushell)
+        "-c"
+
+        (let
+          tablet = "Wacom PTK-470";
+        in
+          # nu
+          ''
+            match (otd getoutputmode '${tablet}' | str substring 14..-2) {
+              'Absolute Mode' => {
+                otd setoutputmode '${tablet}' OpenTabletDriver.Desktop.Output.RelativeMode
+                otd disabletabletfilters '${tablet}' DragThreshold.DragThreshold
+                otd enabletabletfilters '${tablet}' Hover_Distance_Limiter.Hover_Distance_Limiter
+              },
+              'Relative Mode' => {
+                otd setoutputmode '${tablet}' OpenTabletDriver.Desktop.Output.AbsoluteMode
+                otd enabletabletfilters '${tablet}' DragThreshold.DragThreshold
+                otd disabletabletfilters '${tablet}' Hover_Distance_Limiter.Hover_Distance_Limiter
+              },
+            }
+          '')
+      ];
     };
 
     home.packages = [
