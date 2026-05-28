@@ -42,6 +42,7 @@ rec {
       ./modules/extra/iloader
       ./modules/extra/chirp
       ./modules/extra/chess
+      ./modules/extra/baduk
       # ./modules/extra/vmware
     ];
 }
