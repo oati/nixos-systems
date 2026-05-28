@@ -9,7 +9,7 @@
       # check if this is necessary in the future
       enableDefaultConfig = false;
 
-      matchBlocks = {
+      settings = {
         github = {
           hostname = "github.com";
           user = "git";
