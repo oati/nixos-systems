@@ -12,7 +12,7 @@ NixOS configurations for my personal use.
 
 - `overlays.nix` is an attribute set that specifies the names of overlays and their defining modules.
 
-- `packages.nix` is a list that specifies which packages to output from the overlays in `overlays.nix`
+- `packages.nix` is a function that returns an attribute set which specifies what packages to output from the overlays in `overlays.nix`
 
 ### Base Modules
 

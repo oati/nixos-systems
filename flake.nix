@@ -106,12 +106,7 @@
             overlays = lib.attrValues flakes.self.overlays;
           };
 
-          packages = lib.listToAttrs (
-            map (name: {
-              inherit name;
-              value = pkgs.${name};
-            }) (import ./packages.nix)
-          );
+          packages = import ./packages.nix pkgs;
         in
         isoImages // packages
       );
