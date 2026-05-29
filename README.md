@@ -40,7 +40,7 @@ NixOS configurations for my personal use.
 
 - The codebase should take as little effort as possible to understand.  
   The behavior and effect of a component should be clear from its own code when possible, and documented when unclear.
-  Any dependencies between components should be explicit and easy to understand.
+  Nontrivial dependencies between components should be explicit and easy to understand.
 
 - Components should be associated with semantic units of functionality.
   Code associated with the same functionality should be close to each other and isolated from other code.
