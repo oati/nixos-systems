@@ -60,17 +60,20 @@
   outputs = flakes: let
     inherit (flakes.nixpkgs) lib;
     eachSystem = lib.genAttrs lib.systems.flakeExposed;
-  in {
-    # nixos configurations defined by ./systems.nix
-    nixosConfigurations = lib.mapAttrs (name: modules:
+
+    genNixosConfigurations = lib.mapAttrs (name: modules:
       lib.nixosSystem {
         inherit modules;
         specialArgs = {
           inherit flakes name;
           user = "erin";
         };
-      })
-    (import ./systems.nix);
+      });
+  in {
+    # nixos configurations defined in ./systems.nix
+    nixosConfigurations =
+      genNixosConfigurations
+      (lib.mergeAttrsList (lib.attrValues (import ./systems.nix)));
 
     # overlays listed in ./overlays.nix
     overlays = lib.mapAttrs (name: module:
@@ -83,11 +86,8 @@
 
     packages = eachSystem (
       system: let
-        # iso images for all system names ending in "-iso"
-        isoConfigurations =
-          lib.filterAttrs
-          (name: value: lib.hasSuffix "-iso" name)
-          flakes.self.nixosConfigurations;
+        # iso images for all iso systems
+        isoConfigurations = genNixosConfigurations (import ./systems.nix).iso;
 
         isoImages =
           lib.mapAttrs
