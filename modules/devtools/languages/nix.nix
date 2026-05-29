@@ -16,7 +16,7 @@
               "uwu-colors"
             ];
             formatter = {
-              command = "alejandra";
+              command = "nixfmt";
             };
             auto-format = true;
           }
@@ -39,7 +39,6 @@
 
     home.packages = [
       pkgs.nixd
-      pkgs.alejandra
       pkgs.nixfmt
     ];
   };
