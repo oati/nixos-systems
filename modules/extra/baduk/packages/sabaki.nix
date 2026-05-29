@@ -18,6 +18,8 @@ buildNpmPackage (finalAttrs: {
     hash = "sha256-3VzA/YmGSheBvY43tyNByqC0KPESEQd726TIt4O2Y60=";
   };
 
+  __structuredAttrs = true;
+
   npmDepsHash = "sha256-RPFhBe7APSYK58pRcTraep5oLYgT9hWP742wFsx1zwA=";
 
   nativeBuildInputs = [makeWrapper copyDesktopItems];

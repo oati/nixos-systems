@@ -16,6 +16,9 @@ stdenv.mkDerivation (finalAttrs: {
     sha256 = "sha256-wB4UjgPg7Y1jJPC6Wl10atZaVplnDL/hZyfEiq11/ck=";
   };
 
+  __structuredAttrs = true;
+  strictDeps = true;
+
   dontBuild = true;
 
   nativeBuildInputs = [makeWrapper];

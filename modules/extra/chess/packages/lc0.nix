@@ -25,6 +25,9 @@ stdenv.mkDerivation (finalAttrs: {
     fetchSubmodules = true;
   };
 
+  __structuredAttrs = true;
+  strictDeps = true;
+
   postPatch = ''
     patchShebangs .
 
