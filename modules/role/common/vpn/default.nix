@@ -7,6 +7,9 @@
       name = "netbird";
       port = 51820;
       interface = "vpn0";
+
+      # see https://github.com/NixOS/nixpkgs/issues/506156
+      hardened = false;
     };
   };
 
