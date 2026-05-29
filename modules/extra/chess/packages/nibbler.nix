@@ -29,7 +29,8 @@ stdenv.mkDerivation (finalAttrs: {
     install -Dm644 files/res/linux/nibbler.desktop -t $out/share/applications
 
     makeWrapper '${lib.getExe electron}' "$out/bin/nibbler" \
-      --add-flags "$out/share/nibbler"
+      --add-flags "$out/share/nibbler" \
+      --inherit-argv0
   '';
 
   meta.mainProgram = "nibbler";

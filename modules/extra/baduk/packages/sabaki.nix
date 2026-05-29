@@ -47,7 +47,8 @@ buildNpmPackage (finalAttrs: {
     install -Dm644 logo.png $out/share/icons/hicolor/scalable/apps/sabaki.png
 
     makeWrapper '${lib.getExe electron}' "$out/bin/sabaki" \
-      --add-flags "$out/share/sabaki/app.asar"
+      --add-flags "$out/share/sabaki/app.asar" \
+      --inherit-argv0
 
     runHook postInstall
   '';
