@@ -72,12 +72,34 @@
       })
     (import ./systems.nix);
 
-    # build iso images for all system names ending in "-iso"
-    packages = eachSystem (system:
-      lib.mapAttrs
-      (name: nixosConfiguration: nixosConfiguration.config.system.build.images.iso)
-      (lib.filterAttrs
-        (name: value: lib.hasSuffix "-iso" name)
-        flakes.self.nixosConfigurations));
+    # overlays listed in ./overlays.nix
+    overlays = lib.mapAttrs (name: module:
+      lib.composeManyExtensions
+      ((import module) {
+        # module args
+        inherit flakes;
+      }).nixpkgs.overlays)
+    (import ./overlays.nix);
+
+    # packages listed in ./packages.nix pulled from overlays
+    # iso images for all system names ending in "-iso"
+    packages = eachSystem (
+      system:
+        (let
+          pkgs = import flakes.nixpkgs {
+            localSystem.system = system;
+            overlays = lib.attrValues flakes.self.overlays;
+          };
+        in
+          lib.listToAttrs (map (name: {
+            inherit name;
+            value = pkgs.${name};
+          }) (import ./packages.nix)))
+        // (lib.mapAttrs
+          (name: nixosConfiguration: nixosConfiguration.config.system.build.images.iso)
+          (lib.filterAttrs
+            (name: value: lib.hasSuffix "-iso" name)
+            flakes.self.nixosConfigurations))
+    );
   };
 }
