@@ -6,9 +6,13 @@ NixOS configurations for my personal use.
 
 ### Nix
 
-- `flake.nix` defines flake inputs and outputs. It generates outputs solely based on the systems defined in `systems.nix`
+- `flake.nix` defines flake inputs and outputs. It generates outputs based on the definitions in `systems.nix`, `overlays.nix`, and `packages.nix`
 
-- `systems.nix` is a nix attribute set defining a list of NixOS modules to import for each system.
+- `systems.nix` is an attribute set defining a list of NixOS modules to import for each system.
+
+- `overlays.nix` is an attribute set that specifies the names of overlays and their defining modules.
+
+- `packages.nix` is a list that specifies which packages to output from the overlays in `overlays.nix`
 
 ### Base Modules
 
