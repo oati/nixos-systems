@@ -187,11 +187,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778222279,
-        "narHash": "sha256-fpWCTscEWMuMg5rKjvluwRnzS/lQNkrhWnSCvyQ4EpE=",
+        "lastModified": 1780093053,
+        "narHash": "sha256-qOxgpJv1L3wbHi8/r1X5rJ0T4gR3fLH4lp0FFzANepI=",
         "owner": "oati",
         "repo": "delta-shell",
-        "rev": "c04f92b1f380eee564aa51a6a7856c6745b61d75",
+        "rev": "48e720087867cbbe90d38f8c4b358e034cfdb612",
         "type": "github"
       },
       "original": {
