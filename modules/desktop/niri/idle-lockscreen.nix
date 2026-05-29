@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   programs.gtklock = {
     enable = true;
 
@@ -18,7 +19,7 @@
       enable = true;
 
       # wait for command to finish
-      extraArgs = ["-w"];
+      extraArgs = [ "-w" ];
 
       events.before-sleep = lib.getExe pkgs.gtklock;
     };

@@ -1,5 +1,6 @@
 # core options for every system
-{flakes, ...}: {
+{ flakes, ... }:
+{
   imports = [
     flakes.disko.nixosModules.default
     flakes.intransience.nixosModules.default

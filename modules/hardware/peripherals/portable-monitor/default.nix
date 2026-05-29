@@ -2,9 +2,11 @@
   user,
   pkgs,
   ...
-}: let
+}:
+let
   scale = 4. / 3.;
-in {
+in
+{
   home-manager.users.${user} = {
     # niri output
     programs.niri.settings.outputs = {
@@ -36,7 +38,7 @@ in {
     package = pkgs.ddcutil-service;
   };
 
-  users.users.${user}.extraGroups = ["i2c"];
+  users.users.${user}.extraGroups = [ "i2c" ];
 
   intransience.datastores.cache.users.${user}.dirs = [
     # monitor data

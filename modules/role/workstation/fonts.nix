@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   fonts = {
     # defaulted to true by many desktop environments
     enableDefaultPackages = true;
@@ -15,10 +16,13 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = ["Monaspace Neon Frozen" "Symbols Nerd Font Mono"];
-        sansSerif = ["Lexend"];
-        serif = ["Lexend"];
-        emoji = ["Noto Color Emoji"];
+        monospace = [
+          "Monaspace Neon Frozen"
+          "Symbols Nerd Font Mono"
+        ];
+        sansSerif = [ "Lexend" ];
+        serif = [ "Lexend" ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };

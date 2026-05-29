@@ -2,16 +2,18 @@
   user,
   pkgs,
   ...
-}: let
+}:
+let
   package = pkgs.iloader;
-in {
+in
+{
   home-manager.users.${user} = {
-    home.packages = [package];
+    home.packages = [ package ];
   };
 
   services.usbmuxd.enable = true;
 
-  users.users.${user}.extraGroups = ["usbmux"];
+  users.users.${user}.extraGroups = [ "usbmux" ];
 
   intransience.datastores.home.users.${user}.dirs = [
     ".local/share/me.nabdev.iloader"

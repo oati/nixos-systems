@@ -1,32 +1,35 @@
-{user, ...}: {
-  home-manager.users.${user} = {config, ...}: {
-    programs.helix = {
-      enable = true;
+{ user, ... }:
+{
+  home-manager.users.${user} =
+    { config, ... }:
+    {
+      programs.helix = {
+        enable = true;
 
-      settings = {
-        editor = {
-          cursor-shape = {
-            normal = "block";
-            select = "underline";
-            insert = "bar";
+        settings = {
+          editor = {
+            cursor-shape = {
+              normal = "block";
+              select = "underline";
+              insert = "bar";
+            };
+
+            soft-wrap.enable = true;
           };
 
-          soft-wrap.enable = true;
-        };
-
-        keys = {
-          insert = {
-            C-left = "move_prev_word_start";
-            C-right = "move_next_word_start";
+          keys = {
+            insert = {
+              C-left = "move_prev_word_start";
+              C-right = "move_next_word_start";
+            };
           };
         };
       };
-    };
 
-    xdg.mimeApps.defaultApplicationPackages = [
-      config.programs.helix.package
-    ];
-  };
+      xdg.mimeApps.defaultApplicationPackages = [
+        config.programs.helix.package
+      ];
+    };
 
   environment.variables = {
     EDITOR = "hx";

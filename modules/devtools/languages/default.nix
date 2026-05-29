@@ -2,7 +2,8 @@
   user,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./nix.nix
     ./rust.nix
@@ -20,7 +21,10 @@
           }
           {
             name = "css";
-            language-servers = ["vscode-css-language-server" "uwu-colors"];
+            language-servers = [
+              "vscode-css-language-server"
+              "uwu-colors"
+            ];
           }
         ];
 

@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ./disks.nix
     ./intransience.nix

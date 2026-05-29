@@ -1,4 +1,5 @@
-{flakes, ...}: {
+{ flakes, ... }:
+{
   imports = [
     # battery power management
     flakes.nixos-hardware.nixosModules.common-pc-laptop

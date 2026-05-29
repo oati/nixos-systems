@@ -22,7 +22,10 @@ buildNpmPackage (finalAttrs: {
 
   npmDepsHash = "sha256-RPFhBe7APSYK58pRcTraep5oLYgT9hWP742wFsx1zwA=";
 
-  nativeBuildInputs = [makeWrapper copyDesktopItems];
+  nativeBuildInputs = [
+    makeWrapper
+    copyDesktopItems
+  ];
 
   env = {
     ELECTRON_SKIP_BINARY_DOWNLOAD = "1";
@@ -62,8 +65,11 @@ buildNpmPackage (finalAttrs: {
       comment = "Go/Baduk/Weiqi board and SGF editor";
       exec = "sabaki %U";
       icon = "sabaki";
-      categories = ["Game" "BoardGame"];
-      mimeTypes = ["application/x-go-sgf"];
+      categories = [
+        "Game"
+        "BoardGame"
+      ];
+      mimeTypes = [ "application/x-go-sgf" ];
     })
   ];
 

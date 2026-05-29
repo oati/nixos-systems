@@ -1,4 +1,5 @@
-{user, ...}: {
+{ user, ... }:
+{
   home-manager.users.${user} = {
     xdg.configFile."anytype/custom.css".text =
       # css

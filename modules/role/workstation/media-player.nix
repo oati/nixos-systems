@@ -2,24 +2,27 @@
   user,
   pkgs,
   ...
-}: {
+}:
+{
   home-manager.users.${user} = {
     programs.mpv = {
       enable = true;
 
-      scripts = let
-        p = pkgs.mpvScripts;
-      in [
-        p.mpris
+      scripts =
+        let
+          p = pkgs.mpvScripts;
+        in
+        [
+          p.mpris
 
-        # on screen controller
-        p.uosc
-        # thumbnails on timeline
-        p.thumbfast
+          # on screen controller
+          p.uosc
+          # thumbnails on timeline
+          p.thumbfast
 
-        # youtube
-        p.sponsorblock
-      ];
+          # youtube
+          p.sponsorblock
+        ];
 
       defaultProfiles = [
         "high-quality"

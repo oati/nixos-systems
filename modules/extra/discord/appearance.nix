@@ -2,7 +2,8 @@
   flakes,
   user,
   ...
-}: {
+}:
+{
   home-manager.users.${user} = {
     programs.vesktop.vencord = {
       settings.enabledThemes = [

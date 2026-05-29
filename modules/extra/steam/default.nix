@@ -2,7 +2,8 @@
   user,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./niri-window-rules.nix
     ./mangohud.nix

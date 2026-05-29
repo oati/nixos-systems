@@ -2,7 +2,8 @@
   user,
   config,
   ...
-}: {
+}:
+{
   home-manager.users.${user} = {
     programs.ssh = {
       enable = true;

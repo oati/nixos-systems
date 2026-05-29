@@ -2,15 +2,17 @@
   user,
   pkgs,
   ...
-}: let
+}:
+let
   package = pkgs.anytype;
-in {
+in
+{
   imports = [
     ./appearance.nix
   ];
 
   home-manager.users.${user} = {
-    home.packages = [package];
+    home.packages = [ package ];
 
     # prevent anytype from automatically creating bad desktop entry
     xdg.dataFile."applications/anytype.desktop" = {

@@ -3,7 +3,8 @@
   user,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../common/vpn
     ./fonts.nix

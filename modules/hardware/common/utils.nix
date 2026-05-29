@@ -1,5 +1,6 @@
 # hardware utilities
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = [
     pkgs.usbutils
     pkgs.pciutils

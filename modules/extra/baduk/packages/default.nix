@@ -1,7 +1,8 @@
-{...}: {
+{ ... }:
+{
   nixpkgs.overlays = [
     (final: prev: {
-      sabaki = final.callPackage ./sabaki.nix {};
+      sabaki = final.callPackage ./sabaki.nix { };
     })
   ];
 }

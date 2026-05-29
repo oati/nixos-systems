@@ -2,7 +2,8 @@
   user,
   pkgs,
   ...
-}: {
+}:
+{
   home-manager.users.${user} = {
     programs.nushell = {
       settings.keybindings = [
@@ -10,7 +11,11 @@
           name = "skim_file_finder";
           modifier = "control";
           keycode = "char_t";
-          mode = ["emacs" "vi_normal" "vi_insert"];
+          mode = [
+            "emacs"
+            "vi_normal"
+            "vi_insert"
+          ];
           event = {
             send = "executehostcommand";
             cmd =

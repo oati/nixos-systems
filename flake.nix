@@ -57,55 +57,63 @@
     };
   };
 
-  outputs = flakes: let
-    inherit (flakes.nixpkgs) lib;
-    eachSystem = lib.genAttrs lib.systems.flakeExposed;
+  outputs =
+    flakes:
+    let
+      inherit (flakes.nixpkgs) lib;
+      eachSystem = lib.genAttrs lib.systems.flakeExposed;
 
-    genNixosConfigurations = lib.mapAttrs (name: modules:
-      lib.nixosSystem {
-        inherit modules;
-        specialArgs = {
-          inherit flakes name;
-          user = "erin";
-        };
-      });
-  in {
-    # nixos configurations defined in ./systems.nix
-    nixosConfigurations =
-      genNixosConfigurations
-      (lib.mergeAttrsList (lib.attrValues (import ./systems.nix)));
+      genNixosConfigurations = lib.mapAttrs (
+        name: modules:
+        lib.nixosSystem {
+          inherit modules;
+          specialArgs = {
+            inherit flakes name;
+            user = "erin";
+          };
+        }
+      );
+    in
+    {
+      # nixos configurations defined in ./systems.nix
+      nixosConfigurations = genNixosConfigurations (
+        lib.mergeAttrsList (lib.attrValues (import ./systems.nix))
+      );
 
-    # overlays listed in ./overlays.nix
-    overlays = lib.mapAttrs (name: module:
-      lib.composeManyExtensions
-      ((import module) {
-        # module args
-        inherit flakes;
-      }).nixpkgs.overlays)
-    (import ./overlays.nix);
+      # overlays listed in ./overlays.nix
+      overlays = lib.mapAttrs (
+        name: module:
+        lib.composeManyExtensions
+          ((import module) {
+            # module args
+            inherit flakes;
+          }).nixpkgs.overlays
+      ) (import ./overlays.nix);
 
-    packages = eachSystem (
-      system: let
-        # iso images for all iso systems
-        isoConfigurations = genNixosConfigurations (import ./systems.nix).iso;
+      packages = eachSystem (
+        system:
+        let
+          # iso images for all iso systems
+          isoConfigurations = genNixosConfigurations (import ./systems.nix).iso;
 
-        isoImages =
-          lib.mapAttrs
-          (name: nixosConfiguration: nixosConfiguration.config.system.build.images.iso)
-          isoConfigurations;
+          isoImages = lib.mapAttrs (
+            name: nixosConfiguration: nixosConfiguration.config.system.build.images.iso
+          ) isoConfigurations;
 
-        # packages listed in ./packages.nix pulled from overlays
-        pkgs = import flakes.nixpkgs {
-          localSystem.system = system;
-          overlays = lib.attrValues flakes.self.overlays;
-        };
+          # packages listed in ./packages.nix pulled from overlays
+          pkgs = import flakes.nixpkgs {
+            localSystem.system = system;
+            overlays = lib.attrValues flakes.self.overlays;
+          };
 
-        packages = lib.listToAttrs (map (name: {
-          inherit name;
-          value = pkgs.${name};
-        }) (import ./packages.nix));
-      in
+          packages = lib.listToAttrs (
+            map (name: {
+              inherit name;
+              value = pkgs.${name};
+            }) (import ./packages.nix)
+          );
+        in
         isoImages // packages
-    );
-  };
+      );
+    };
 }

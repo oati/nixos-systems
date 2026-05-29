@@ -2,7 +2,8 @@
   user,
   lib,
   ...
-}: {
+}:
+{
   home-manager.users.${user} = {
     programs.niri = {
       settings = {

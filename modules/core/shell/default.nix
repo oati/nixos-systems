@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./completions.nix
     ./aliases.nix
@@ -39,7 +40,10 @@
 
     home.shell.enableNushellIntegration = true;
 
-    programs.helix.settings.editor.shell = ["nu" "-c"];
+    programs.helix.settings.editor.shell = [
+      "nu"
+      "-c"
+    ];
   };
 
   environment.variables = {

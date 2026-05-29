@@ -5,7 +5,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   users.users.${user} = {
     hashedPasswordFile = lib.mkForce null;
     initialPassword = "";

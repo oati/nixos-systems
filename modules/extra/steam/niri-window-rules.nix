@@ -1,11 +1,12 @@
-{user, ...}: {
+{ user, ... }:
+{
   home-manager.users.${user} = {
     programs.niri.settings.window-rules = [
       # steam notifications
       {
         matches = [
-          {app-id = "steam";}
-          {title = "^notificationtoasts_\\d+_desktop$";}
+          { app-id = "steam"; }
+          { title = "^notificationtoasts_\\d+_desktop$"; }
         ];
 
         default-floating-position = {

@@ -2,10 +2,12 @@
   user,
   lib,
   ...
-}: let
+}:
+let
   # uuidgen | tr -d '-'
   machine-id = "45e552cb2a7f4aefaab49a8fe0d44d34";
-in {
+in
+{
   networking = {
     hostName = "nixos-iso";
     hostId = lib.substring 0 8 machine-id;

@@ -1,4 +1,5 @@
-{user, ...}: {
+{ user, ... }:
+{
   home-manager.users.${user} = {
     # https://github.com/ahrm/sioyek/blob/development/pdf_viewer/keys.config
     # https://sioyek-documentation.readthedocs.io/en/latest/commands.html
@@ -18,17 +19,32 @@
 
       # selection
       keyboard_select = "s";
-      copy = ["y" "<C-c>"];
+      copy = [
+        "y"
+        "<C-c>"
+      ];
 
       # visual mark
       enter_visual_mark_mode = "v";
       focus_text = "V";
-      move_visual_mark_up = ["<up>" "<tab>"];
-      move_visual_mark_down = ["<down>" "<space>"];
+      move_visual_mark_up = [
+        "<up>"
+        "<tab>"
+      ];
+      move_visual_mark_down = [
+        "<down>"
+        "<space>"
+      ];
 
       # basic movement
-      move_up = ["<up>" "<tab>"];
-      move_down = ["<down>" "<space>"];
+      move_up = [
+        "<up>"
+        "<tab>"
+      ];
+      move_down = [
+        "<down>"
+        "<space>"
+      ];
       move_left = "<right>";
       move_right = "<left>";
 

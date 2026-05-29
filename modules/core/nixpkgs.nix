@@ -1,11 +1,14 @@
-{flakes, ...}: {
+{ flakes, ... }:
+{
   nixpkgs = {
     overlays = [
       flakes.nur.overlays.default
       (
-        final: prev: let
+        final: prev:
+        let
           packages = flake: flake.packages.${final.stdenv.hostPlatform.system};
-        in {
+        in
+        {
           inherit (packages flakes.home-manager) home-manager;
           inherit (packages flakes.disko) disko;
           inherit (packages flakes.delta-shell) delta-shell;

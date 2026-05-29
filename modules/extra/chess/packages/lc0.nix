@@ -66,15 +66,18 @@ stdenv.mkDerivation (finalAttrs: {
 
     # BLAS backend
     "-Ddnnl=true"
-    (let
-      onednn-combined = symlinkJoin {
-        name = "onednn-combined";
-        paths = [
-          onednn
-          onednn.dev
-        ];
-      };
-    in "-Ddnnl_dir=${onednn-combined}")
+    (
+      let
+        onednn-combined = symlinkJoin {
+          name = "onednn-combined";
+          paths = [
+            onednn
+            onednn.dev
+          ];
+        };
+      in
+      "-Ddnnl_dir=${onednn-combined}"
+    )
 
     # ONNX backend
     "-Donnx=true"

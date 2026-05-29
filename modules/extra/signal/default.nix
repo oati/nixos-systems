@@ -3,22 +3,24 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   package = pkgs.signal-desktop;
-in {
+in
+{
   home-manager.users.${user} = {
-    home.packages = [package];
+    home.packages = [ package ];
 
     # autostart
     systemd.user.services.signal-desktop = {
       Unit = {
         Description = "Signal Client";
-        PartOf = ["graphical-session.target"];
+        PartOf = [ "graphical-session.target" ];
         After = [
           "graphical-session.target"
           "dbus.service"
         ];
-        Wants = ["dbus.service"];
+        Wants = [ "dbus.service" ];
       };
       Service = {
         ExecStartPre = "${pkgs.coreutils}/bin/sleep 2";
@@ -27,7 +29,7 @@ in {
         RestartSec = "5s";
       };
       Install = {
-        WantedBy = ["graphical-session.target"];
+        WantedBy = [ "graphical-session.target" ];
       };
     };
   };

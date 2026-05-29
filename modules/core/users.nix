@@ -4,7 +4,8 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   services.userborn.enable = true;
 
   users = {
@@ -14,7 +15,7 @@
       description = "Erin";
       isNormalUser = true;
       # sudoer
-      extraGroups = ["wheel"];
+      extraGroups = [ "wheel" ];
       # mkpasswd -m yescrypt -s
       hashedPasswordFile = "/var/lib/secrets/${user}-password";
     };
@@ -27,19 +28,15 @@
 
   # sudo alias for run0
   environment.systemPackages = [
-    (
-      pkgs.writeScriptBin "sudo" ''
-        #!${lib.getExe pkgs.dash}
-        exec run0 "$@"
-      ''
-    )
+    (pkgs.writeScriptBin "sudo" ''
+      #!${lib.getExe pkgs.dash}
+      exec run0 "$@"
+    '')
   ];
 
   intransience.datastores.system.files = [
     "/var/lib/secrets"
   ];
 
-  fileSystems."/var/lib/secrets" =
-    lib.mkIf config.intransience.enable
-    {neededForBoot = true;};
+  fileSystems."/var/lib/secrets" = lib.mkIf config.intransience.enable { neededForBoot = true; };
 }

@@ -2,7 +2,8 @@
   user,
   pkgs,
   ...
-}: {
+}:
+{
   home-manager.users.${user} = {
     programs.gpg.enable = true;
 
@@ -15,7 +16,7 @@
     };
 
     # needed for pinentry-gnome3
-    home.packages = [pkgs.gcr];
+    home.packages = [ pkgs.gcr ];
   };
 
   intransience.datastores.home.users.${user}.dirs = [

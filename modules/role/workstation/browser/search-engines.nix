@@ -1,4 +1,5 @@
-{user, ...}: {
+{ user, ... }:
+{
   home-manager.users.${user} = {
     programs.librewolf = {
       # https://mozilla.github.io/policy-templates/
@@ -55,51 +56,53 @@
 
             wikipedia-en = {
               name = "Wikipedia";
-              urls = [{template = "https://en.wikipedia.org/wiki/Special:Search/{searchTerms}";}];
+              urls = [ { template = "https://en.wikipedia.org/wiki/Special:Search/{searchTerms}"; } ];
               iconMapObj."48" = "https://en.wikipedia.org/favicon.ico";
-              definedAliases = ["w"];
+              definedAliases = [ "w" ];
             };
 
             wiktionary = {
               name = "Wiktionary";
-              urls = [{template = "https://en.wiktionary.org/wiki/Special:Search/{searchTerms}";}];
+              urls = [ { template = "https://en.wiktionary.org/wiki/Special:Search/{searchTerms}"; } ];
               iconMapObj."48" = "https://en.wiktionary.org/favicon.ico";
-              definedAliases = ["wk"];
+              definedAliases = [ "wk" ];
             };
 
             google-scholar = {
               name = "Google Scholar";
-              urls = [{template = "https://scholar.google.com/scholar?q={searchTerms}";}];
+              urls = [ { template = "https://scholar.google.com/scholar?q={searchTerms}"; } ];
               iconMapObj."48" = "https://scholar.google.com/favicon.ico";
-              definedAliases = ["gs"];
+              definedAliases = [ "gs" ];
             };
 
             wolfram-alpha = {
               name = "Wolfram Alpha";
-              urls = [{template = "https://wolframalpha.com/input?i={searchTerms}";}];
+              urls = [ { template = "https://wolframalpha.com/input?i={searchTerms}"; } ];
               iconMapObj."48" = "https://wolfram.com/favicon.ico";
-              definedAliases = ["wa"];
+              definedAliases = [ "wa" ];
             };
 
             youtube = {
               name = "Youtube";
-              urls = [{template = "https://youtube.com/results?search_query={searchTerms}";}];
+              urls = [ { template = "https://youtube.com/results?search_query={searchTerms}"; } ];
               iconMapObj."16" = "https://youtube.com/favicon.ico";
-              definedAliases = ["yt"];
+              definedAliases = [ "yt" ];
             };
 
             nixpkgs = {
               name = "Nixpkgs";
-              urls = [{template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";}];
+              urls = [ { template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}"; } ];
               iconMapObj."64" = "https://nixos.org/favicon.ico";
-              definedAliases = ["np"];
+              definedAliases = [ "np" ];
             };
 
             home-manager = {
               name = "Home Manager";
-              urls = [{template = "https://home-manager-options.extranix.com/?release=master&query={searchTerms}";}];
+              urls = [
+                { template = "https://home-manager-options.extranix.com/?release=master&query={searchTerms}"; }
+              ];
               iconMapObj."64" = "https://nixos.org/favicon.ico";
-              definedAliases = ["hm"];
+              definedAliases = [ "hm" ];
             };
           };
         };

@@ -2,15 +2,17 @@
   user,
   pkgs,
   ...
-}: let
+}:
+let
   package = pkgs.osu-lazer-bin;
-in {
+in
+{
   imports = [
     ./niri-window-rules.nix
   ];
 
   home-manager.users.${user} = {
-    home.packages = [package];
+    home.packages = [ package ];
   };
 
   intransience.datastores.games.users.${user}.dirs = [

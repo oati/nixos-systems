@@ -1,4 +1,5 @@
-{user, ...}: {
+{ user, ... }:
+{
   services.netbird = {
     ui.enable = false;
 
@@ -9,7 +10,7 @@
     };
   };
 
-  users.users.${user}.extraGroups = ["netbird"];
+  users.users.${user}.extraGroups = [ "netbird" ];
 
   intransience.datastores.system.dirs = [
     "/var/lib/netbird"

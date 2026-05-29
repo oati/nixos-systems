@@ -36,17 +36,15 @@
       ./modules/extra/signal
     ];
 
-    erin-pc =
-      erin-pc-small
-      ++ [
-        ./modules/extra/anytype
-        ./modules/extra/steam
-        ./modules/extra/osu-lazer
-        ./modules/extra/iloader
-        ./modules/extra/chirp
-        ./modules/extra/chess
-        ./modules/extra/baduk
-        # ./modules/extra/vmware
-      ];
+    erin-pc = erin-pc-small ++ [
+      ./modules/extra/anytype
+      ./modules/extra/steam
+      ./modules/extra/osu-lazer
+      ./modules/extra/iloader
+      ./modules/extra/chirp
+      ./modules/extra/chess
+      ./modules/extra/baduk
+      # ./modules/extra/vmware
+    ];
   };
 }

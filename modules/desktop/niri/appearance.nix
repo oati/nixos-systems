@@ -1,4 +1,5 @@
-{user, ...}: {
+{ user, ... }:
+{
   home-manager.users.${user} = {
     programs.niri = {
       settings = {
@@ -11,14 +12,16 @@
 
         window-rules = [
           {
-            geometry-corner-radius = let
-              radius = 15.;
-            in {
-              bottom-left = radius;
-              bottom-right = radius;
-              top-left = radius;
-              top-right = radius;
-            };
+            geometry-corner-radius =
+              let
+                radius = 15.;
+              in
+              {
+                bottom-left = radius;
+                bottom-right = radius;
+                top-left = radius;
+                top-right = radius;
+              };
             clip-to-geometry = true;
           }
         ];
@@ -28,15 +31,17 @@
 
           gaps = 8;
 
-          struts = let
-            verticalStruts = -4;
-            horizontalStruts = -2;
-          in {
-            top = verticalStruts;
-            bottom = verticalStruts;
-            left = horizontalStruts;
-            right = horizontalStruts;
-          };
+          struts =
+            let
+              verticalStruts = -4;
+              horizontalStruts = -2;
+            in
+            {
+              top = verticalStruts;
+              bottom = verticalStruts;
+              left = horizontalStruts;
+              right = horizontalStruts;
+            };
 
           focus-ring.enable = false;
 

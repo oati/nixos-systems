@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   intransience = {
     enable = true;
 

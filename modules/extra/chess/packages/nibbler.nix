@@ -21,7 +21,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   dontBuild = true;
 
-  nativeBuildInputs = [makeWrapper];
+  nativeBuildInputs = [ makeWrapper ];
 
   installPhase = ''
     mkdir -p $out/share $out/bin

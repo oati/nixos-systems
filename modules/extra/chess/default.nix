@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./packages
   ];
@@ -18,7 +19,7 @@
 
     xdg.configFile."Nibbler/engines.json".text = builtins.toJSON {
       ${builtins.unsafeDiscardStringContext (lib.getExe pkgs.lc0)} = {
-        args = [];
+        args = [ ];
         options = {
           # https://lczero.org/dev/wiki/networks/
           WeightsFile = pkgs.fetchurl {

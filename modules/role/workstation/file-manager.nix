@@ -2,12 +2,14 @@
   user,
   pkgs,
   ...
-}: let
+}:
+let
   package = pkgs.nautilus;
-in {
+in
+{
   home-manager.users.${user} = {
-    home.packages = [package];
+    home.packages = [ package ];
 
-    xdg.mimeApps.defaultApplicationPackages = [package];
+    xdg.mimeApps.defaultApplicationPackages = [ package ];
   };
 }
