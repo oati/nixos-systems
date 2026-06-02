@@ -74,7 +74,7 @@
               resignThreshold = -0.99;
               resignConsecTurns = 20;
               resignMinScoreDifference = 40;
-              resingMinMovesPerBoardArea = 0.4;
+              resignMinMovesPerBoardArea = 0.4;
               maxVisits = 40;
               numSearchThreads = 1;
 
@@ -103,6 +103,11 @@
               );
 
             settings = {
+              "app.enable_hardware_acceleration" = true;
+              "app.startup_check_updates" = false;
+
+              "board.analysis_type" = "scoreLead";
+
               "engines.list" = [
                 {
                   name = "KataGo";
@@ -114,24 +119,28 @@
                   ];
                 }
               ]
-              ++
-                map
-                  (rank: {
+              ++ (
+                let
+                  katagoHumanStyle = rank: {
                     name = "KataGo Human-style ${rank}";
                     path = lib.getExe pkgs.katago;
                     args = lib.concatStringsSep " " [
                       "gtp"
                       "-model ${katago-network}"
                       "-human-model ${katago-human-network}"
-                      "-config ${writeConfig "katago-human-config" (katago-human-config rank)}"
+                      "-config ${writeConfig "katago-human-${rank}-config" (katago-human-config rank)}"
                     ];
-                  })
+                  };
+                in
+                map katagoHumanStyle
                   # katago human-style play ranks
                   [
+                    "15k"
                     "10k"
                     "5k"
                     "1d"
-                  ];
+                  ]
+              );
             };
           in
           lib.hm.dag.entryAfter [ "writeBoundary" ]
