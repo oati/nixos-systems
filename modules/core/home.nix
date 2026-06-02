@@ -27,7 +27,6 @@
           in
           {
             enable = true;
-            createDirectories = true;
             desktop = null;
             documents = "${homeDir}/documents";
             download = "${homeDir}/downloads";
@@ -38,8 +37,6 @@
             publicShare = null;
             templates = null;
           };
-
-        mimeApps.enable = true;
       };
     };
 

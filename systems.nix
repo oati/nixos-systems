@@ -17,7 +17,7 @@
   machines = rec {
     erin-pc-small = [
       ./modules/hardware/framework-13-ryzen-ai-300
-      ./modules/filesystems/tmpfs-zfs
+      ./modules/filesystems/tmpfs-zfs-workstation
 
       ./modules/hardware/peripherals/portable-monitor
       ./modules/hardware/peripherals/drawing-tablet

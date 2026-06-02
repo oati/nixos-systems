@@ -7,6 +7,7 @@
 {
   imports = [
     ../common/vpn
+    ./xdg.nix
     ./fonts.nix
     ./theme.nix
     ./networking.nix
