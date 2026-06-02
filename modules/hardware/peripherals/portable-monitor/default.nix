@@ -30,7 +30,7 @@ in
   };
 
   # virtual console
-  services.kmscon.extraConfig = "font-dpi=${toString (96 * scale)}";
+  services.kmscon.config.font-dpi = builtins.floor (96 * scale);
 
   # DDC/CI
   services.ddccontrol = {
