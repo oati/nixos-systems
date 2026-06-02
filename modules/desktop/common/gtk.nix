@@ -19,6 +19,9 @@
           package = pkgs.adwaita-icon-theme;
           name = "Adwaita";
         };
+
+        gtk4.theme = config.gtk.theme;
+        gtk4.iconTheme = config.gtk.iconTheme;
       };
 
       dconf.settings = {
