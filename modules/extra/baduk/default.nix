@@ -59,7 +59,7 @@
               # rank 20k to 9d
               humanSLProfile = "rank_${rank}";
               humanSLChosenMoveProp = 1.0;
-              humanSLChosenMoveIgnorePass = false;
+              humanSLChosenMoveIgnorePass = true;
               humanSLChosenMovePiklLambda = 100000000;
 
               chosenMoveTemperatureEarly = 0.85;
@@ -70,16 +70,17 @@
               chosenMoveSubtract = 0;
               chosenMovePrune = 0;
 
-              allowResignation = "true";
+              allowResignation = true;
               resignThreshold = -0.99;
               resignConsecTurns = 20;
               resignMinScoreDifference = 40;
               resignMinMovesPerBoardArea = 0.4;
+
               maxVisits = 40;
               numSearchThreads = 1;
 
-              delayMoveScale = 2.0;
-              delayMoveMax = 10.0;
+              delayMoveScale = 1.0;
+              delayMoveMax = 4.0;
 
               ignorePreRootHistory = false;
               analysisIgnorePreRootHistory = false;
