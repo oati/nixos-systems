@@ -42,6 +42,7 @@
       ./modules/extra/osu-lazer
       ./modules/extra/iloader
       ./modules/extra/chirp
+      ./modules/extra/prusa-slicer
       ./modules/extra/chess
       ./modules/extra/baduk
       # ./modules/extra/vmware
