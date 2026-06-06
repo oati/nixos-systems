@@ -1,6 +1,15 @@
 { user, ... }:
 {
   home-manager.users.${user} = {
+    programs.helix.languages = {
+      language = [
+        {
+          name = "python";
+          auto-format = true;
+        }
+      ];
+    };
+
     programs.uv = {
       enable = true;
 

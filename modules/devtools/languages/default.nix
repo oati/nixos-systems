@@ -12,26 +12,24 @@
   ];
 
   home-manager.users.${user} = {
-    programs.helix = {
-      languages = {
-        language = [
-          {
-            name = "toml";
-            auto-format = true;
-          }
-          {
-            name = "css";
-            language-servers = [
-              "vscode-css-language-server"
-              "uwu-colors"
-            ];
-          }
-        ];
+    programs.helix.languages = {
+      language = [
+        {
+          name = "toml";
+          auto-format = true;
+        }
+        {
+          name = "css";
+          language-servers = [
+            "vscode-css-language-server"
+            "uwu-colors"
+          ];
+        }
+      ];
 
-        language-server = {
-          # color codes
-          uwu-colors.command = "uwu_colors";
-        };
+      language-server = {
+        # color codes
+        uwu-colors.command = "uwu_colors";
       };
     };
 
