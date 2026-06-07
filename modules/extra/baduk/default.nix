@@ -107,6 +107,8 @@
               "app.enable_hardware_acceleration" = true;
               "app.startup_check_updates" = false;
 
+              "game.default_komi" = 7.5;
+
               "board.analysis_type" = "scoreLead";
 
               "engines.list" = [
