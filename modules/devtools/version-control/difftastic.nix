@@ -6,6 +6,15 @@
 
       git.enable = true;
       jujutsu.enable = true;
+
+      options = {
+        override-binary = [
+          # cad
+          "*.dxf"
+          "*.stp"
+          "*.step"
+        ];
+      };
     };
   };
 }
