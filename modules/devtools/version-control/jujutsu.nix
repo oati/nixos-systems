@@ -15,15 +15,5 @@
           };
         };
       };
-
-      programs.difftastic = {
-        enable = true;
-        jujutsu.enable = true;
-      };
-
-      programs.mergiraf = {
-        enable = true;
-        enableJujutsuIntegration = true;
-      };
     };
 }
