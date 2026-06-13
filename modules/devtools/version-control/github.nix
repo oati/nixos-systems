@@ -11,4 +11,8 @@
       };
     };
   };
+
+  intransience.datastores.home.users.${user}.files = [
+    ".config/gh/hosts.yml"
+  ];
 }
