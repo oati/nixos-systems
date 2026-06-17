@@ -46,6 +46,8 @@
     ];
   };
 
+  # needed to override default PAGER
+  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/programs/environment.nix
   environment.variables = {
     PAGER = "moor";
     MOOR = "-terminal-fg";

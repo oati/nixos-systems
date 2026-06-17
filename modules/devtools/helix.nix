@@ -31,6 +31,8 @@
       ];
     };
 
+  # needed to override default EDITOR
+  # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/programs/environment.nix
   environment.variables = {
     EDITOR = "hx";
     VISUAL = "hx";
