@@ -13,6 +13,18 @@
             default-command = "status";
             pager = "moor -quit-if-one-screen";
           };
+
+          aliases = {
+            init = [
+              "git"
+              "init"
+            ];
+
+            clone = [
+              "git"
+              "clone"
+            ];
+          };
         };
       };
     };
