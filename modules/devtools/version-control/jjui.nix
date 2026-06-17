@@ -1,4 +1,4 @@
-{ user, ... }:
+{ user, config, ... }:
 {
   home-manager.users.${user} = {
     programs.jjui = {
@@ -47,4 +47,8 @@
 
     stylix.targets.jjui.enable = true;
   };
+
+  environment.systemPackages = [
+    config.home-manager.users.${user}.programs.jjui.package
+  ];
 }

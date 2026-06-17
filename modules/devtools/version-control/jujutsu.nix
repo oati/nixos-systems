@@ -1,4 +1,4 @@
-{ user, ... }:
+{ user, config, ... }:
 {
   home-manager.users.${user} =
     { config, ... }:
@@ -16,4 +16,8 @@
         };
       };
     };
+
+  environment.systemPackages = [
+    config.home-manager.users.${user}.programs.jujutsu.package
+  ];
 }
