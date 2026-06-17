@@ -1,4 +1,4 @@
-{ user, ... }:
+{ user, config, ... }:
 {
   home-manager.users.${user} =
     { config, ... }:
@@ -30,6 +30,10 @@
         config.programs.helix.package
       ];
     };
+
+  environment.systemPackages = [
+    config.home-manager.users.${user}.programs.helix.package
+  ];
 
   # needed to override default EDITOR
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/programs/environment.nix
