@@ -46,6 +46,10 @@
     };
   };
 
+  intransience.datastores.cache.users.${user}.dirs = [
+    ".cache/nix"
+  ];
+
   intransience.datastores.home.users.${user}.files = [
     ".local/share/nix/trusted-settings.json"
   ];
