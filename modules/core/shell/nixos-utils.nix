@@ -59,17 +59,7 @@
 
           # delete all generations except current
           def "nixos-generations delete all" [] {
-            let generations: list<int> = (
-              nixos-generations list | where not current | get generation
-            )
-
-            if ($generations | is-not-empty) {
-              run0 nix-env -p /nix/var/nix/profiles/system --delete-generations ...$generations
-            }
-
-            $generations | each { |generation|
-              $'/boot/loader/entries/nixos-generation-($generation).conf'
-            } | run0 rm -f ...$in
+            nixos-generations delete 0..
           }
         '';
     };
