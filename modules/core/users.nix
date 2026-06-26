@@ -22,6 +22,7 @@
   };
 
   security.sudo.enable = false;
+  security.run0.enable = true;
 
   # no password for wheel
   security.run0.wheelNeedsPassword = false;
