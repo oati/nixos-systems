@@ -9,6 +9,7 @@
           packages = flake: flake.packages.${final.stdenv.hostPlatform.system};
         in
         {
+          inherit (packages flakes.determinate-nix) nix;
           inherit (packages flakes.home-manager) home-manager;
           inherit (packages flakes.disko) disko;
           inherit (packages flakes.delta-shell) delta-shell;

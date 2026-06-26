@@ -17,18 +17,18 @@
       use-xdg-base-directories = true;
       preallocate-contents = true;
       sync-before-registering = true;
-      # determinate nix
-      # lazy-trees = true;
-      # eval-cores = 0;
 
       log-lines = 50;
 
       auto-optimise-store = true;
       keep-outputs = true;
-      # show-trace = true;
       trusted-users = [ "@wheel" ];
 
       commit-lock-file-summary = "flake.lock: update";
+
+      # determinate nix
+      lazy-trees = true;
+      eval-cores = 0;
     };
 
     # extraOptions = "";
