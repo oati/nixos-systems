@@ -52,9 +52,17 @@
               run0 nix-env -p /nix/var/nix/profiles/system --delete-generations ...$generations
             }
 
-            $generations | each { |generation|
-              $'/boot/loader/entries/nixos-generation-($generation).conf'
-            } | run0 rm -f ...$in
+            let boot_entries = run0 find /boot/loader/entries/ | lines
+              | where (str ends-with '.conf')
+              | where (path basename | str starts-with 'nixos-')
+              | where {
+                let gen: int = run0 cat $in | lines
+                  | parse --regex '^version Generation (\d+)'
+                  | get capture0 | into int | get 0
+                $gen in $generations
+              }
+
+            run0 rm ...$boot_entries
           }
 
           # delete all generations except current
