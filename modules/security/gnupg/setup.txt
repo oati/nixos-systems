@@ -14,6 +14,10 @@ gpg --expert --edit-key <userid>
 - 1 year expiry
 - save
 
+# pam gnupg
+# copy keygrip for encryption key [E] to ~/.pam-gnupg
+gpg --list-keys --with-keygrip
+
 # extend key expiration
 gpg --expert --edit-key <userid>
 - key <n>

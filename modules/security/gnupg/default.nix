@@ -4,6 +4,10 @@
   ...
 }:
 {
+  imports = [
+    ./pam.nix
+  ];
+
   home-manager.users.${user} = {
     programs.gpg.enable = true;
 

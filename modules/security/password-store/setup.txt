@@ -1,4 +1,4 @@
-pass init (gpg --list-keys --with-colons <userid> | parse --regex "fpr:+(.*):" | first | get capture0)
+pass init (gpg --list-keys --with-colons <user> | parse --regex "fpr:+(.*):" | first | get capture0)
 
 pass git init
 pass git remote add origin <remote>

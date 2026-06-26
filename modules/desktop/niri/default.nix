@@ -22,17 +22,9 @@
   niri-flake.cache.enable = false;
 
   services.displayManager = {
-    gdm = {
-      enable = true;
-      # banner = "";
-    };
+    gdm.enable = true;
 
     defaultSession = "niri";
-
-    autoLogin = {
-      enable = true;
-      inherit user;
-    };
   };
 
   programs.niri = {
