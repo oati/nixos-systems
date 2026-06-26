@@ -2,14 +2,14 @@
 let
   package = pkgs.symlinkJoin {
     pname = "kicad-custom";
-    inherit (pkgs.kicad) version;
+    inherit (pkgs.kicad) version meta;
     paths = [ pkgs.kicad ];
 
     # clean up desktop entries
     postBuild = ''
-      rm $out/share/applications
-      mkdir $out/share/applications
-      cp ${pkgs.kicad}/share/applications/org.kicad.kicad.desktop $out/share/applications
+      rm -r $out/share/applications
+      install -Dm644 -t $out/share/applications \
+        ${pkgs.kicad}/share/applications/org.kicad.kicad.desktop
     '';
   };
 in
