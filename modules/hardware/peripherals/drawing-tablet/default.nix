@@ -1,9 +1,5 @@
 { user, ... }:
 {
-  imports = [
-    ./packages
-  ];
-
   hardware.opentabletdriver.enable = true;
 
   hardware.uinput.enable = true;
