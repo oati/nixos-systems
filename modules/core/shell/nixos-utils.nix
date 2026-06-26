@@ -57,8 +57,8 @@
               | where (path basename | str starts-with 'nixos-')
               | where {
                 let gen: int = run0 cat $in | lines
-                  | parse --regex '^version Generation (\d+)'
-                  | get capture0 | into int | get 0
+                  | parse --regex '^version Generation (\d+)' | first
+                  | get capture0 | into int
                 $gen in $generations
               }
 
