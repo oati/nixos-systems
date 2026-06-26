@@ -15,15 +15,16 @@
       programs.sioyek = {
         enable = true;
 
-        package = pkgs.sioyek.overrideAttrs (
-          finalAttrs: prevAttrs: {
-            name = "sioyek-no-default-keys";
-            postInstall = prevAttrs.postInstall + ''
-              rm $out/etc/keys.config
-              touch $out/etc/keys.config
-            '';
-          }
-        );
+        package = pkgs.symlinkJoin {
+          pname = "sioyek-no-default-keys";
+          inherit (pkgs.sioyek) version meta;
+          paths = [ pkgs.sioyek ];
+
+          postBuild = ''
+            rm $out/etc/keys.config
+            touch $out/etc/keys.config
+          '';
+        };
 
         # https://sioyek-documentation.readthedocs.io/en/latest/configuration.html
         config = {
