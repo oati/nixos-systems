@@ -15,9 +15,6 @@
               "nixd"
               "uwu-colors"
             ];
-            formatter = {
-              command = "nixfmt";
-            };
             auto-format = true;
           }
         ];
