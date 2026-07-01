@@ -1,6 +1,6 @@
 {
   user,
-  lib,
+  pkgs,
   ...
 }:
 {
@@ -10,21 +10,20 @@
         environment = {
           QT_QPA_PLATFORM = "wayland";
         };
+
+        includes = [
+          (toString (
+            pkgs.writeText "extra-config.kdl"
+              # kdl
+              ''
+                // disable recent windows keybinds
+                recent-windows {
+                  off
+                }
+              ''
+          ))
+        ];
       };
     };
-
-    # workaround to add custom configs
-    xdg.configFile."niri/config.kdl".text =
-      # kdl
-      ''
-        include "generated-config.kdl"
-
-        // disable recent windows keybinds
-        recent-windows {
-          off
-        }
-      '';
-
-    xdg.configFile.niri-config.target = lib.mkForce "niri/generated-config.kdl";
   };
 }
