@@ -1,8 +1,4 @@
-{
-  user,
-  pkgs,
-  ...
-}:
+{ user, ... }:
 {
   home-manager.users.${user} = {
     programs.niri = {
@@ -10,19 +6,6 @@
         environment = {
           QT_QPA_PLATFORM = "wayland";
         };
-
-        includes = [
-          (toString (
-            pkgs.writeText "extra-config.kdl"
-              # kdl
-              ''
-                // disable recent windows keybinds
-                recent-windows {
-                  off
-                }
-              ''
-          ))
-        ];
       };
     };
   };
