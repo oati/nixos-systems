@@ -8,7 +8,6 @@
   imports = [
     ../common/gtk.nix
     ../common/qt.nix
-    ./config.nix
     ./appearance.nix
     ./behavior.nix
     ./input-devices.nix

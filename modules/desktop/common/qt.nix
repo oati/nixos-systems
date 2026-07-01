@@ -6,5 +6,9 @@
       platformTheme.name = "gtk3";
       style.name = "adwaita-dark";
     };
+
+    home.sessionVariables = {
+      QT_QPA_PLATFORM = "wayland";
+    };
   };
 }
