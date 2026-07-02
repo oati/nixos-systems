@@ -2,7 +2,7 @@
   lib,
   buildNpmPackage,
   fetchFromGitHub,
-  makeWrapper,
+  makeBinaryWrapper,
   electron,
   makeDesktopItem,
   copyDesktopItems,
@@ -23,7 +23,7 @@ buildNpmPackage (finalAttrs: {
   npmDepsHash = "sha256-RPFhBe7APSYK58pRcTraep5oLYgT9hWP742wFsx1zwA=";
 
   nativeBuildInputs = [
-    makeWrapper
+    makeBinaryWrapper
     copyDesktopItems
   ];
 

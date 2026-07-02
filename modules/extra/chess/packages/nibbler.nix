@@ -3,7 +3,7 @@
   stdenv,
   fetchFromGitHub,
   electron,
-  makeWrapper,
+  makeBinaryWrapper,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "nibbler";
@@ -21,7 +21,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   dontBuild = true;
 
-  nativeBuildInputs = [ makeWrapper ];
+  nativeBuildInputs = [ makeBinaryWrapper ];
 
   installPhase = ''
     mkdir -p $out/share $out/bin

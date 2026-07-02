@@ -27,7 +27,7 @@
           name = "carapace-wrapped";
           inherit (pkgs.carapace) version meta;
           paths = [ pkgs.carapace ];
-          nativeBuildInputs = [ pkgs.makeWrapper ];
+          nativeBuildInputs = [ pkgs.makeBinaryWrapper ];
           postBuild = lib.concatStringsSep " " (
             [ "wrapProgram $out/bin/carapace" ]
             ++ (lib.mapAttrsToList (name: value: "--set ${name} '${toString value}'") settings)
