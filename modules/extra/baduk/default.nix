@@ -107,10 +107,15 @@
               "app.enable_hardware_acceleration" = true;
               "app.startup_check_updates" = false;
 
+              # rules
+              "scoring.method" = "area";
               "game.default_komi" = 7.5;
 
+              # analysis
+              "view.winrategraph_invert" = true;
               "board.analysis_type" = "scoreLead";
 
+              # engines
               "engines.list" = [
                 {
                   name = "KataGo";
