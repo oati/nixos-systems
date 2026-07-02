@@ -53,9 +53,8 @@
                     logSearchInfo = false;
 
                     # analysis
-                    reportAnalysisWinratesAs = "SIDETOMOVE";
                     analysisIgnorePreRootHistory = true;
-                    analysisWideRootNoise = 0.1;
+                    analysisWideRootNoise = 0.04;
 
                     # tune with katago benchmark
                     numSearchThreads = 5;
