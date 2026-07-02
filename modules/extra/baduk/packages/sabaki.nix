@@ -9,18 +9,18 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "sabaki";
-  version = "git-950c5d9";
+  version = "git-848745b";
 
   src = fetchFromGitHub {
     owner = "SabakiHQ";
     repo = "Sabaki";
-    rev = "950c5d9f6b4eeb0d9090aff6fe91c42b0221632e";
-    hash = "sha256-3VzA/YmGSheBvY43tyNByqC0KPESEQd726TIt4O2Y60=";
+    rev = "848745bdcc85183eb379fa57f0cd5499cdf90af7";
+    hash = "sha256-3GY4S1pgbmKWkgr9nLhkFPRGo1JxXPfn6G6vD3vq8tQ=";
   };
 
   __structuredAttrs = true;
 
-  npmDepsHash = "sha256-RPFhBe7APSYK58pRcTraep5oLYgT9hWP742wFsx1zwA=";
+  npmDepsHash = "sha256-5QIhV2XbnSEXQBG566pxanDymQ3Xr3PxarhVxDXIYHk=";
 
   nativeBuildInputs = [
     makeBinaryWrapper
