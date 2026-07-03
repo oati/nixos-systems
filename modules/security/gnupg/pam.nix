@@ -1,3 +1,6 @@
+# unlock gpg keys on login
+# signal-desktop uses secret service on startup
+
 { user, ... }:
 {
   home-manager.users.${user} = {
@@ -6,7 +9,6 @@
     '';
   };
 
-  # unlock gpg keys on login
   security.pam.services.login.gnupg = {
     enable = true;
     noAutostart = true;
