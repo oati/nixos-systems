@@ -38,6 +38,7 @@
 
     erin-pc = erin-pc-small ++ [
       ./modules/extra/anytype
+      ./modules/extra/claude-code
       ./modules/extra/steam
       ./modules/extra/osu-lazer
       ./modules/extra/iloader
