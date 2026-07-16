@@ -16,7 +16,7 @@
       isNormalUser = true;
       # sudoer
       extraGroups = [ "wheel" ];
-      # mkpasswd -m yescrypt -s
+      # ~> mkpasswd -m yescrypt -s
       hashedPasswordFile = "/var/lib/secrets/${user}-password";
     };
   };

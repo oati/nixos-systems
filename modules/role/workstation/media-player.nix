@@ -37,7 +37,7 @@
         save-position-on-quit = true;
         write-filename-in-watch-later-config = true;
 
-        # mpv --help=watch-later-options
+        # ~> mpv --help=watch-later-options
         watch-later-options = builtins.concatStringsSep "," [
           "start"
           "aid"

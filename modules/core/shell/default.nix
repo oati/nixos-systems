@@ -19,7 +19,7 @@
     programs.nushell = {
       enable = true;
 
-      # config nu --doc
+      # ~> config nu --doc
       settings = {
         show_banner = false;
         history.file_format = "sqlite";

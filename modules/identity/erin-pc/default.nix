@@ -4,7 +4,7 @@
   ...
 }:
 let
-  # uuidgen | tr -d '-'
+  # ~> uuidgen | tr -d '-'
   machine-id = "049d0784b6c24a14943b0e8e100a3e8d";
 in
 {
