@@ -9,6 +9,7 @@ in
 {
   home-manager.users.${user} = {
     # niri output
+    # ~> niri msg outputs
     programs.niri.settings.outputs = {
       "PNP(YMK) EM160TP-A 0x00000001" = {
         focus-at-startup = true;
