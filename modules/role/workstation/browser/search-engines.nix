@@ -46,6 +46,7 @@
             "wolfram-alpha"
             "youtube"
             "nixpkgs"
+            "nixos-options"
             "home-manager"
           ];
 
@@ -94,6 +95,13 @@
               urls = [ { template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}"; } ];
               iconMapObj."64" = "https://nixos.org/favicon.ico";
               definedAliases = [ "np" ];
+            };
+
+            nixos-options = {
+              name = "NixOS Options";
+              urls = [ { template = "https://search.nixos.org/options?channel=unstable&query={searchTerms}"; } ];
+              iconMapObj."64" = "https://nixos.org/favicon.ico";
+              definedAliases = [ "no" ];
             };
 
             home-manager = {
