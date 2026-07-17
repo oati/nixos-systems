@@ -41,7 +41,8 @@
       ./modules/extra/claude-code
       ./modules/extra/steam
       ./modules/extra/osu-lazer
-      ./modules/extra/iloader
+      # disabled because https://github.com/nix-community/bun2nix/issues/98
+      # ./modules/extra/iloader
       ./modules/extra/chirp
       ./modules/extra/kicad
       ./modules/extra/prusa-slicer
