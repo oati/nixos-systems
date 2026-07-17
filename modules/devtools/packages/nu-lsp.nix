@@ -4,16 +4,16 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "nu-lsp";
-  version = "0.113.0";
+  version = "0.114.1";
 
   src = fetchCrate {
     inherit (finalAttrs) pname version;
-    hash = "sha256-6muPnGsX9gM5vWJ2p55pSfI+nY3rji31Sgj/zG7QQU8=";
+    hash = "sha256-3aHcAFhT3AStSov5D4QcwRGUANNqjw8ZztM8EsEaOEU=";
   };
 
   __structuredAttrs = true;
 
-  cargoHash = "sha256-/0Q8ZXTnSiGvj+Lj+RF/88eKJ9SfW9CE0NBPp+Ozi14";
+  cargoHash = "sha256-zf4iSJ1wq7DGBo2+x1OaRBT0NWyjLSPT6l0RojigaDI=";
 
   doCheck = false;
 
