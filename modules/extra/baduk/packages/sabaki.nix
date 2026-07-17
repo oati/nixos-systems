@@ -9,18 +9,18 @@
 }:
 buildNpmPackage (finalAttrs: {
   pname = "sabaki";
-  version = "git-848745b";
+  version = "0.60.2";
 
   src = fetchFromGitHub {
     owner = "SabakiHQ";
     repo = "Sabaki";
-    rev = "848745bdcc85183eb379fa57f0cd5499cdf90af7";
-    hash = "sha256-3GY4S1pgbmKWkgr9nLhkFPRGo1JxXPfn6G6vD3vq8tQ=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-DoP5KZiaf+HYwbmg/im5UawkVwPg1rTVrX3ox5GZc9s=";
   };
 
   __structuredAttrs = true;
 
-  npmDepsHash = "sha256-5QIhV2XbnSEXQBG566pxanDymQ3Xr3PxarhVxDXIYHk=";
+  npmDepsHash = "sha256-KalPH3nGccAnLMGm+mNEmQEt/ucszbYdBoE0VWJqlEk=";
 
   nativeBuildInputs = [
     makeBinaryWrapper
@@ -36,9 +36,13 @@ buildNpmPackage (finalAttrs: {
 
     npm run bundle
 
+    # electron dist needs to be writable for electron fuses
+    cp -r '${electron.dist}' electron-dist
+    chmod -R u+w electron-dist
+
     ./node_modules/.bin/electron-builder \
       --dir \
-      -c.electronDist='${electron.dist}' \
+      -c.electronDist=electron-dist \
       -c.electronVersion='${electron.version}'
 
     runHook postBuild
@@ -49,7 +53,7 @@ buildNpmPackage (finalAttrs: {
 
     mkdir -p $out/share/sabaki
     cp dist/*-unpacked/resources/app.asar $out/share/sabaki
-    install -Dm644 logo.png $out/share/icons/hicolor/scalable/apps/sabaki.png
+    install -Dm644 logo.png $out/share/icons/hicolor/512x512/apps/sabaki.png
 
     makeWrapper '${lib.getExe electron}' "$out/bin/sabaki" \
       --add-flags "$out/share/sabaki/app.asar" \
