@@ -9,8 +9,7 @@
     config.hwaccel = true;
   };
 
-  # TODO: reenable when no longer broken (when stylix >= 26.05)
-  # stylix.targets.kmscon.enable = true;
+  stylix.targets.kmscon.enable = true;
 
   # terminal emulator
   home-manager.users.${user} = {
