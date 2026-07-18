@@ -2,7 +2,10 @@
 {
   fonts = {
     # defaulted to true by many desktop environments
-    enableDefaultPackages = true;
+    # enabling this breaks default font aliases for electron
+    # since Liberation fonts capture hardcoded Arial / Times New Roman defaults
+    # through 30-metric-aliases.conf
+    enableDefaultPackages = false;
 
     # X11 fonts
     fontDir.enable = true;
