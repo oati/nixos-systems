@@ -8,6 +8,10 @@
         theme = "dark";
       };
     };
+
+    programs.git.ignores = [
+      ".claude"
+    ];
   };
 
   intransience.datastores.home.users.${user} = {
