@@ -15,6 +15,10 @@
       pkgs.lexend
       pkgs.nerd-fonts.symbols-only
       pkgs.noto-fonts-color-emoji
+
+      # unicode fallback
+      pkgs.noto-fonts
+      pkgs.noto-fonts-cjk-sans
     ];
 
     fontconfig = {
@@ -36,9 +40,16 @@
             monospace = [
               "Monaspace Neon Frozen"
               "Symbols Nerd Font Mono"
+              "Noto Sans Mono"
             ];
-            sans-serif = [ "Lexend" ];
-            serif = [ "Lexend" ];
+            sans-serif = [
+              "Lexend"
+              "Noto Sans"
+            ];
+            serif = [
+              "Lexend"
+              "Noto Sans"
+            ];
             emoji = [ "Noto Color Emoji" ];
           };
         in
