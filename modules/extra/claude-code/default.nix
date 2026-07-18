@@ -12,6 +12,7 @@
 
   intransience.datastores.home.users.${user} = {
     files = [
+      ".claude.json"
       ".claude/.credentials.json"
     ];
 
