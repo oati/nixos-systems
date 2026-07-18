@@ -15,6 +15,14 @@
   ];
 
   # workaround for https://github.com/openzfs/zfs/issues/10255
-  # amount of RAM that ZFS cache should leave free
-  boot.extraModprobeConfig = "options zfs zfs_arc_sys_free=${toString (4 * 1073741824)}"; # 4 GB
+  boot.kernelParams =
+    let
+      GB = 1024 * 1024 * 1024;
+    in
+    [
+      # ZFS cache size
+      "zfs.zfs_arc_max=${toString (8 * GB)}"
+      # amount of RAM that ZFS cache should leave free
+      "zfs.zfs_arc_sys_free=${toString (4 * GB)}"
+    ];
 }
