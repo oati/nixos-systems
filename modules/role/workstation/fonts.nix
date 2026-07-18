@@ -18,15 +18,34 @@
     ];
 
     fontconfig = {
+      # workaround to use strong bindings for default fonts
+      # defaultFonts uses binding="same"
+      # fontconfig >= 2.18 causes this to inherit weak bindings in some contexts
+      # which ranks below the (incorrect) name-based generic-family guesses in 48-guessfamily.conf
+      # see https://github.com/NixOS/nixpkgs/issues/541553
       defaultFonts = {
-        monospace = [
-          "Monaspace Neon Frozen"
-          "Symbols Nerd Font Mono"
-        ];
-        sansSerif = [ "Lexend" ];
-        serif = [ "Lexend" ];
-        emoji = [ "Noto Color Emoji" ];
+        monospace = [ ];
+        sansSerif = [ ];
+        serif = [ ];
+        emoji = [ ];
       };
+
+      aliases =
+        let
+          defaultFonts = {
+            monospace = [
+              "Monaspace Neon Frozen"
+              "Symbols Nerd Font Mono"
+            ];
+            sans-serif = [ "Lexend" ];
+            serif = [ "Lexend" ];
+            emoji = [ "Noto Color Emoji" ];
+          };
+        in
+        builtins.mapAttrs (name: value: {
+          binding = "strong";
+          prefer = value;
+        }) defaultFonts;
     };
   };
 
