@@ -30,5 +30,14 @@
           color-scheme = "prefer-dark";
         };
       };
+
+      # gtk fonts
+      stylix.targets.gnome = {
+        enable = true;
+        colors.enable = false;
+        image.enable = false;
+        inputs.enable = false;
+        fonts.enable = true;
+      };
     };
 }
