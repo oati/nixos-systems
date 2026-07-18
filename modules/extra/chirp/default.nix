@@ -10,14 +10,12 @@ let
     hash = "sha256-3yQSQ5SacJIIZLkoSZAofU57oAKA4fNoQaC0mMbNIDw=";
   };
 
-  package = pkgs.chirp.overrideAttrs (
-    finalAttrs: prevAttrs: {
-      postInstall = (prevAttrs.postInstall or "") + ''
-        cp ${armel-uv-k1-driver} \
-          $out/${pkgs.python3.sitePackages}/chirp/drivers/F4HWN.py
-      '';
-    }
-  );
+  package = pkgs.chirp.overrideAttrs (prevAttrs: {
+    postInstall = (prevAttrs.postInstall or "") + ''
+      cp ${armel-uv-k1-driver} \
+        $out/${pkgs.python3.sitePackages}/chirp/drivers/F4HWN.py
+    '';
+  });
 in
 {
   home-manager.users.${user} = {
