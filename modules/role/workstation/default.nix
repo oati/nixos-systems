@@ -14,6 +14,7 @@
     ./ssh-client.nix
     ./terminal.nix
     ./file-manager.nix
+    ./image-viewer.nix
     ./media-player.nix
     ./pdf-viewer
     ./email-client.nix
