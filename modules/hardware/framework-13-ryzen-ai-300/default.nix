@@ -20,7 +20,7 @@
     ../common/tpm.nix
     ../common/wifi.nix
     ../common/bluetooth.nix
-    ../common/sound.nix
+    ../common/audio.nix
   ];
 
   nixpkgs.hostPlatform = {
