@@ -27,6 +27,7 @@ in
           # allowed graph rates
           "default.clock.allowed-rates" = [
             48000
+            44100
             sampleRate
           ];
 
