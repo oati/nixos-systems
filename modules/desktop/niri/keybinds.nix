@@ -85,7 +85,7 @@
           "toggle"
           "quicksettings"
         ];
-        "Mod+Escape" = {
+        "Mod+Delete" = {
           action.spawn = [
             "delta-shell"
             "toggle"
