@@ -40,6 +40,7 @@
         config = {
           should_launch_new_window = "1";
           should_load_tutorial_when_no_other_file = "0";
+          show_command_hints = "1";
 
           # generate search index
           super_fast_search = "1";
