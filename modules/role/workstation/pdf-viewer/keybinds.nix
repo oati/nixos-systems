@@ -8,9 +8,6 @@
       new_window = "<C-n>";
       toggle_custom_color = "c";
 
-      # helper window
-      toggle_one_window = "w";
-
       # highlight links
       toggle_highlight = "l";
 
@@ -129,13 +126,13 @@
 
       # bookmarks
       add_bookmark = "b";
-      delete_bookmark = "<delete>b";
+      delete_bookmark = "Db";
 
       # highlights
       add_highlight_with_current_type = "h";
       set_select_highlight_type = "<C-h>";
       add_highlight = "H";
-      delete_highlight = "<delete>h";
+      delete_highlight = "Dh";
 
       # portals
       portal = "pp";
@@ -143,7 +140,10 @@
       portal_to_link = "pl";
       portal_to_definition = "pr";
       edit_portal = "pe";
-      delete_portal = "<delete>p";
+      delete_portal = "Dp";
+
+      # helper window
+      toggle_one_window = "pw";
 
       # overview
       keyboard_overview = "ow";
