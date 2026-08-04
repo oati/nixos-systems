@@ -10,7 +10,9 @@
       let
         settings = {
           # bridges
-          CARAPACE_BRIDGES = "zsh,fish,jj";
+          CARAPACE_BRIDGES = "zsh,fish";
+          # location of fish completions
+          fish_complete_path = "${pkgs.fish.src}/share/completions";
 
           # allow unkown flags for completions
           CARAPACE_LENIENT = 1;
