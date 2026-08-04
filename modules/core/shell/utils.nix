@@ -25,6 +25,24 @@
               '';
           };
         }
+        {
+          name = "skim_directory_finder";
+          modifier = "alt";
+          keycode = "char_t";
+          mode = [
+            "emacs"
+            "vi_normal"
+            "vi_insert"
+          ];
+          event = {
+            send = "executehostcommand";
+            cmd =
+              # nu
+              ''
+                commandline edit --insert (ls **/* | where type == dir | get name | str join (char newline) | sk)
+              '';
+          };
+        }
       ];
 
       extraConfig =
