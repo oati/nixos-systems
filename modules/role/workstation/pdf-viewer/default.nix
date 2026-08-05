@@ -15,26 +15,18 @@
       programs.sioyek = {
         enable = true;
 
-        package = pkgs.symlinkJoin {
+        package = pkgs.sioyek.overrideAttrs (prevAttrs: {
           pname = "sioyek-custom";
-          inherit (pkgs.sioyek) version meta;
-          paths = [ pkgs.sioyek ];
 
-          postBuild =
+          postInstall = prevAttrs.postInstall + ''
             # no default keybinds
-            ''
-              rm $out/etc/keys.config
-              touch $out/etc/keys.config
-            ''
+            rm $out/etc/keys.config
+            touch $out/etc/keys.config
+
             # make desktop entry open a new window
-            + ''
-              pushd $out/share/applications
-              rm sioyek.desktop
-              cp ${pkgs.sioyek}/share/applications/sioyek.desktop .
-              sed -i 's/^Exec=sioyek/& --new-window/' sioyek.desktop
-              popd
-            '';
-        };
+            sed -i 's/^Exec=sioyek/& --new-window/' $out/share/applications/sioyek.desktop
+          '';
+        });
 
         # https://sioyek-documentation.readthedocs.io/en/latest/configuration.html
         config = {
