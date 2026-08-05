@@ -150,6 +150,12 @@
       overview_to_portal = "op";
       overview_link = "ol";
       overview_definition = "or";
+
+      # overview in new window
+      "keyboard_overview;goto_overview;new_window;prev_state" = "Ow";
+      "overview_to_portal;goto_overview;new_window;prev_state" = "Op";
+      "overview_link;goto_overview;new_window;prev_state" = "Ol";
+      "overview_definition;goto_overview;new_window;prev_state" = "Or";
     };
   };
 }
