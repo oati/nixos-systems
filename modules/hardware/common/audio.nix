@@ -74,7 +74,6 @@ in
           matches = [ { "node.name" = "~alsa_output.*Qudelix-5K*"; } ];
           actions."update-props" = {
             "audio.format" = "S24LE";
-            "audio.rate" = sampleRate;
             "node.latency" = "${toString quantum}/1000";
           };
         }
