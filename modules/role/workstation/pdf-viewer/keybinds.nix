@@ -1,149 +1,184 @@
-{ user, ... }:
+{
+  user,
+  lib,
+  pkgs,
+  ...
+}:
 {
   home-manager.users.${user} = {
     # https://github.com/ahrm/sioyek/blob/development/pdf_viewer/keys.config
     # https://sioyek-documentation.readthedocs.io/en/latest/commands.html
-    programs.sioyek.bindings = {
-      command = ":";
-      new_window = "<C-n>";
-      toggle_custom_color = "c";
+    programs.sioyek = {
+      config =
+        # convert overview commands to new window commands
+        lib.mapAttrs
+          (
+            name: value:
+            toString (
+              pkgs.writeText "sioyek-custom-command-${name}.js"
+                # js
+                ''
+                  sioyek.${value}()
 
-      # highlight links
-      toggle_highlight = "l";
+                  state = sioyek_api.get_json_state()
 
-      # table of contents
-      goto_toc = "t";
+                  if ("overview" in state) {
+                      sioyek.goto_overview()
+                      sioyek.new_window()
+                      sioyek.prev_state()
+                  }
+                ''
+            )
+          )
+          {
+            "new_js_command _smart_jump_to_new_window" = "keyboard_overview";
+            "new_js_command _open_portal_in_new_window" = "overview_to_portal";
+            "new_async_js_command _open_link_in_new_window" = "overview_link";
+            "new_async_js_command _open_definition_in_new_window" = "overview_definition";
+          };
 
-      # selection
-      keyboard_select = "s";
-      copy = [
-        "y"
-        "<C-c>"
-      ];
+      bindings = {
+        command = ":";
+        new_window = "<C-n>";
+        toggle_custom_color = "c";
 
-      # visual mark
-      enter_visual_mark_mode = "v";
-      focus_text = "V";
-      move_visual_mark_up = "<up>";
-      move_visual_mark_down = "<down>";
+        # highlight links
+        toggle_highlight = "l";
 
-      # basic movement
-      move_up = "<up>";
-      move_down = "<down>";
-      move_left = "<right>";
-      move_right = "<left>";
+        # table of contents
+        goto_toc = "t";
 
-      screen_up = "u";
-      screen_down = "d";
+        # selection
+        keyboard_select = "s";
+        copy = [
+          "y"
+          "<C-c>"
+        ];
 
-      goto_top_of_page = "<home>";
-      goto_bottom_of_page = "<end>";
+        # visual mark
+        enter_visual_mark_mode = "v";
+        focus_text = "V";
+        move_visual_mark_up = "<up>";
+        move_visual_mark_down = "<down>";
 
-      goto_left_smart = "<C-<left>>";
-      goto_right_smart = "<C-<right>>";
+        # basic movement
+        move_up = "<up>";
+        move_down = "<down>";
+        move_left = "<right>";
+        move_right = "<left>";
 
-      "goto_top_of_page;goto_right_smart" = "<C-d>";
-      "goto_bottom_of_page;goto_left_smart" = "<C-u>";
+        screen_up = "u";
+        screen_down = "d";
 
-      # navigation
-      goto_beginning = "gg";
-      goto_end = "ge";
-      goto_page_with_page_number = "gn";
-      goto_page_with_label = "gN";
+        goto_top_of_page = "<home>";
+        goto_bottom_of_page = "<end>";
 
-      goto_selected_text = "gs";
-      goto_overview = "go";
-      goto_bookmark = "gb";
-      goto_bookmark_g = "gB";
-      goto_highlight = "gh";
-      goto_highlight_g = "gH";
-      goto_portal_list = "gP";
+        goto_left_smart = "<C-<left>>";
+        goto_right_smart = "<C-<right>>";
 
-      keyboard_smart_jump = "gw";
-      open_link = "gl";
+        "goto_top_of_page;goto_right_smart" = "<C-d>";
+        "goto_bottom_of_page;goto_left_smart" = "<C-u>";
 
-      goto_portal = "gp";
-      goto_definition = "gd";
+        # navigation
+        goto_beginning = "gg";
+        goto_end = "ge";
+        goto_page_with_page_number = "gn";
+        goto_page_with_label = "gN";
 
-      previous_page = "[p";
-      next_page = "]p";
+        goto_selected_text = "gs";
+        goto_overview = "go";
+        goto_bookmark = "gb";
+        goto_bookmark_g = "gB";
+        goto_highlight = "gh";
+        goto_highlight_g = "gH";
+        goto_portal_list = "gP";
 
-      prev_chapter = "[c";
-      next_chapter = "]c";
+        keyboard_smart_jump = "gw";
+        open_link = "gl";
 
-      goto_prev_highlight = "[h";
-      goto_next_highlight = "]h";
+        goto_portal = "gp";
+        goto_definition = "gd";
 
-      goto_prev_highlight_of_type = "[H";
-      goto_next_highlight_of_type = "]H";
+        previous_page = "[p";
+        next_page = "]p";
 
-      prev_state = "<A-<left>>";
-      next_state = "<A-<right>>";
+        prev_chapter = "[c";
+        next_chapter = "]c";
 
-      # zoom and view
-      zoom_in = "=";
-      zoom_out = "-";
+        goto_prev_highlight = "[h";
+        goto_next_highlight = "]h";
 
-      fit_to_page_width = "zw";
-      fit_to_page_width_smart = "zW";
-      fit_to_page_height = "zh";
-      fit_to_page_height_smart = "zH";
+        goto_prev_highlight_of_type = "[H";
+        goto_next_highlight_of_type = "]H";
 
-      rotate_clockwise = "r";
-      rotate_counterclockwise = "R";
+        prev_state = "<A-<left>>";
+        next_state = "<A-<right>>";
 
-      # open document
-      open_document = "f";
-      open_prev_doc = "<tab>";
-      open_document_embedded_from_current_path = "F";
-      open_document_embedded = "<C-F>";
+        # zoom and view
+        zoom_in = "=";
+        zoom_out = "-";
 
-      # search
-      external_search = "?";
+        fit_to_page_width = "zw";
+        fit_to_page_width_smart = "zW";
+        fit_to_page_height = "zh";
+        fit_to_page_height_smart = "zH";
 
-      search = "/";
-      chapter_search = "<C-/>";
-      regex_search = "<A-/>";
+        rotate_clockwise = "r";
+        rotate_counterclockwise = "R";
 
-      next_item = "n";
-      previous_item = "N";
+        # open document
+        open_document = "f";
+        open_prev_doc = "<tab>";
+        open_document_embedded_from_current_path = "F";
+        open_document_embedded = "<C-F>";
 
-      # marks
-      set_mark = "m";
-      goto_mark = "'";
+        # search
+        external_search = "?";
 
-      # bookmarks
-      add_bookmark = "b";
-      delete_bookmark = "Db";
+        search = "/";
+        chapter_search = "<C-/>";
+        regex_search = "<A-/>";
 
-      # highlights
-      add_highlight_with_current_type = "h";
-      set_select_highlight_type = "<C-h>";
-      add_highlight = "H";
-      delete_highlight = "Dh";
+        next_item = "n";
+        previous_item = "N";
 
-      # portals
-      portal = "pp";
-      portal_to_overview = "po";
-      portal_to_link = "pl";
-      portal_to_definition = "pd";
-      edit_portal = "pe";
-      delete_portal = "Dp";
+        # marks
+        set_mark = "m";
+        goto_mark = "'";
 
-      # helper window
-      toggle_one_window = "pw";
+        # bookmarks
+        add_bookmark = "b";
+        delete_bookmark = "Db";
 
-      # overview
-      keyboard_overview = "Ow";
-      overview_to_portal = "Op";
-      overview_link = "Ol";
-      overview_definition = "Od";
+        # highlights
+        add_highlight_with_current_type = "h";
+        set_select_highlight_type = "<C-h>";
+        add_highlight = "H";
+        delete_highlight = "Dh";
 
-      # overview in new window
-      "keyboard_overview;goto_overview;new_window;prev_state" = "ow";
-      "overview_to_portal;goto_overview;new_window;prev_state" = "op";
-      "overview_link;goto_overview;new_window;prev_state" = "ol";
-      "overview_definition;goto_overview;new_window;prev_state" = "od";
+        # portals
+        portal = "pp";
+        portal_to_overview = "po";
+        portal_to_link = "pl";
+        portal_to_definition = "pd";
+        edit_portal = "pe";
+        delete_portal = "Dp";
+
+        # helper window
+        toggle_one_window = "pw";
+
+        # new window
+        _smart_jump_to_new_window = "ow";
+        _open_portal_in_new_window = "op";
+        _open_link_in_new_window = "ol";
+        _open_definition_in_new_window = "od";
+
+        # overview
+        keyboard_overview = "Ow";
+        overview_to_portal = "Op";
+        overview_link = "Ol";
+        overview_definition = "Od";
+      };
     };
   };
 }
