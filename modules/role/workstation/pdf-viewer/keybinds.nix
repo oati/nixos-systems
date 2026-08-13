@@ -24,24 +24,12 @@
       # visual mark
       enter_visual_mark_mode = "v";
       focus_text = "V";
-      move_visual_mark_up = [
-        "<up>"
-        "<tab>"
-      ];
-      move_visual_mark_down = [
-        "<down>"
-        "<space>"
-      ];
+      move_visual_mark_up = "<up>";
+      move_visual_mark_down = "<down>";
 
       # basic movement
-      move_up = [
-        "<up>"
-        "<tab>"
-      ];
-      move_down = [
-        "<down>"
-        "<space>"
-      ];
+      move_up = "<up>";
+      move_down = "<down>";
       move_left = "<right>";
       move_right = "<left>";
 
@@ -105,10 +93,10 @@
       rotate_counterclockwise = "R";
 
       # open document
-      open_prev_doc = "F";
-      open_document_embedded_from_current_path = "f";
-      open_document_embedded = "<C-f>";
-      open_document = "<A-f>";
+      open_document = "f";
+      open_prev_doc = "<tab>";
+      open_document_embedded_from_current_path = "F";
+      open_document_embedded = "<C-F>";
 
       # search
       external_search = "?";
@@ -146,16 +134,16 @@
       toggle_one_window = "pw";
 
       # overview
-      keyboard_overview = "ow";
-      overview_to_portal = "op";
-      overview_link = "ol";
-      overview_definition = "or";
+      keyboard_overview = "Ow";
+      overview_to_portal = "Op";
+      overview_link = "Ol";
+      overview_definition = "Or";
 
       # overview in new window
-      "keyboard_overview;goto_overview;new_window;prev_state" = "Ow";
-      "overview_to_portal;goto_overview;new_window;prev_state" = "Op";
-      "overview_link;goto_overview;new_window;prev_state" = "Ol";
-      "overview_definition;goto_overview;new_window;prev_state" = "Or";
+      "keyboard_overview;goto_overview;new_window;prev_state" = "ow";
+      "overview_to_portal;goto_overview;new_window;prev_state" = "op";
+      "overview_link;goto_overview;new_window;prev_state" = "ol";
+      "overview_definition;goto_overview;new_window;prev_state" = "or";
     };
   };
 }
