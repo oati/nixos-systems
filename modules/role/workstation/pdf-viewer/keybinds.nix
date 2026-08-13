@@ -63,7 +63,7 @@
       open_link = "gl";
 
       goto_portal = "gp";
-      goto_definition = "gr";
+      goto_definition = "gd";
 
       previous_page = "[p";
       next_page = "]p";
@@ -126,7 +126,7 @@
       portal = "pp";
       portal_to_overview = "po";
       portal_to_link = "pl";
-      portal_to_definition = "pr";
+      portal_to_definition = "pd";
       edit_portal = "pe";
       delete_portal = "Dp";
 
@@ -137,13 +137,13 @@
       keyboard_overview = "Ow";
       overview_to_portal = "Op";
       overview_link = "Ol";
-      overview_definition = "Or";
+      overview_definition = "Od";
 
       # overview in new window
       "keyboard_overview;goto_overview;new_window;prev_state" = "ow";
       "overview_to_portal;goto_overview;new_window;prev_state" = "op";
       "overview_link;goto_overview;new_window;prev_state" = "ol";
-      "overview_definition;goto_overview;new_window;prev_state" = "or";
+      "overview_definition;goto_overview;new_window;prev_state" = "od";
     };
   };
 }
