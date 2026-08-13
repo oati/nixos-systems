@@ -64,7 +64,10 @@
           overview_size = "1.0 0.3";
           overview_offset = "0.0 -0.7";
 
-          search_url_g = "https://google.com/search?hl=en&pws=0&udm=14&hl=en&q=";
+          search_url_g = "https://google.com/search?hl=en&pws=0&udm=14&q=";
+          search_url_w = "https://en.wikipedia.org/wiki/Special:Search/";
+          search_url_d = "https://en.wiktionary.org/wiki/Special:Search/";
+          search_url_s = "https://scholar.google.com/scholar?q=";
 
           startup_commands = [
             "toggle_custom_color"
