@@ -10,7 +10,6 @@
 
     modules = [
       pkgs.gtklock-powerbar-module
-      pkgs.gtklock-playerctl-module
     ];
   };
 
