@@ -18,6 +18,13 @@
         package = pkgs.sioyek.overrideAttrs (prevAttrs: {
           pname = "sioyek-custom";
 
+          # remove when sioyek > 2.0.0-unstable-2026-08-05
+          version = "2.0.0-unstable-2026-08-14";
+          src = prevAttrs.src.override {
+            rev = "459774b7987e4b9364a7129aba63883219caec25";
+            hash = "sha256-8OpFnIgu4any6rzMG2Zd3y3aNrgdyUWLj/aSR5RHIhU=";
+          };
+
           postInstall = prevAttrs.postInstall + ''
             # no default keybinds
             rm $out/etc/keys.config
