@@ -8,6 +8,10 @@ let
   package = pkgs.signal-desktop;
 in
 {
+  imports = [
+    ./packages
+  ];
+
   home-manager.users.${user} = {
     home.packages = [ package ];
 
