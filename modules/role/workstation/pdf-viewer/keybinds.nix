@@ -87,11 +87,6 @@
 
         goto_selected_text = "gs";
         goto_overview = "go";
-        goto_bookmark = "gb";
-        goto_bookmark_g = "gB";
-        goto_highlight = "gh";
-        goto_highlight_g = "gH";
-        goto_portal_list = "gP";
 
         keyboard_smart_jump = "gw";
         open_link = "gl";
@@ -99,8 +94,20 @@
         goto_portal = "gp";
         goto_definition = "gd";
 
-        previous_page = "[p";
-        next_page = "]p";
+        goto_bookmark = "<space>b";
+        goto_bookmark_g = "<space>B";
+        goto_highlight = "<space>h";
+        goto_highlight_g = "<space>H";
+        goto_portal_list = "<space>p";
+
+        previous_page = [
+          "<comma>"
+          "[p"
+        ];
+        next_page = [
+          "<period>"
+          "]p"
+        ];
 
         prev_chapter = "[c";
         next_chapter = "]c";
