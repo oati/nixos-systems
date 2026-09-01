@@ -6,8 +6,8 @@
 }:
 let
   armel-uv-k1-driver = pkgs.fetchurl {
-    url = "https://github.com/armel/uv-k1-k5v3-firmware-custom/releases/download/v5.5.0/f4hwn.fusion.chirp.v5.5.0.py";
-    hash = "sha256-3yQSQ5SacJIIZLkoSZAofU57oAKA4fNoQaC0mMbNIDw=";
+    url = "https://github.com/armel/uv-k1-k5v3-firmware-custom/releases/download/v5.9.0/f4hwn.fusion.chirp.v5.9.0.py";
+    hash = "sha256-CdI4kabcREeMs+j9FuHwD98zZztOL6/652WtgSs6D/I=";
   };
 
   package = pkgs.chirp.overrideAttrs (prevAttrs: {
