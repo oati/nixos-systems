@@ -15,7 +15,7 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "lc0";
-  version = "git-d8ce482";
+  version = "0.32.1-unstable-2026-5-5";
 
   src = fetchFromGitHub {
     owner = "LeelaChessZero";
