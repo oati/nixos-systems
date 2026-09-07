@@ -1,8 +1,4 @@
-{
-  flakes,
-  user,
-  ...
-}:
+{ flakes, user, ... }:
 {
   nix = {
     settings = {

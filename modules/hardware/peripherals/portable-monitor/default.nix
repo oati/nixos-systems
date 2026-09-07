@@ -1,8 +1,4 @@
-{
-  user,
-  pkgs,
-  ...
-}:
+{ user, pkgs, ... }:
 let
   scale = 4. / 3.;
 in

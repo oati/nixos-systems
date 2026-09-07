@@ -1,8 +1,4 @@
-{
-  user,
-  pkgs,
-  ...
-}:
+{ user, pkgs, ... }:
 {
   home-manager.users.${user} = {
     programs.librewolf =

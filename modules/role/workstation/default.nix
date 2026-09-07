@@ -1,9 +1,5 @@
 # system used as a personal computer
-{
-  user,
-  pkgs,
-  ...
-}:
+{ user, pkgs, ... }:
 {
   imports = [
     ../common/vpn
