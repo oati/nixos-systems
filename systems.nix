@@ -46,6 +46,7 @@
       ./modules/extra/chirp
       ./modules/extra/kicad
       ./modules/extra/prusa-slicer
+      ./modules/extra/musescore
       ./modules/extra/chess
       ./modules/extra/baduk
       # ./modules/extra/vmware
