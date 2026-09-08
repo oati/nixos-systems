@@ -58,11 +58,6 @@
       url = "github:LuckFire/amoled-cord";
       flake = false;
     };
-
-    iloader = {
-      url = "github:nab138/iloader?ref=v2.2.6";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   nixConfig = {
