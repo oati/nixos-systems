@@ -15,4 +15,8 @@ in
     # save data
     ".config/Ryujinx/bis/user"
   ];
+
+  intransience.datastores.cache.users.${user}.dirs = [
+    ".cache/mesa_shader_cache"
+  ];
 }
