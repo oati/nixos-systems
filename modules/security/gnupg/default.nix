@@ -16,7 +16,7 @@
     };
 
     # needed for pinentry-gnome3
-    home.packages = [ pkgs.gcr ];
+    home.packages = [ pkgs.gcr_3 ];
   };
 
   intransience.datastores.home.users.${user}.dirs = [
