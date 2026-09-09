@@ -6,6 +6,8 @@
 
       settings = {
         cache_file = "/dev/null";
+        # multi-contains sorts based on match position
+        matching = "multi-contains";
         no_actions = true;
         insensitive = true;
 
