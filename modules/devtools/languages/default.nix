@@ -50,7 +50,6 @@
       pkgs.vscode-css-languageserver
 
       # nushell
-      pkgs.nu-lsp
       pkgs.nufmt
 
       # bash
