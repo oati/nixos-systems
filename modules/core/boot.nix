@@ -8,8 +8,6 @@
       timeout = lib.mkForce 8;
     };
 
-    initrd.systemd.enable = true;
-
     # remove when stateVersion >= 26.11
     zfs.forceImportRoot = false;
   };
