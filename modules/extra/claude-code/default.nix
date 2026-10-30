@@ -16,12 +16,12 @@
 
   intransience.datastores.home.users.${user} = {
     files = [
-      ".claude.json"
-      ".claude/.credentials.json"
+      ".config/claude/.claude.json"
+      ".config/claude/.credentials.json"
     ];
 
     dirs = [
-      ".claude/projects"
+      ".config/claude/projects"
     ];
   };
 }
