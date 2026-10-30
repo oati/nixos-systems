@@ -1,4 +1,9 @@
-{ user, ... }:
+{
+  user,
+  lib,
+  pkgs,
+  ...
+}:
 {
   programs.nh = {
     enable = true;
@@ -68,6 +73,26 @@
           # delete all generations except current
           def "nixos-generations delete all" [] {
             nixos-generations delete 0..
+          }
+
+          # show the closure diff of two generations by indices
+          # second generation is the current system if not specified
+          def "nixos-generations diff" [index1: int, index2?: int] {
+            let generations_list: table = nixos-generations list
+
+            let path1: string = $'/nix/var/nix/profiles/system-(
+              $generations_list | get generation | get $index1
+            )-link'
+
+            let path2: string = if $index2 != null {
+              $'/nix/var/nix/profiles/system-(
+                $generations_list | get generation | get $index2
+              )-link'
+            } else {
+              '/run/current-system'
+            }
+
+            ${lib.getExe pkgs.dix} $path1 $path2
           }
         '';
     };

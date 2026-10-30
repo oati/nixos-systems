@@ -8,6 +8,7 @@
         ngl = "nixos-generations list";
         ngs = "nixos-generations switch";
         ngd = "nixos-generations delete";
+        ngi = "nixos-generations diff";
 
         nfu = "nix flake update";
         nfuc = "nix flake update --commit-lock-file";
