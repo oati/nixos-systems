@@ -21,6 +21,7 @@
 
       ./modules/hardware/peripherals/portable-monitor
       ./modules/hardware/peripherals/drawing-tablet
+      ./modules/hardware/peripherals/gamepad
 
       ./modules/core
       ./modules/identity/erin-pc
