@@ -20,8 +20,7 @@
 
           postInstall = prevAttrs.postInstall + ''
             # no default keybinds
-            rm $out/etc/keys.config
-            touch $out/etc/keys.config
+            rm $out/share/keys.config
 
             # make desktop entry open a new window
             sed -i 's/^Exec=sioyek/& --new-window/' $out/share/applications/sioyek.desktop
