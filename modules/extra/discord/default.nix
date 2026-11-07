@@ -17,7 +17,7 @@
 
         package = pkgs.vesktop.override {
           withMiddleClickScroll = true;
-          withSystemVencord = true;
+          withSystemVencord = false;
         };
 
         # https://github.com/Vencord/Vesktop/blob/main/src/shared/settings.d.ts
@@ -34,7 +34,7 @@
 
         vencord = {
           settings = {
-            autoUpdate = false;
+            autoUpdate = true;
             autoUpdateNotifications = false;
             useQuickCss = true;
             disableMinSize = true;
