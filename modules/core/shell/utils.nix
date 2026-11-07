@@ -54,7 +54,7 @@
           @example "watch the root filesystem while excluding /tmp" {fswatch / --exclude ^/tmp}
           def --wrapped fswatch [dir, ...rest] {
             (
-              run0 fsnotifywait ($dir | path expand)
+              run0 inotifywait ($dir | path expand)
               --filesystem
               --monitor
               --quiet
