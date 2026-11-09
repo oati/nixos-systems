@@ -3,6 +3,10 @@ let
   package = pkgs.musescore;
 in
 {
+  imports = [
+    ./muse-sounds.nix
+  ];
+
   home-manager.users.${user} =
     { lib, ... }:
     {
