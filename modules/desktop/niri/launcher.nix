@@ -8,6 +8,7 @@
         cache_file = "/dev/null";
         # multi-contains sorts based on match position
         matching = "multi-contains";
+        sort_order = "alphabetical";
         no_actions = true;
         insensitive = true;
 
