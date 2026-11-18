@@ -24,8 +24,19 @@ in
                 welcomeDialogLastShownVersion = "99.0.0";
               };
 
+              project = {
+                # don't prompt about saving to cloud
+                lastUsedSaveLocationType = 1;
+                shouldAskSaveLocationType = false;
+              };
+
               ui = {
                 "application\\followSystemTheme" = true;
+                "canvas\\onlyInvertInDarkTheme" = true;
+              };
+
+              engraving = {
+                scoreColorInversion = true;
               };
             };
           in
