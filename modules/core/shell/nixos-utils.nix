@@ -92,7 +92,7 @@
               '/run/current-system'
             }
 
-            ${lib.getExe pkgs.dix} $path1 $path2
+            ${lib.getExe pkgs.dix} diff $path1 $path2
           }
         '';
     };
