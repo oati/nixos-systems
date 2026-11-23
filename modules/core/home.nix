@@ -1,4 +1,4 @@
-{ user, ... }:
+{ user, pkgs, ... }:
 {
   home-manager = {
     # use system pkgs
@@ -6,7 +6,8 @@
     # allow home manager to add packages
     useUserPackages = true;
 
-    backupFileExtension = "hm-backup";
+    # delete conflicting files
+    backupCommand = "${pkgs.coreutils}/bin/rm";
   };
 
   home-manager.users.${user} =
