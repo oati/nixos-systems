@@ -83,5 +83,8 @@
     pkgs.inetutils
     pkgs.iw
     pkgs.speedtest-cli
+
+    # image viewer
+    pkgs.viu
   ];
 }
