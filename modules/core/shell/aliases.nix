@@ -12,6 +12,7 @@
 
         nfu = "nix flake update";
         nfuc = "nix flake update --commit-lock-file";
+        nfufc = "nix flake update-follow --commit-lock-file";
       };
     };
   };

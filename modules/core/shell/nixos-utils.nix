@@ -94,6 +94,17 @@
 
             ${lib.getExe pkgs.dix} diff $path1 $path2
           }
+
+          # update nix flake to match system nixpkgs
+          def --wrapped "nix flake update-follow" [...rest] {
+            let system_nixpkgs = nix flake metadata --json /etc/nixos | from json
+              | get locks.nodes
+              | get ($in.root.inputs.nixpkgs)
+              | get locked
+              | $'github:($in.owner)/($in.repo)/($in.rev)'
+
+            nix flake update --override-input nixpkgs $system_nixpkgs ...$rest
+          }
         '';
     };
   };
