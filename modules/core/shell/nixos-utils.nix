@@ -51,7 +51,7 @@
                   $generations_list | slice $item
                 }
               }
-            } | flatten | where not current | get generation
+            } | flatten | where current == false | get generation
 
             if ($generations | is-not-empty) {
               run0 nix-env -p /nix/var/nix/profiles/system --delete-generations ...$generations
