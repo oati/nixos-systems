@@ -17,12 +17,41 @@
             soft-wrap.enable = true;
           };
 
-          keys = {
-            insert = {
-              C-left = "move_prev_word_start";
-              C-right = "move_next_word_start";
+          keys =
+            let
+              window = {
+                C-up = "swap_view_up";
+                C-down = "swap_view_down";
+                C-left = "swap_view_left";
+                C-right = "swap_view_right";
+              };
+            in
+            {
+              normal = {
+                C-w = window;
+                space.w = window;
+
+                g = {
+                  up = "move_line_up";
+                  down = "move_line_down";
+                };
+              };
+
+              select = {
+                C-w = window;
+                space.w = window;
+
+                g = {
+                  up = "extend_line_up";
+                  down = "extend_line_down";
+                };
+              };
+
+              insert = {
+                C-left = "move_prev_word_start";
+                C-right = "move_next_word_start";
+              };
             };
-          };
         };
       };
 
