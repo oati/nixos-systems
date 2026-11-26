@@ -11,8 +11,8 @@
         ngi = "nixos-generations diff";
 
         nfu = "nix flake update";
-        nfuc = "nix flake update --commit-lock-file";
-        nfufc = "nix flake update-follow --commit-lock-file";
+        nfuc = "nix flake update-follow --commit-lock-file";
+        nfuca = "nix flake update --commit-lock-file";
       };
     };
   };
