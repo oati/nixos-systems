@@ -15,10 +15,23 @@
       programs.vesktop = {
         enable = true;
 
-        package = pkgs.vesktop.override {
-          withMiddleClickScroll = true;
-          withSystemVencord = false;
-        };
+        package =
+          let
+            # see https://github.com/NixOS/nixpkgs/pull/591162
+            vesktop =
+              lib.warnIf (lib.versionAtLeast pkgs.vesktop.version "1.7.0")
+                "nixpkgs vesktop is now ${pkgs.vesktop.version}"
+                (
+                  pkgs.callPackage (builtins.fetchurl {
+                    url = "https://raw.githubusercontent.com/NixOS/nixpkgs/bc0a78f3ea29a3c4c895bff51724d43da71105a0/pkgs/by-name/ve/vesktop/package.nix";
+                    sha256 = "sha256-h/qxEl50yI7N/3NFlRL1QxfPMNx09lZwbE5dnfs1SM8=";
+                  }) { }
+                );
+          in
+          vesktop.override {
+            withMiddleClickScroll = true;
+            withSystemVencord = false;
+          };
 
         # https://github.com/Vencord/Vesktop/blob/main/src/shared/settings.d.ts
         settings = {
