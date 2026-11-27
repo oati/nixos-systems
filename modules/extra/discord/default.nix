@@ -151,7 +151,7 @@
           Wants = [ "dbus.service" ];
         };
         Service = {
-          ExecStartPre = "${pkgs.coreutils}/bin/sleep 2";
+          ExecStartPre = "${lib.getExe' pkgs.glib "gdbus"} wait --session org.kde.StatusNotifierWatcher";
           ExecStart = "${lib.getExe config.programs.vesktop.package} --start-minimized";
           Restart = "always";
           RestartSec = "5s";
