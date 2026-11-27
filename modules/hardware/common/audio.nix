@@ -9,7 +9,7 @@ let
 
   latency = rec {
     # pipewire graph cycle length
-    ms = 4;
+    ms = 8;
 
     # longest cycle the graph may stretch to.
     # this ceiling only matters when streams ask for larger buffers.
